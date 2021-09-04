@@ -1,0 +1,3 @@
+/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles/rebuild_cache.dir
+/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles/edit_cache.dir
+/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles/rc_remote.elf.dir
