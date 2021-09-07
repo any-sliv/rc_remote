@@ -14,7 +14,7 @@ set(SIZE arm-none-eabi-size)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 # project settings
-project(rc_remote C CXX ASM)
+project(temp C CXX ASM)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 
@@ -46,11 +46,35 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
-include_directories(Core/Inc Drivers/STM32L1xx_HAL_Driver/Inc Drivers/STM32L1xx_HAL_Driver/Inc/Legacy Middlewares/Third_Party/FreeRTOS/Source/include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 Drivers/CMSIS/Device/ST/STM32L1xx/Include Drivers/CMSIS/Include)
+include_directories(Core/Inc 
+App/gpio
+App/nrf24
+Core/Inc
+Drivers/STM32L1xx_HAL_Driver/Inc 
+Drivers/STM32L1xx_HAL_Driver/Inc/Legacy 
+Drivers/CMSIS/Include
+Drivers/CMSIS/STM32L1xx_HAL_Driver/Inc
+Drivers/STM32L1xx_HAL_Driver/Inc/Legacy
+Drivers/Device/ST/STM32L1xx_HAL_Driver/Include
+Drivers/Device/ST/STM32L1xx_HAL_Driver/Include/Legacy
+Drivers/CMSIS/Device/ST/STM32L1xx/Include Drivers/CMSIS/Include
+Middlewares/Third_Party/FreeRTOS/Source/include 
+Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 
+Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3
+)
 
 add_definitions(-DUSE_HAL_DRIVER -DSTM32L151xBA)
 
-file(GLOB_RECURSE SOURCES "startup/*.*" "Middlewares/*.*" "Drivers/*.*" "Core/*.*")
+file(GLOB_RECURSE SOURCES 
+"startup/*.*" 
+"Middlewares/*.*" 
+"Drivers/*.*" 
+"Drivers/STM32L1xx_HAL_Driver/*.*"
+"Core/*.*" 
+"Core/Src/*.*" 
+"App/gpio/*.*" 
+"App/nrf24/*.*"
+)
 
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32L151CBTxA_FLASH.ld)
 

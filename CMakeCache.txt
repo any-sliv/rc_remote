@@ -153,7 +153,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=rc_remote
+CMAKE_PROJECT_NAME:STATIC=temp
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/local/bin/arm-none-eabi-ranlib
@@ -225,6 +225,15 @@ rc_remote_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 rc_remote_SOURCE_DIR:STATIC=/Users/macsli/Documents/dev/engthesis/rc_remote
+
+//Value Computed by CMake
+temp_BINARY_DIR:STATIC=/Users/macsli/Documents/dev/engthesis/rc_remote
+
+//Value Computed by CMake
+temp_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+temp_SOURCE_DIR:STATIC=/Users/macsli/Documents/dev/engthesis/rc_remote
 
 
 ########################

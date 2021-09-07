@@ -16,6 +16,10 @@
   *
   ******************************************************************************
   */
+
+ #ifdef __cplusplus 
+ extern "C" { 
+#endif 
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -27,97 +31,107 @@
 #include "usb.h"
 #include "gpio.h"
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
+//#include "gpioApp.hpp"
 
-/* USER CODE END Includes */
+ /* Private includes
+  * ----------------------------------------------------------*/
+ /* USER CODE BEGIN Includes */
 
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
+ /* USER CODE END Includes */
 
-/* USER CODE END PTD */
+ /* Private typedef
+  * -----------------------------------------------------------*/
+ /* USER CODE BEGIN PTD */
 
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-/* USER CODE END PD */
+ /* USER CODE END PTD */
 
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
+ /* Private define
+  * ------------------------------------------------------------*/
+ /* USER CODE BEGIN PD */
+ /* USER CODE END PD */
 
-/* USER CODE END PM */
+ /* Private macro
+  * -------------------------------------------------------------*/
+ /* USER CODE BEGIN PM */
 
-/* Private variables ---------------------------------------------------------*/
+ /* USER CODE END PM */
 
-/* USER CODE BEGIN PV */
+ /* Private variables
+  * ---------------------------------------------------------*/
 
-/* USER CODE END PV */
+ /* USER CODE BEGIN PV */
 
-/* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
-void MX_FREERTOS_Init(void);
-/* USER CODE BEGIN PFP */
+ /* USER CODE END PV */
 
-/* USER CODE END PFP */
+ /* Private function prototypes
+  * -----------------------------------------------*/
+ void SystemClock_Config(void);
+ void MX_FREERTOS_Init(void);
+ /* USER CODE BEGIN PFP */
 
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
+ /* USER CODE END PFP */
 
-/* USER CODE END 0 */
+ /* Private user code
+  * ---------------------------------------------------------*/
+ /* USER CODE BEGIN 0 */
 
-/**
+ /* USER CODE END 0 */
+
+ /**
   * @brief  The application entry point.
   * @retval int
   */
-int main(void)
-{
-  /* USER CODE BEGIN 1 */
+ int main(void) {
+   /* USER CODE BEGIN 1 */
 
-  /* USER CODE END 1 */
+   /* USER CODE END 1 */
 
-  /* MCU Configuration--------------------------------------------------------*/
+   /* MCU
+    * Configuration--------------------------------------------------------*/
 
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+   /* Reset of all peripherals, Initializes the Flash interface and the Systick.
+    */
+   HAL_Init();
 
-  /* USER CODE BEGIN Init */
+   /* USER CODE BEGIN Init */
 
-  /* USER CODE END Init */
+   /* USER CODE END Init */
 
-  /* Configure the system clock */
-  SystemClock_Config();
+   /* Configure the system clock */
+   SystemClock_Config();
 
-  /* USER CODE BEGIN SysInit */
+   /* USER CODE BEGIN SysInit */
 
-  /* USER CODE END SysInit */
+   /* USER CODE END SysInit */
 
-  /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_DMA_Init();
-  MX_ADC_Init();
-  MX_SPI1_Init();
-  MX_SPI2_Init();
-  MX_USART1_UART_Init();
-  MX_USB_PCD_Init();
-  /* USER CODE BEGIN 2 */
+   /* Initialize all configured peripherals */
+   MX_GPIO_Init();
+   MX_DMA_Init();
+   MX_ADC_Init();
+   MX_SPI1_Init();
+   MX_SPI2_Init();
+   MX_USART1_UART_Init();
+   MX_USB_PCD_Init();
+   /* USER CODE BEGIN 2 */
 
-  /* USER CODE END 2 */
+   /* USER CODE END 2 */
 
-  /* Init scheduler */
-  osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
-  /* Start scheduler */
-  osKernelStart();
+   /* Init scheduler */
+   osKernelInitialize(); /* Call init function for freertos objects (in
+                            freertos.c) */
+   MX_FREERTOS_Init();
+   /* Start scheduler */
+   osKernelStart();
 
-  /* We should never get here as control is now taken by the scheduler */
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
+   /* We should never get here as control is now taken by the scheduler */
+   /* Infinite loop */
+   /* USER CODE BEGIN WHILE */
+   while (1) {
+     /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
-  }
-  /* USER CODE END 3 */
+     /* USER CODE BEGIN 3 */
+   }
+   /* USER CODE END 3 */
 }
 
 /**
@@ -218,5 +232,9 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
+#ifdef __cplusplus 
+} 
+#endif 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
