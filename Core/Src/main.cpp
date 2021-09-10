@@ -31,7 +31,7 @@
 #include "usb.h"
 #include "gpio.h"
 
-//#include "gpioApp.hpp"
+#include "gpioApp.hpp"
 
  /* Private includes
   * ----------------------------------------------------------*/

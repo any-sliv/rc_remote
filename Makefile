@@ -129,6 +129,54 @@ temp.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/build
 .PHONY : temp.elf/fast
 
+App/gpio/gpioApp.obj: App/gpio/gpioApp.cpp.obj
+.PHONY : App/gpio/gpioApp.obj
+
+# target to build an object file
+App/gpio/gpioApp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/App/gpio/gpioApp.cpp.obj
+.PHONY : App/gpio/gpioApp.cpp.obj
+
+App/gpio/gpioApp.i: App/gpio/gpioApp.cpp.i
+.PHONY : App/gpio/gpioApp.i
+
+# target to preprocess a source file
+App/gpio/gpioApp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/App/gpio/gpioApp.cpp.i
+.PHONY : App/gpio/gpioApp.cpp.i
+
+App/gpio/gpioApp.s: App/gpio/gpioApp.cpp.s
+.PHONY : App/gpio/gpioApp.s
+
+# target to generate assembly for a file
+App/gpio/gpioApp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/App/gpio/gpioApp.cpp.s
+.PHONY : App/gpio/gpioApp.cpp.s
+
+App/nrf24/radioTask.obj: App/nrf24/radioTask.cpp.obj
+.PHONY : App/nrf24/radioTask.obj
+
+# target to build an object file
+App/nrf24/radioTask.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/App/nrf24/radioTask.cpp.obj
+.PHONY : App/nrf24/radioTask.cpp.obj
+
+App/nrf24/radioTask.i: App/nrf24/radioTask.cpp.i
+.PHONY : App/nrf24/radioTask.i
+
+# target to preprocess a source file
+App/nrf24/radioTask.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/App/nrf24/radioTask.cpp.i
+.PHONY : App/nrf24/radioTask.cpp.i
+
+App/nrf24/radioTask.s: App/nrf24/radioTask.cpp.s
+.PHONY : App/nrf24/radioTask.s
+
+# target to generate assembly for a file
+App/nrf24/radioTask.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/App/nrf24/radioTask.cpp.s
+.PHONY : App/nrf24/radioTask.cpp.s
+
 Core/Src/adc.obj: Core/Src/adc.c.obj
 .PHONY : Core/Src/adc.obj
 
@@ -1202,6 +1250,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... temp.elf"
+	@echo "... App/gpio/gpioApp.obj"
+	@echo "... App/gpio/gpioApp.i"
+	@echo "... App/gpio/gpioApp.s"
+	@echo "... App/nrf24/radioTask.obj"
+	@echo "... App/nrf24/radioTask.i"
+	@echo "... App/nrf24/radioTask.s"
 	@echo "... Core/Src/adc.obj"
 	@echo "... Core/Src/adc.i"
 	@echo "... Core/Src/adc.s"
