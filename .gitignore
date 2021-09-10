@@ -1,5 +1,6 @@
 # Directories
 CmakeFiles/temp.elf.dir/
+CMakeFiles/
 
 # Prerequisites
 *.d

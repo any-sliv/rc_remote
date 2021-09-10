@@ -30,7 +30,7 @@
 #include "usart.h"
 #include "usb.h"
 #include "gpio.h"
-
+#include "radioTask.cpp"
 #include "gpioApp.hpp"
 
  /* Private includes
