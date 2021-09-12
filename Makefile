@@ -153,6 +153,30 @@ App/gpio/gpioApp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/App/gpio/gpioApp.cpp.s
 .PHONY : App/gpio/gpioApp.cpp.s
 
+App/nrf24/nrf24.obj: App/nrf24/nrf24.c.obj
+.PHONY : App/nrf24/nrf24.obj
+
+# target to build an object file
+App/nrf24/nrf24.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/App/nrf24/nrf24.c.obj
+.PHONY : App/nrf24/nrf24.c.obj
+
+App/nrf24/nrf24.i: App/nrf24/nrf24.c.i
+.PHONY : App/nrf24/nrf24.i
+
+# target to preprocess a source file
+App/nrf24/nrf24.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/App/nrf24/nrf24.c.i
+.PHONY : App/nrf24/nrf24.c.i
+
+App/nrf24/nrf24.s: App/nrf24/nrf24.c.s
+.PHONY : App/nrf24/nrf24.s
+
+# target to generate assembly for a file
+App/nrf24/nrf24.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/App/nrf24/nrf24.c.s
+.PHONY : App/nrf24/nrf24.c.s
+
 App/nrf24/radioTask.obj: App/nrf24/radioTask.cpp.obj
 .PHONY : App/nrf24/radioTask.obj
 
@@ -1253,6 +1277,9 @@ help:
 	@echo "... App/gpio/gpioApp.obj"
 	@echo "... App/gpio/gpioApp.i"
 	@echo "... App/gpio/gpioApp.s"
+	@echo "... App/nrf24/nrf24.obj"
+	@echo "... App/nrf24/nrf24.i"
+	@echo "... App/nrf24/nrf24.s"
 	@echo "... App/nrf24/radioTask.obj"
 	@echo "... App/nrf24/radioTask.i"
 	@echo "... App/nrf24/radioTask.s"

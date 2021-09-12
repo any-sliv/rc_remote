@@ -2,6 +2,7 @@
 set(CMAKE_DEPENDS_LANGUAGES
   "ASM"
   "C"
+  "CXX"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM
@@ -31,7 +32,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/dma.c" "/Users/macsli/Documents/dev/engthesis/rc_remote/cmake-build-debug/CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/freertos.c" "/Users/macsli/Documents/dev/engthesis/rc_remote/cmake-build-debug/CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/gpio.c" "/Users/macsli/Documents/dev/engthesis/rc_remote/cmake-build-debug/CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj"
-  "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.c" "/Users/macsli/Documents/dev/engthesis/rc_remote/cmake-build-debug/CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/spi.c" "/Users/macsli/Documents/dev/engthesis/rc_remote/cmake-build-debug/CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/stm32l1xx_hal_msp.c" "/Users/macsli/Documents/dev/engthesis/rc_remote/cmake-build-debug/CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/stm32l1xx_hal_timebase_tim.c" "/Users/macsli/Documents/dev/engthesis/rc_remote/cmake-build-debug/CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj"
@@ -82,6 +82,28 @@ set(CMAKE_TARGET_DEFINITIONS_C
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../Core/Inc"
+  "../Drivers/STM32L1xx_HAL_Driver/Inc"
+  "../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy"
+  "../Middlewares/Third_Party/FreeRTOS/Source/include"
+  "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"
+  "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3"
+  "../Drivers/CMSIS/Device/ST/STM32L1xx/Include"
+  "../Drivers/CMSIS/Include"
+  )
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.cpp" "/Users/macsli/Documents/dev/engthesis/rc_remote/cmake-build-debug/CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "STM32L151xBA"
+  "USE_HAL_DRIVER"
+  )
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../Core/Inc"
   "../Drivers/STM32L1xx_HAL_Driver/Inc"
   "../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy"

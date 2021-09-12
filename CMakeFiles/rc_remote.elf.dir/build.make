@@ -125,19 +125,19 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.s"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/gpio.c -o CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.s
 
-CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
-CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj: Core/Src/main.c
-CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.c
+CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj: CMakeFiles/rc_remote.elf.dir/flags.make
+CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj: Core/Src/main.cpp
+CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj"
+	/usr/local/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.cpp
 
-CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.i"
-	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.c > CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.i
+CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.i"
+	/usr/local/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.cpp > CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.i
 
-CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.s"
-	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.c -o CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.s
+CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.s"
+	/usr/local/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.cpp -o CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.s
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj: Core/Src/spi.c
@@ -704,7 +704,7 @@ rc_remote_elf_OBJECTS = \
 "CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj" \
 "CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj" \
 "CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj" \
-"CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj" \
+"CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj" \
 "CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj" \
 "CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj" \
 "CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj" \
@@ -753,7 +753,7 @@ rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj
-rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj
+rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj
@@ -796,7 +796,7 @@ rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Sou
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/startup/startup_stm32l151xba.s.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/build.make
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Linking C executable rc_remote.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Linking CXX executable rc_remote.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rc_remote.elf.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building /Users/macsli/Documents/dev/engthesis/rc_remote/rc_remote.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building /Users/macsli/Documents/dev/engthesis/rc_remote/rc_remote.bin"

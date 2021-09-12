@@ -36,7 +36,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/dma.c" "CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/freertos.c" "CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/gpio.c" "CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj.d"
-  "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.c" "CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/spi.c" "CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/stm32l1xx_hal_msp.c" "CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/stm32l1xx_hal_timebase_tim.c" "CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj.d"
@@ -76,6 +75,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/timers.c" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj.d"
+  "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.cpp" "CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj.d"
   )
 
 # Targets to which this target links.

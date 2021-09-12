@@ -100,6 +100,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/.DS_Store">
+			<Option target="rc_remote.elf"/>
+		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Inc/FreeRTOSConfig.h">
 			<Option target="rc_remote.elf"/>
 		</Unit>
@@ -142,7 +145,7 @@
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/gpio.c">
 			<Option target="rc_remote.elf"/>
 		</Unit>
-		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.c">
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.cpp">
 			<Option target="rc_remote.elf"/>
 		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/spi.c">
@@ -167,6 +170,9 @@
 			<Option target="rc_remote.elf"/>
 		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/usb.c">
+			<Option target="rc_remote.elf"/>
+		</Unit>
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/.DS_Store">
 			<Option target="rc_remote.elf"/>
 		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l151xba.h">
