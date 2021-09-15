@@ -176,7 +176,8 @@ CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj: App/nrf24/radioTask.cp
   /Applications/ARM/arm-none-eabi/include/string.h \
   /Applications/ARM/arm-none-eabi/include/sys/_locale.h \
   /Applications/ARM/arm-none-eabi/include/strings.h \
-  /Applications/ARM/arm-none-eabi/include/sys/string.h
+  /Applications/ARM/arm-none-eabi/include/sys/string.h \
+  App/nrf24/radioTask.hpp
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj: Core/Src/adc.c \
   Core/Inc/adc.h \

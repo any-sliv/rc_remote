@@ -5,8 +5,8 @@
  *      Author: macsli
  */
 
- #ifdef __cplusplus 
- extern "C" { 
+#ifdef __cplusplus 
+extern "C" { 
 #endif 
 
 #include "gpioApp.hpp"
@@ -34,13 +34,17 @@ Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState = 0,
   Set(initState);
 }
 
-void Gpio::Set(void) { HAL_GPIO_WritePin(port, pin, (GPIO_PinState)1U); }
+void Gpio::Set(void) { 
+  HAL_GPIO_WritePin(port, pin, (GPIO_PinState)1U); 
+}
 
 void Gpio::Set(bool value) {
   HAL_GPIO_WritePin(port, pin, (GPIO_PinState)value);
 }
 
-void Gpio::Reset(void) { HAL_GPIO_WritePin(port, pin, (GPIO_PinState)0); }
+void Gpio::Reset(void) { 
+  HAL_GPIO_WritePin(port, pin, (GPIO_PinState)0); 
+}
 
 #ifdef __cplusplus 
 } 

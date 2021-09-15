@@ -1,4 +1,5 @@
 #include "nrf24.h"
+#include "radioTask.hpp"
 
 #ifdef __cplusplus 
 extern "C" { 
@@ -6,8 +7,9 @@ extern "C" {
 
 void radioTask(void *argument)
 {
-    asm("nop");
+    //asm("nop");
 }
+
 
 
 // --------------------------------------------------------
