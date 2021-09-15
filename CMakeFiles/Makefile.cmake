@@ -42,5 +42,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/temp.elf.dir/DependInfo.cmake"
+  "CMakeFiles/rc_remote.elf.dir/DependInfo.cmake"
   )

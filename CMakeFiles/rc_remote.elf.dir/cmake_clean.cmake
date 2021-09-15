@@ -1,4 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.obj"
+  "CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.obj.d"
+  "CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj"
+  "CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj.d"
+  "CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj"
+  "CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj.d"
   "CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj"
   "CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj.d"
   "CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj"
@@ -7,8 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj.d"
   "CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj"
   "CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj.d"
-  "CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj"
-  "CMakeFiles/rc_remote.elf.dir/Core/Src/main.c.obj.d"
+  "CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj"
+  "CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj.d"
   "CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj"
   "CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj.d"
   "CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj"
@@ -93,6 +99,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang ASM C)
+foreach(lang ASM C CXX)
   include(CMakeFiles/rc_remote.elf.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()
