@@ -21,17 +21,23 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "Core/Inc"
+  "App/gpio"
+  "App/nrf24"
   "Drivers/STM32L1xx_HAL_Driver/Inc"
   "Drivers/STM32L1xx_HAL_Driver/Inc/Legacy"
+  "Drivers/CMSIS/Include"
+  "Drivers/CMSIS/STM32L1xx_HAL_Driver/Inc"
+  "Drivers/Device/ST/STM32L1xx_HAL_Driver/Include"
+  "Drivers/Device/ST/STM32L1xx_HAL_Driver/Include/Legacy"
+  "Drivers/CMSIS/Device/ST/STM32L1xx/Include"
   "Middlewares/Third_Party/FreeRTOS/Source/include"
   "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"
   "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3"
-  "Drivers/CMSIS/Device/ST/STM32L1xx/Include"
-  "Drivers/CMSIS/Include"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/nrf24.c" "CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/adc.c" "CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/dma.c" "CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/freertos.c" "CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj.d"
@@ -75,6 +81,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/timers.c" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj.d"
+  "/Users/macsli/Documents/dev/engthesis/rc_remote/App/gpio/gpioApp.cpp" "CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.obj.d"
+  "/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioTask.cpp" "CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj.d"
   "/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.cpp" "CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj" "gcc" "CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj.d"
   )
 

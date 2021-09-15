@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /Users/macsli/Documents/dev/engthesis/rc_remote
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/temp.elf.dir/all
+all: CMakeFiles/rc_remote.elf.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/temp.elf.dir/clean
+clean: CMakeFiles/rc_remote.elf.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/temp.elf.dir
+# Target rules for target CMakeFiles/rc_remote.elf.dir
 
 # All Build rule for target.
-CMakeFiles/temp.elf.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49 "Built target temp.elf"
-.PHONY : CMakeFiles/temp.elf.dir/all
+CMakeFiles/rc_remote.elf.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49 "Built target rc_remote.elf"
+.PHONY : CMakeFiles/rc_remote.elf.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/temp.elf.dir/rule: cmake_check_build_system
+CMakeFiles/rc_remote.elf.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles 49
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/temp.elf.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/rc_remote.elf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles 0
-.PHONY : CMakeFiles/temp.elf.dir/rule
+.PHONY : CMakeFiles/rc_remote.elf.dir/rule
 
 # Convenience name for target.
-temp.elf: CMakeFiles/temp.elf.dir/rule
-.PHONY : temp.elf
+rc_remote.elf: CMakeFiles/rc_remote.elf.dir/rule
+.PHONY : rc_remote.elf
 
 # clean rule for target.
-CMakeFiles/temp.elf.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.elf.dir/build.make CMakeFiles/temp.elf.dir/clean
-.PHONY : CMakeFiles/temp.elf.dir/clean
+CMakeFiles/rc_remote.elf.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/clean
+.PHONY : CMakeFiles/rc_remote.elf.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

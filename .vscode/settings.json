@@ -1,4 +1,4 @@
 {
     "makefile.extensionOutputFolder": "./.vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
 }
