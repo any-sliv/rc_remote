@@ -180,6 +180,7 @@ CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj
  /Applications/ARM/arm-none-eabi/include/sys/_locale.h
  /Applications/ARM/arm-none-eabi/include/strings.h
  /Applications/ARM/arm-none-eabi/include/sys/string.h
+ /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioTask.hpp
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj
  /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/adc.c
