@@ -1,4 +1,10 @@
 {
     "makefile.extensionOutputFolder": "./.vscode",
     "editor.formatOnSave": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#CC5801",
+        "statusBar.noFolderBackground": "#212121",
+        "statusBar.debuggingBackground": "#263238"
+    },
+    "cmake.configureOnOpen": true,
 }

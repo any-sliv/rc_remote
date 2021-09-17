@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.obj"
   "CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.obj.d"
-  "CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj"
-  "CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj.d"
+  "CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj"
+  "CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj.d"
+  "CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj"
+  "CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj.d"
   "CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj"
   "CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj.d"
   "CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj"

@@ -83,24 +83,38 @@ CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.s"
 	/usr/local/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/macsli/Documents/dev/engthesis/rc_remote/App/gpio/gpioApp.cpp -o CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.s
 
-CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
-CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj: App/nrf24/nrf24.c
-CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj -MF CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj.d -o CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/nrf24.c
+CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
+CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj: App/nrf24/drivers/nrf24.c
+CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj -MF CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj.d -o CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/drivers/nrf24.c
 
-CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.i"
-	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/nrf24.c > CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.i
+CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.i"
+	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/drivers/nrf24.c > CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.i
 
-CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.s"
-	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/nrf24.c -o CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.s
+CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.s"
+	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/drivers/nrf24.c -o CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.s
+
+CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj: CMakeFiles/rc_remote.elf.dir/flags.make
+CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj: App/nrf24/radioClass.cpp
+CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj"
+	/usr/local/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj -MF CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj.d -o CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioClass.cpp
+
+CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.i"
+	/usr/local/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioClass.cpp > CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.i
+
+CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.s"
+	/usr/local/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioClass.cpp -o CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.s
 
 CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj: App/nrf24/radioTask.cpp
 CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj"
 	/usr/local/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj -MF CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj.d -o CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioTask.cpp
 
 CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj: Core/Src/adc.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/adc.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj: Core/Src/dma.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/dma.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj: Core/Src/freertos.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/freertos.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj: Core/Src/gpio.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/gpio.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj: Core/Src/main.cpp
 CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj"
 	/usr/local/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/main.cpp
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj: Core/Src/spi.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/spi.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj: Core/Src/stm32l1xx_hal_msp.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/stm32l1xx_hal_msp.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj: Core/Src/stm32l1xx_hal_timebase_tim.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/stm32l1xx_hal_timebase_tim.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.s: cmake_forc
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.obj: Core/Src/stm32l1xx_it.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/stm32l1xx_it.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.obj: Core/Src/syscalls.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/syscalls.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.obj: Core/Src/system_stm32l1xx.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/system_stm32l1xx.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.obj: Core/Src/usart.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/usart.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.i: cmake_force
@@ -282,7 +296,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.obj: Core/Src/usb.c
 CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.obj -MF CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Core/Src/usb.c
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.i: cmake_force
@@ -296,7 +310,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.s: cmake_force
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.s:
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.i: cmake_force
@@ -324,7 +338,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.i: cmake_force
@@ -338,7 +352,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.i: cmake_force
@@ -352,7 +366,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cort
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.i: cmake_force
@@ -366,7 +380,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.i: cmake_force
@@ -380,7 +394,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.i: cmake_force
@@ -394,7 +408,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flas
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.i: cmake_force
@@ -408,7 +422,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flas
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.i: cmake_force
@@ -422,7 +436,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flas
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.i: cmake_force
@@ -436,7 +450,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.i: cmake_force
@@ -450,7 +464,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.i: cmake_force
@@ -464,7 +478,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.i: cmake_force
@@ -478,7 +492,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.i: cmake_force
@@ -492,7 +506,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.i: cmake_force
@@ -506,7 +520,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.i: cmake_force
@@ -520,7 +534,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.i: cmake_force
@@ -534,7 +548,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.i: cmake_force
@@ -548,7 +562,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.i: cmake_force
@@ -562,7 +576,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.i: cmake_force
@@ -576,7 +590,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj -MF CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c
 
 CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.i: cmake_force
@@ -590,7 +604,7 @@ CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj -MF CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.i: cmake_force
@@ -604,7 +618,7 @@ CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: Middlewares/Third_Party/FreeRTOS/Source/croutine.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj -MF CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/croutine.c
 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i: cmake_force
@@ -618,7 +632,7 @@ CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj -MF CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i: cmake_force
@@ -632,7 +646,7 @@ CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_group
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: Middlewares/Third_Party/FreeRTOS/Source/list.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj -MF CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/list.c
 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.i: cmake_force
@@ -646,7 +660,7 @@ CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.s: c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj: Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj -MF CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c
 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i: cmake_force
@@ -660,7 +674,7 @@ CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GC
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj -MF CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i: cmake_force
@@ -674,7 +688,7 @@ CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/Me
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: Middlewares/Third_Party/FreeRTOS/Source/queue.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj -MF CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/queue.c
 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.i: cmake_force
@@ -688,7 +702,7 @@ CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.s: 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj -MF CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i: cmake_force
@@ -702,7 +716,7 @@ CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buff
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: Middlewares/Third_Party/FreeRTOS/Source/tasks.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj -MF CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/tasks.c
 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i: cmake_force
@@ -716,7 +730,7 @@ CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s: 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: Middlewares/Third_Party/FreeRTOS/Source/timers.c
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: CMakeFiles/rc_remote.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj -MF CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj.d -o CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/timers.c
 
 CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.i: cmake_force
@@ -729,7 +743,7 @@ CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s:
 
 CMakeFiles/rc_remote.elf.dir/startup/startup_stm32l151xba.s.obj: CMakeFiles/rc_remote.elf.dir/flags.make
 CMakeFiles/rc_remote.elf.dir/startup/startup_stm32l151xba.s.obj: startup/startup_stm32l151xba.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building ASM object CMakeFiles/rc_remote.elf.dir/startup/startup_stm32l151xba.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building ASM object CMakeFiles/rc_remote.elf.dir/startup/startup_stm32l151xba.s.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/rc_remote.elf.dir/startup/startup_stm32l151xba.s.obj -c /Users/macsli/Documents/dev/engthesis/rc_remote/startup/startup_stm32l151xba.s
 
 CMakeFiles/rc_remote.elf.dir/startup/startup_stm32l151xba.s.i: cmake_force
@@ -743,7 +757,8 @@ CMakeFiles/rc_remote.elf.dir/startup/startup_stm32l151xba.s.s: cmake_force
 # Object files for target rc_remote.elf
 rc_remote_elf_OBJECTS = \
 "CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.obj" \
-"CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj" \
+"CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj" \
+"CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj" \
 "CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj" \
 "CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj" \
 "CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj" \
@@ -795,7 +810,8 @@ rc_remote_elf_OBJECTS = \
 rc_remote_elf_EXTERNAL_OBJECTS =
 
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.obj
-rc_remote.elf: CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj
+rc_remote.elf: CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj
+rc_remote.elf: CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj
@@ -844,7 +860,7 @@ rc_remote.elf: CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Sou
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/startup/startup_stm32l151xba.s.obj
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/build.make
 rc_remote.elf: CMakeFiles/rc_remote.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Linking CXX executable rc_remote.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Linking CXX executable rc_remote.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rc_remote.elf.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building /Users/macsli/Documents/dev/engthesis/rc_remote/out/rc_remote.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building /Users/macsli/Documents/dev/engthesis/rc_remote/out/rc_remote.bin"
