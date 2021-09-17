@@ -153,29 +153,53 @@ App/gpio/gpioApp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.s
 .PHONY : App/gpio/gpioApp.cpp.s
 
-App/nrf24/nrf24.obj: App/nrf24/nrf24.c.obj
-.PHONY : App/nrf24/nrf24.obj
+App/nrf24/drivers/nrf24.obj: App/nrf24/drivers/nrf24.c.obj
+.PHONY : App/nrf24/drivers/nrf24.obj
 
 # target to build an object file
-App/nrf24/nrf24.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj
-.PHONY : App/nrf24/nrf24.c.obj
+App/nrf24/drivers/nrf24.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj
+.PHONY : App/nrf24/drivers/nrf24.c.obj
 
-App/nrf24/nrf24.i: App/nrf24/nrf24.c.i
-.PHONY : App/nrf24/nrf24.i
+App/nrf24/drivers/nrf24.i: App/nrf24/drivers/nrf24.c.i
+.PHONY : App/nrf24/drivers/nrf24.i
 
 # target to preprocess a source file
-App/nrf24/nrf24.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.i
-.PHONY : App/nrf24/nrf24.c.i
+App/nrf24/drivers/nrf24.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.i
+.PHONY : App/nrf24/drivers/nrf24.c.i
 
-App/nrf24/nrf24.s: App/nrf24/nrf24.c.s
-.PHONY : App/nrf24/nrf24.s
+App/nrf24/drivers/nrf24.s: App/nrf24/drivers/nrf24.c.s
+.PHONY : App/nrf24/drivers/nrf24.s
 
 # target to generate assembly for a file
-App/nrf24/nrf24.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.s
-.PHONY : App/nrf24/nrf24.c.s
+App/nrf24/drivers/nrf24.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.s
+.PHONY : App/nrf24/drivers/nrf24.c.s
+
+App/nrf24/radioClass.obj: App/nrf24/radioClass.cpp.obj
+.PHONY : App/nrf24/radioClass.obj
+
+# target to build an object file
+App/nrf24/radioClass.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj
+.PHONY : App/nrf24/radioClass.cpp.obj
+
+App/nrf24/radioClass.i: App/nrf24/radioClass.cpp.i
+.PHONY : App/nrf24/radioClass.i
+
+# target to preprocess a source file
+App/nrf24/radioClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.i
+.PHONY : App/nrf24/radioClass.cpp.i
+
+App/nrf24/radioClass.s: App/nrf24/radioClass.cpp.s
+.PHONY : App/nrf24/radioClass.s
+
+# target to generate assembly for a file
+App/nrf24/radioClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.s
+.PHONY : App/nrf24/radioClass.cpp.s
 
 App/nrf24/radioTask.obj: App/nrf24/radioTask.cpp.obj
 .PHONY : App/nrf24/radioTask.obj
@@ -1277,9 +1301,12 @@ help:
 	@echo "... App/gpio/gpioApp.obj"
 	@echo "... App/gpio/gpioApp.i"
 	@echo "... App/gpio/gpioApp.s"
-	@echo "... App/nrf24/nrf24.obj"
-	@echo "... App/nrf24/nrf24.i"
-	@echo "... App/nrf24/nrf24.s"
+	@echo "... App/nrf24/drivers/nrf24.obj"
+	@echo "... App/nrf24/drivers/nrf24.i"
+	@echo "... App/nrf24/drivers/nrf24.s"
+	@echo "... App/nrf24/radioClass.obj"
+	@echo "... App/nrf24/radioClass.i"
+	@echo "... App/nrf24/radioClass.s"
 	@echo "... App/nrf24/radioTask.obj"
 	@echo "... App/nrf24/radioTask.i"
 	@echo "... App/nrf24/radioTask.s"

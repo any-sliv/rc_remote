@@ -52,5 +52,4 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj: \
  /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd_ex.h \
  /Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
  /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
- /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- /Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioTask.hpp
+ /Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h

@@ -23,6 +23,8 @@ Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState = 0,
   pin = _pin;
   port = _port;
 
+
+
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   GPIO_InitStruct.Pin = pin;

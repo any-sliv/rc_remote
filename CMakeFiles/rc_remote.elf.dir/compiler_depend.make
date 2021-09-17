@@ -45,8 +45,8 @@ CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.obj: App/gpio/gpioApp.cpp \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd_ex.h \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h
 
-CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj: App/nrf24/nrf24.c \
-  App/nrf24/nrf24.h \
+CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj: App/nrf24/drivers/nrf24.c \
+  App/nrf24/drivers/nrf24.h \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h \
   Core/Inc/stm32l1xx_hal_conf.h \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h \
@@ -88,7 +88,7 @@ CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj: App/nrf24/nrf24.c \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_usb.h \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd_ex.h \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
-  App/nrf24/nRF24L01.h \
+  App/nrf24/drivers/nRF24L01.h \
   /Applications/ARM/arm-none-eabi/include/stdlib.h \
   /Applications/ARM/arm-none-eabi/include/machine/ieeefp.h \
   /Applications/ARM/arm-none-eabi/include/_ansi.h \
@@ -108,8 +108,8 @@ CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj: App/nrf24/nrf24.c \
   /Applications/ARM/arm-none-eabi/include/strings.h \
   /Applications/ARM/arm-none-eabi/include/sys/string.h
 
-CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj: App/nrf24/radioTask.cpp \
-  App/nrf24/nrf24.h \
+CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj: App/nrf24/radioClass.cpp \
+  App/nrf24/radioClass.hpp \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h \
   Core/Inc/stm32l1xx_hal_conf.h \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h \
@@ -151,7 +151,8 @@ CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj: App/nrf24/radioTask.cp
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_usb.h \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd_ex.h \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
-  App/nrf24/nRF24L01.h \
+  App/nrf24/drivers/nrf24.h \
+  App/nrf24/drivers/nRF24L01.h \
   /Applications/ARM/arm-none-eabi/include/c++/10.2.1/stdlib.h \
   /Applications/ARM/arm-none-eabi/include/c++/10.2.1/cstdlib \
   /Applications/ARM/arm-none-eabi/include/c++/10.2.1/arm-none-eabi/thumb/v7-m/nofp/bits/c++config.h \
@@ -177,7 +178,82 @@ CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj: App/nrf24/radioTask.cp
   /Applications/ARM/arm-none-eabi/include/sys/_locale.h \
   /Applications/ARM/arm-none-eabi/include/strings.h \
   /Applications/ARM/arm-none-eabi/include/sys/string.h \
-  App/nrf24/radioTask.hpp
+  Core/Inc/spi.h \
+  Core/Inc/main.h
+
+CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj: App/nrf24/radioTask.cpp \
+  App/nrf24/radioTask.hpp \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h \
+  Core/Inc/stm32l1xx_hal_conf.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h \
+  Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h \
+  Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l151xba.h \
+  Drivers/CMSIS/Include/core_cm3.h \
+  /Applications/ARM/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h \
+  /Applications/ARM/arm-none-eabi/include/stdint.h \
+  /Applications/ARM/arm-none-eabi/include/machine/_default_types.h \
+  /Applications/ARM/arm-none-eabi/include/sys/features.h \
+  /Applications/ARM/arm-none-eabi/include/_newlib_version.h \
+  /Applications/ARM/arm-none-eabi/include/sys/_intsup.h \
+  /Applications/ARM/arm-none-eabi/include/sys/_stdint.h \
+  Drivers/CMSIS/Include/cmsis_version.h \
+  Drivers/CMSIS/Include/cmsis_compiler.h \
+  Drivers/CMSIS/Include/cmsis_gcc.h \
+  Drivers/CMSIS/Include/mpu_armv7.h \
+  Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  /Applications/ARM/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_usb.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd_ex.h \
+  Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
+  App/nrf24/radioClass.hpp \
+  App/nrf24/drivers/nrf24.h \
+  App/nrf24/drivers/nRF24L01.h \
+  /Applications/ARM/arm-none-eabi/include/c++/10.2.1/stdlib.h \
+  /Applications/ARM/arm-none-eabi/include/c++/10.2.1/cstdlib \
+  /Applications/ARM/arm-none-eabi/include/c++/10.2.1/arm-none-eabi/thumb/v7-m/nofp/bits/c++config.h \
+  /Applications/ARM/arm-none-eabi/include/c++/10.2.1/arm-none-eabi/thumb/v7-m/nofp/bits/os_defines.h \
+  /Applications/ARM/arm-none-eabi/include/c++/10.2.1/arm-none-eabi/thumb/v7-m/nofp/bits/cpu_defines.h \
+  /Applications/ARM/arm-none-eabi/include/c++/10.2.1/pstl/pstl_config.h \
+  /Applications/ARM/arm-none-eabi/include/stdlib.h \
+  /Applications/ARM/arm-none-eabi/include/machine/ieeefp.h \
+  /Applications/ARM/arm-none-eabi/include/_ansi.h \
+  /Applications/ARM/arm-none-eabi/include/newlib.h \
+  /Applications/ARM/arm-none-eabi/include/sys/config.h \
+  /Applications/ARM/arm-none-eabi/include/sys/reent.h \
+  /Applications/ARM/arm-none-eabi/include/_ansi.h \
+  /Applications/ARM/arm-none-eabi/include/sys/_types.h \
+  /Applications/ARM/arm-none-eabi/include/machine/_types.h \
+  /Applications/ARM/arm-none-eabi/include/sys/lock.h \
+  /Applications/ARM/arm-none-eabi/include/sys/cdefs.h \
+  /Applications/ARM/arm-none-eabi/include/machine/stdlib.h \
+  /Applications/ARM/arm-none-eabi/include/alloca.h \
+  /Applications/ARM/arm-none-eabi/include/c++/10.2.1/bits/std_abs.h \
+  /Applications/ARM/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h \
+  /Applications/ARM/arm-none-eabi/include/string.h \
+  /Applications/ARM/arm-none-eabi/include/sys/_locale.h \
+  /Applications/ARM/arm-none-eabi/include/strings.h \
+  /Applications/ARM/arm-none-eabi/include/sys/string.h \
+  Core/Inc/spi.h \
+  Core/Inc/main.h
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj: Core/Src/adc.c \
   Core/Inc/adc.h \
@@ -322,8 +398,7 @@ CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj: Core/Src/freertos.c \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd_ex.h \
   Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
   Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
-  Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
-  App/nrf24/radioTask.hpp
+  Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 
 CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj: Core/Src/gpio.c \
   Core/Inc/gpio.h \
@@ -2021,8 +2096,6 @@ Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/tasks.c:
 
-Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c:
-
 Middlewares/Third_Party/FreeRTOS/Source/queue.c:
 
 Middlewares/Third_Party/FreeRTOS/Source/list.c:
@@ -2091,8 +2164,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:
 
 /Applications/ARM/arm-none-eabi/include/machine/endian.h:
 
-/Applications/ARM/arm-none-eabi/include/sys/types.h:
-
 /Applications/ARM/arm-none-eabi/include/machine/time.h:
 
 /Applications/ARM/arm-none-eabi/include/time.h:
@@ -2103,10 +2174,6 @@ Core/Inc/stm32l1xx_it.h:
 
 Core/Src/stm32l1xx_it.c:
 
-Core/Inc/dma.h:
-
-Core/Src/stm32l1xx_hal_msp.c:
-
 /Applications/ARM/arm-none-eabi/include/sys/_locale.h:
 
 Core/Inc/usb.h:
@@ -2115,19 +2182,13 @@ Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:
 
 Core/Src/main.cpp:
 
-Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
-
-Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c:
-
-Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c:
-
-Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h:
-
-Core/Src/gpio.c:
-
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+
+/Applications/ARM/arm-none-eabi/include/c++/10.2.1/arm-none-eabi/thumb/v7-m/nofp/bits/cpu_defines.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h:
 
 Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h:
 
@@ -2143,10 +2204,6 @@ Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
 Core/Src/freertos.c:
 
-/Applications/ARM/arm-none-eabi/include/c++/10.2.1/arm-none-eabi/thumb/v7-m/nofp/bits/os_defines.h:
-
-Core/Src/spi.c:
-
 /Applications/ARM/arm-none-eabi/include/machine/_endian.h:
 
 Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l151xba.h:
@@ -2161,11 +2218,17 @@ Core/Inc/main.h:
 
 /Applications/ARM/arm-none-eabi/include/c++/10.2.1/pstl/pstl_config.h:
 
-Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h:
+Core/Src/spi.c:
 
-/Applications/ARM/arm-none-eabi/include/c++/10.2.1/arm-none-eabi/thumb/v7-m/nofp/bits/cpu_defines.h:
+/Applications/ARM/arm-none-eabi/include/c++/10.2.1/arm-none-eabi/thumb/v7-m/nofp/bits/os_defines.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/event_groups.c:
+
+/Applications/ARM/arm-none-eabi/include/c++/10.2.1/arm-none-eabi/thumb/v7-m/nofp/bits/c++config.h:
 
 /Applications/ARM/arm-none-eabi/include/c++/10.2.1/stdlib.h:
+
+App/nrf24/radioClass.cpp:
 
 Core/Inc/stm32l1xx_hal_conf.h:
 
@@ -2213,18 +2276,6 @@ Core/Src/stm32l1xx_hal_timebase_tim.c:
 
 /Applications/ARM/arm-none-eabi/include/machine/ieeefp.h:
 
-App/nrf24/nRF24L01.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/event_groups.c:
-
-/Applications/ARM/arm-none-eabi/include/c++/10.2.1/arm-none-eabi/thumb/v7-m/nofp/bits/c++config.h:
-
-App/nrf24/nrf24.h:
-
-/Applications/ARM/arm-none-eabi/include/sys/features.h:
-
-App/nrf24/nrf24.c:
-
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c:
 
 Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h:
@@ -2244,6 +2295,18 @@ Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_usb.h:
 App/nrf24/radioTask.hpp:
 
 Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h:
+
+App/nrf24/drivers/nRF24L01.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
+
+Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c:
+
+Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c:
+
+Core/Src/gpio.c:
+
+Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h:
 
 Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h:
 
@@ -2281,11 +2344,17 @@ Drivers/CMSIS/Include/cmsis_gcc.h:
 
 Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h:
 
+Core/Src/stm32l1xx_hal_msp.c:
+
+Core/Inc/dma.h:
+
 /Applications/ARM/arm-none-eabi/include/machine/_time.h:
 
 /Applications/ARM/arm-none-eabi/include/string.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+
+App/nrf24/drivers/nrf24.h:
 
 Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h:
 
@@ -2304,6 +2373,10 @@ Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:
 Core/Src/adc.c:
 
 Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
+
+/Applications/ARM/arm-none-eabi/include/sys/types.h:
+
+App/nrf24/radioClass.hpp:
 
 Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h:
 
@@ -2335,9 +2408,15 @@ Core/Inc/spi.h:
 
 Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h:
 
+/Applications/ARM/arm-none-eabi/include/sys/features.h:
+
 /Applications/ARM/arm-none-eabi/include/sys/timespec.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c:
+
+App/nrf24/drivers/nrf24.c:
 
 /Applications/ARM/arm-none-eabi/include/signal.h:
 
