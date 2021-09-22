@@ -4,6 +4,8 @@ CMakeFiles/
 cmake-build-debug/
 out/
 
+# Vsc files
+*.log
 # Prerequisites
 *.d
 
