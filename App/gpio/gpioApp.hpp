@@ -28,15 +28,28 @@ private:
   GPIO_TypeDef *port;
 
 public:
-  Gpio();
-
+  /**
+   * Gpio class constructor. Instantize if want to
+   * initialize GPIO pin.
+   *
+   * @param _port Port of GPIO pin.
+   * @param _pin cmon thats self explanatorya
+   * @param initState State which pin is given at init
+   * @param mode Input/output
+   * @param pull pull type
+   */
   Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState, uint32_t mode,
-       uint32_t pull);
+      uint32_t pull);
 
+  // Sets pin value to '1'
   void Set(void);
 
+  /**
+   * Sets pin value to @param value
+   */
   void Set(bool value);
 
+  // Sets pin value to '0'
   void Reset(void);
 };
 

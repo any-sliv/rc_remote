@@ -11,19 +11,11 @@ extern "C" {
 
 #include "gpioApp.hpp"
 
-/**
- * Gpio class constructor. Instantize if want to
- * initialize GPIO pin.
- *
- * @param _port Port of GPIO pin.
- * @param _pin cmon thats self explanatorya
- */
+
 Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState = 0,
            uint32_t mode = OUTPUT, uint32_t pull = NO_PULL) {
   pin = _pin;
   port = _port;
-
-
 
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
