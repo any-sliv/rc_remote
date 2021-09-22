@@ -153,6 +153,30 @@ App/gpio/gpioApp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.s
 .PHONY : App/gpio/gpioApp.cpp.s
 
+App/logger/logger.obj: App/logger/logger.cpp.obj
+.PHONY : App/logger/logger.obj
+
+# target to build an object file
+App/logger/logger.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/logger/logger.cpp.obj
+.PHONY : App/logger/logger.cpp.obj
+
+App/logger/logger.i: App/logger/logger.cpp.i
+.PHONY : App/logger/logger.i
+
+# target to preprocess a source file
+App/logger/logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/logger/logger.cpp.i
+.PHONY : App/logger/logger.cpp.i
+
+App/logger/logger.s: App/logger/logger.cpp.s
+.PHONY : App/logger/logger.s
+
+# target to generate assembly for a file
+App/logger/logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/logger/logger.cpp.s
+.PHONY : App/logger/logger.cpp.s
+
 App/nrf24/drivers/nrf24.obj: App/nrf24/drivers/nrf24.c.obj
 .PHONY : App/nrf24/drivers/nrf24.obj
 
@@ -1301,6 +1325,9 @@ help:
 	@echo "... App/gpio/gpioApp.obj"
 	@echo "... App/gpio/gpioApp.i"
 	@echo "... App/gpio/gpioApp.s"
+	@echo "... App/logger/logger.obj"
+	@echo "... App/logger/logger.i"
+	@echo "... App/logger/logger.s"
 	@echo "... App/nrf24/drivers/nrf24.obj"
 	@echo "... App/nrf24/drivers/nrf24.i"
 	@echo "... App/nrf24/drivers/nrf24.s"

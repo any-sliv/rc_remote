@@ -49,6 +49,7 @@ include_directories(
 App/gpio
 App/nrf24
 App/nrf24/drivers
+App/logger
 Core/Inc
 Drivers/STM32L1xx_HAL_Driver/Inc 
 Drivers/STM32L1xx_HAL_Driver/Inc/Legacy 
@@ -70,6 +71,7 @@ file(GLOB_RECURSE SOURCES
 "App/gpio/*.*"
 "App/nrf24/*.*"
 "App/nrf24/drivers"
+"App/logger/*.*"
 "Core/*.*" 
 "Core/Src/*.*" 
 "startup/*.*" 
