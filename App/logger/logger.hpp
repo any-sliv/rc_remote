@@ -5,4 +5,16 @@
  *      Author: macsli
  */
 
-#include "stm32l1xx_hal.h"
+#include <string>
+
+class Logger {
+private:
+    Logger();
+    static Logger logInstance;
+    static bool ILogDebug(std::string textString);
+
+public: 
+    static Logger& Get();
+    static bool LogDebug(std::string text);
+
+};
