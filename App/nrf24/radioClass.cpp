@@ -5,10 +5,6 @@
  *      Author: macsli
  */
 
-#ifdef __cplusplus 
-extern "C" { 
-#endif 
-
 #include "radioClass.hpp"
 #include "logger.hpp"
 
@@ -56,17 +52,15 @@ void NRF24::Sleep(void) {
 }
 
 void NRF24::Wakeup(void) {
-	if(isSleeping) return;
-	NRF24_powerUp();
-	// Powerup requires 1.5ms run up delay
-	HAL_Delay(1500);
-	isSleeping = false;
+	if(isSleeping) {
+		NRF24_powerUp();
+		// Powerup requires 1.5ms run up delay
+		HAL_Delay(1500);
+		isSleeping = false;
+	}		
 }
 
 
 
 
 // --------------------------------------------------------
-#ifdef __cplusplus
-} 
-#endif 
