@@ -7,7 +7,7 @@
 
 #include "radioClass.hpp"
 #include "logger.hpp"
-#include "nrf24.h"
+//#include "nrf24.h"
 
 #define RADIO_WRITE_PIPE	0xCAFEBABE
 #define RADIO_CHANNEL		52

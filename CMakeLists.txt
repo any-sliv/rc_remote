@@ -84,9 +84,9 @@ file(GLOB_RECURSE SOURCES
 "Drivers/STM32L1xx_HAL_Driver/*.*"
 )
 
-set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32L151CBTxA_FLASH.ld)
+set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/Drivers/STM32L151CBTxA_FLASH.ld)
 
-add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map)
+add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/Drivers/${PROJECT_NAME}.map)
 add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)
 add_link_options(-T ${LINKER_SCRIPT})
 
