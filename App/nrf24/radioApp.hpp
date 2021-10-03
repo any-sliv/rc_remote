@@ -1,19 +1,22 @@
 /*
- * radioClass.hpp
+ * radioApp.hpp
  *
  *  Created on: Sep 15, 2021
  *      Author: macsli
  */
 
-#ifndef INC_RADIOCLASS_H_
-#define INC_RADIOCLASS_H_
+#ifndef INC_RADIOAPP_H_
+#define INC_RADIOAPP_H_
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 #include "spi.h"
 #include "nrf24.h"
+#include "cmsis_os.h"
+#include "task.h"
 
 #ifdef __cplusplus
 }
@@ -32,7 +35,7 @@ public:
      * Transmit given payload, constant length
      * @param payload address 
      */
-    bool Write(void * payload);
+    bool Write(void *payload);
 
     /**
      * Check if any payload has been recieved by radio
@@ -42,8 +45,8 @@ public:
     /**
      * Read recieved payload
      * @param data address
-     */ 
-    void Read(void * data);
+     */
+    void Read(void *data);
 
     /**
      * Put radio into sleep mode
@@ -56,4 +59,4 @@ public:
     void Wakeup(void);
 };
 
-#endif /* INC_RADIOCLASS_H_ */
+#endif /* INC_RADIOAPP_H_ */
