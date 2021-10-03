@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/App/**",
+                "${workspaceFolder}/Core/**",
+                "${workspaceFolder}/Drivers/**",
+                "${workspaceFolder}/Middlewares/**"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceRoot}",
+                    "${env:VSARM}/armcc"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "defines": [
+                "STM32L151xBA"
+            ],
+            "macFrameworkPath": [],
+            "compilerPath": "/usr/local/bin/arm-none-eabi-gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++20",
+            "intelliSenseMode": "${default}",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

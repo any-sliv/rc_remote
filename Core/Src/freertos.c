@@ -27,7 +27,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "radioTask.hpp"
 
 /* USER CODE END Includes */
 
@@ -64,6 +63,13 @@ const osThreadAttr_t radio_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for sensors */
+osThreadId_t sensorsHandle;
+const osThreadAttr_t sensors_attributes = {
+  .name = "sensors",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -71,7 +77,8 @@ const osThreadAttr_t radio_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
-extern void radioTask(void *argument);
+extern void RadioTask(void *argument);
+extern void SensorsTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -106,7 +113,10 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* creation of radio */
-  radioHandle = osThreadNew(radioTask, NULL, &radio_attributes);
+  radioHandle = osThreadNew(RadioTask, NULL, &radio_attributes);
+
+  /* creation of sensors */
+  sensorsHandle = osThreadNew(SensorsTask, NULL, &sensors_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

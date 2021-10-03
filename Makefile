@@ -153,53 +153,101 @@ App/gpio/gpioApp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/gpio/gpioApp.cpp.s
 .PHONY : App/gpio/gpioApp.cpp.s
 
-App/nrf24/nrf24.obj: App/nrf24/nrf24.c.obj
-.PHONY : App/nrf24/nrf24.obj
+App/logger/logger.obj: App/logger/logger.cpp.obj
+.PHONY : App/logger/logger.obj
 
 # target to build an object file
-App/nrf24/nrf24.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.obj
-.PHONY : App/nrf24/nrf24.c.obj
+App/logger/logger.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/logger/logger.cpp.obj
+.PHONY : App/logger/logger.cpp.obj
 
-App/nrf24/nrf24.i: App/nrf24/nrf24.c.i
-.PHONY : App/nrf24/nrf24.i
+App/logger/logger.i: App/logger/logger.cpp.i
+.PHONY : App/logger/logger.i
 
 # target to preprocess a source file
-App/nrf24/nrf24.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.i
-.PHONY : App/nrf24/nrf24.c.i
+App/logger/logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/logger/logger.cpp.i
+.PHONY : App/logger/logger.cpp.i
 
-App/nrf24/nrf24.s: App/nrf24/nrf24.c.s
-.PHONY : App/nrf24/nrf24.s
+App/logger/logger.s: App/logger/logger.cpp.s
+.PHONY : App/logger/logger.s
 
 # target to generate assembly for a file
-App/nrf24/nrf24.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/nrf24.c.s
-.PHONY : App/nrf24/nrf24.c.s
+App/logger/logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/logger/logger.cpp.s
+.PHONY : App/logger/logger.cpp.s
 
-App/nrf24/radioTask.obj: App/nrf24/radioTask.cpp.obj
-.PHONY : App/nrf24/radioTask.obj
+App/nrf24/drivers/nrf24.obj: App/nrf24/drivers/nrf24.c.obj
+.PHONY : App/nrf24/drivers/nrf24.obj
 
 # target to build an object file
-App/nrf24/radioTask.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj
-.PHONY : App/nrf24/radioTask.cpp.obj
+App/nrf24/drivers/nrf24.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj
+.PHONY : App/nrf24/drivers/nrf24.c.obj
 
-App/nrf24/radioTask.i: App/nrf24/radioTask.cpp.i
-.PHONY : App/nrf24/radioTask.i
+App/nrf24/drivers/nrf24.i: App/nrf24/drivers/nrf24.c.i
+.PHONY : App/nrf24/drivers/nrf24.i
 
 # target to preprocess a source file
-App/nrf24/radioTask.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.i
-.PHONY : App/nrf24/radioTask.cpp.i
+App/nrf24/drivers/nrf24.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.i
+.PHONY : App/nrf24/drivers/nrf24.c.i
 
-App/nrf24/radioTask.s: App/nrf24/radioTask.cpp.s
-.PHONY : App/nrf24/radioTask.s
+App/nrf24/drivers/nrf24.s: App/nrf24/drivers/nrf24.c.s
+.PHONY : App/nrf24/drivers/nrf24.s
 
 # target to generate assembly for a file
-App/nrf24/radioTask.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.s
-.PHONY : App/nrf24/radioTask.cpp.s
+App/nrf24/drivers/nrf24.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.s
+.PHONY : App/nrf24/drivers/nrf24.c.s
+
+App/nrf24/radioApp.obj: App/nrf24/radioApp.cpp.obj
+.PHONY : App/nrf24/radioApp.obj
+
+# target to build an object file
+App/nrf24/radioApp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioApp.cpp.obj
+.PHONY : App/nrf24/radioApp.cpp.obj
+
+App/nrf24/radioApp.i: App/nrf24/radioApp.cpp.i
+.PHONY : App/nrf24/radioApp.i
+
+# target to preprocess a source file
+App/nrf24/radioApp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioApp.cpp.i
+.PHONY : App/nrf24/radioApp.cpp.i
+
+App/nrf24/radioApp.s: App/nrf24/radioApp.cpp.s
+.PHONY : App/nrf24/radioApp.s
+
+# target to generate assembly for a file
+App/nrf24/radioApp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioApp.cpp.s
+.PHONY : App/nrf24/radioApp.cpp.s
+
+App/sensors/sensorsTask.obj: App/sensors/sensorsTask.cpp.obj
+.PHONY : App/sensors/sensorsTask.obj
+
+# target to build an object file
+App/sensors/sensorsTask.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.obj
+.PHONY : App/sensors/sensorsTask.cpp.obj
+
+App/sensors/sensorsTask.i: App/sensors/sensorsTask.cpp.i
+.PHONY : App/sensors/sensorsTask.i
+
+# target to preprocess a source file
+App/sensors/sensorsTask.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.i
+.PHONY : App/sensors/sensorsTask.cpp.i
+
+App/sensors/sensorsTask.s: App/sensors/sensorsTask.cpp.s
+.PHONY : App/sensors/sensorsTask.s
+
+# target to generate assembly for a file
+App/sensors/sensorsTask.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.s
+.PHONY : App/sensors/sensorsTask.cpp.s
 
 Core/Src/adc.obj: Core/Src/adc.c.obj
 .PHONY : Core/Src/adc.obj
@@ -1277,12 +1325,18 @@ help:
 	@echo "... App/gpio/gpioApp.obj"
 	@echo "... App/gpio/gpioApp.i"
 	@echo "... App/gpio/gpioApp.s"
-	@echo "... App/nrf24/nrf24.obj"
-	@echo "... App/nrf24/nrf24.i"
-	@echo "... App/nrf24/nrf24.s"
-	@echo "... App/nrf24/radioTask.obj"
-	@echo "... App/nrf24/radioTask.i"
-	@echo "... App/nrf24/radioTask.s"
+	@echo "... App/logger/logger.obj"
+	@echo "... App/logger/logger.i"
+	@echo "... App/logger/logger.s"
+	@echo "... App/nrf24/drivers/nrf24.obj"
+	@echo "... App/nrf24/drivers/nrf24.i"
+	@echo "... App/nrf24/drivers/nrf24.s"
+	@echo "... App/nrf24/radioApp.obj"
+	@echo "... App/nrf24/radioApp.i"
+	@echo "... App/nrf24/radioApp.s"
+	@echo "... App/sensors/sensorsTask.obj"
+	@echo "... App/sensors/sensorsTask.i"
+	@echo "... App/sensors/sensorsTask.s"
 	@echo "... Core/Src/adc.obj"
 	@echo "... Core/Src/adc.i"
 	@echo "... Core/Src/adc.s"

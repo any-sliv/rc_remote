@@ -1,4 +1,3 @@
-#THIS FILE IS AUTO GENERATED FROM THE TEMPLATE! DO NOT CHANGE!
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_VERSION 1)
 cmake_minimum_required(VERSION 3.19)
@@ -46,9 +45,13 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
-include_directories(Core/Inc 
+include_directories(
 App/gpio
 App/nrf24
+App/nrf24/drivers
+App/logger
+App/sensors
+App/sensors/SS49
 Core/Inc
 Drivers/STM32L1xx_HAL_Driver/Inc 
 Drivers/STM32L1xx_HAL_Driver/Inc/Legacy 
@@ -57,7 +60,8 @@ Drivers/CMSIS/STM32L1xx_HAL_Driver/Inc
 Drivers/STM32L1xx_HAL_Driver/Inc/Legacy
 Drivers/Device/ST/STM32L1xx_HAL_Driver/Include
 Drivers/Device/ST/STM32L1xx_HAL_Driver/Include/Legacy
-Drivers/CMSIS/Device/ST/STM32L1xx/Include Drivers/CMSIS/Include
+Drivers/CMSIS/Device/ST/STM32L1xx/Include 
+Drivers/CMSIS/Include
 Middlewares/Third_Party/FreeRTOS/Source/include 
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3
@@ -66,19 +70,23 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3
 add_definitions(-DUSE_HAL_DRIVER -DSTM32L151xBA)
 
 file(GLOB_RECURSE SOURCES 
+"App/gpio/*.*"
+"App/nrf24/*.*"
+"App/nrf24/drivers/*.*"
+"App/logger/*.*"
+"App/sensors/*.*"
+"App/sensors/SS49/*.*"
+"Core/*.*" 
+"Core/Src/*.*" 
 "startup/*.*" 
 "Middlewares/*.*" 
 "Drivers/*.*" 
 "Drivers/STM32L1xx_HAL_Driver/*.*"
-"Core/*.*" 
-"Core/Src/*.*" 
-"App/gpio/*.*" 
-"App/nrf24/*.*"
 )
 
-set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32L151CBTxA_FLASH.ld)
+set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/Drivers/STM32L151CBTxA_FLASH.ld)
 
-add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/out/${PROJECT_NAME}.map)
+add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/Drivers/${PROJECT_NAME}.map)
 add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)
 add_link_options(-T ${LINKER_SCRIPT})
 
