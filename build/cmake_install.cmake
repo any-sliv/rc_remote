@@ -1,4 +1,4 @@
-# Install script for directory: /Users/macsli/Documents/dev/engthesis/rc_remote/build
+# Install script for directory: /Users/macsli/Documents/dev/engthesis/rc_remote
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

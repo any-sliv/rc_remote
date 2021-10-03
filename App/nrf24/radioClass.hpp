@@ -8,7 +8,16 @@
 #ifndef INC_RADIOCLASS_H_
 #define INC_RADIOCLASS_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "spi.h"
+#include "nrf24.h"
+
+#ifdef __cplusplus
+}
+#endif
 
 class NRF24
 {

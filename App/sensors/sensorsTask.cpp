@@ -7,7 +7,18 @@
 
 #include "sensorsTask.hpp"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-void SensorsTask(void * argument) {
+#include "cmsis_os.h"
+#include "task.h"
 
+
+void SensorsTask(void const * argument) {
+    asm("nop");
 }
+
+#ifdef __cplusplus
+}
+#endif

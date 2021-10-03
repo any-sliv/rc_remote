@@ -249,6 +249,30 @@ App/nrf24/radioTask.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.s
 .PHONY : App/nrf24/radioTask.cpp.s
 
+App/sensors/sensorsTask.obj: App/sensors/sensorsTask.cpp.obj
+.PHONY : App/sensors/sensorsTask.obj
+
+# target to build an object file
+App/sensors/sensorsTask.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.obj
+.PHONY : App/sensors/sensorsTask.cpp.obj
+
+App/sensors/sensorsTask.i: App/sensors/sensorsTask.cpp.i
+.PHONY : App/sensors/sensorsTask.i
+
+# target to preprocess a source file
+App/sensors/sensorsTask.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.i
+.PHONY : App/sensors/sensorsTask.cpp.i
+
+App/sensors/sensorsTask.s: App/sensors/sensorsTask.cpp.s
+.PHONY : App/sensors/sensorsTask.s
+
+# target to generate assembly for a file
+App/sensors/sensorsTask.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.s
+.PHONY : App/sensors/sensorsTask.cpp.s
+
 Core/Src/adc.obj: Core/Src/adc.c.obj
 .PHONY : Core/Src/adc.obj
 
@@ -1337,6 +1361,9 @@ help:
 	@echo "... App/nrf24/radioTask.obj"
 	@echo "... App/nrf24/radioTask.i"
 	@echo "... App/nrf24/radioTask.s"
+	@echo "... App/sensors/sensorsTask.obj"
+	@echo "... App/sensors/sensorsTask.i"
+	@echo "... App/sensors/sensorsTask.s"
 	@echo "... Core/Src/adc.obj"
 	@echo "... Core/Src/adc.i"
 	@echo "... Core/Src/adc.s"
