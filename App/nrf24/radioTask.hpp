@@ -8,6 +8,5 @@
 #ifndef INC_RADIOTASK_H_
 #define INC_RADIOTASK_H_
 
-#include "stm32l1xx_hal.h"
 
 #endif

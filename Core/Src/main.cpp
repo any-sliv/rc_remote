@@ -17,8 +17,8 @@
   ******************************************************************************
   */
 
- #ifdef __cplusplus 
- extern "C" { 
+#ifdef __cplusplus 
+extern "C" { 
 #endif 
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
@@ -32,6 +32,7 @@
 #include "gpio.h"
 #include "radioTask.hpp"
 #include "gpioApp.hpp"
+#include "sensorsTask.hpp"
 
  /* Private includes
   * ----------------------------------------------------------*/
