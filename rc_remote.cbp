@@ -50,6 +50,8 @@
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/drivers"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/logger"/>
+					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors"/>
+					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors/SS49"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Inc"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy"/>
@@ -82,6 +84,8 @@
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/drivers"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/logger"/>
+					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors"/>
+					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors/SS49"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Inc"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy"/>
@@ -123,16 +127,16 @@
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/drivers/nrf24.h">
 			<Option target="rc_remote.elf"/>
 		</Unit>
-		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioClass.cpp">
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioApp.cpp">
 			<Option target="rc_remote.elf"/>
 		</Unit>
-		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioClass.hpp">
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioApp.hpp">
 			<Option target="rc_remote.elf"/>
 		</Unit>
-		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioTask.cpp">
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors/sensorsTask.cpp">
 			<Option target="rc_remote.elf"/>
 		</Unit>
-		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/nrf24/radioTask.hpp">
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors/sensorsTask.hpp">
 			<Option target="rc_remote.elf"/>
 		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/.DS_Store">
@@ -282,6 +286,9 @@
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/CMSIS/Include/tz_context.h">
 			<Option target="rc_remote.elf"/>
 		</Unit>
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L151CBTxA_FLASH.ld">
+			<Option target="rc_remote.elf"/>
+		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
 			<Option target="rc_remote.elf"/>
 		</Unit>
@@ -417,6 +424,9 @@
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c">
 			<Option target="rc_remote.elf"/>
 		</Unit>
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/rc_remote.map">
+			<Option target="rc_remote.elf"/>
+		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h">
 			<Option target="rc_remote.elf"/>
 		</Unit>
@@ -505,9 +515,6 @@
 			<Option target="rc_remote.elf"/>
 		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Middlewares/Third_Party/FreeRTOS/Source/timers.c">
-			<Option target="rc_remote.elf"/>
-		</Unit>
-		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/STM32L151CBTxA_FLASH.ld">
 			<Option target="rc_remote.elf"/>
 		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/startup/startup_stm32l151xba.s">

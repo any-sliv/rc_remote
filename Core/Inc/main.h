@@ -58,6 +58,28 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define BUTTON_TRIGGER_Pin GPIO_PIN_14
+#define BUTTON_TRIGGER_GPIO_Port GPIOC
+#define ADC_HALL_Pin GPIO_PIN_0
+#define ADC_HALL_GPIO_Port GPIOA
+#define ADC_BAT_Pin GPIO_PIN_1
+#define ADC_BAT_GPIO_Port GPIOA
+#define CHARGER_STANDBY_Pin GPIO_PIN_2
+#define CHARGER_STANDBY_GPIO_Port GPIOA
+#define CHARGER_CHARGE_Pin GPIO_PIN_3
+#define CHARGER_CHARGE_GPIO_Port GPIOA
+#define CHARGER_ENABLE_Pin GPIO_PIN_4
+#define CHARGER_ENABLE_GPIO_Port GPIOA
+#define NRF24_IRQ_EXTI_Pin GPIO_PIN_0
+#define NRF24_IRQ_EXTI_GPIO_Port GPIOB
+#define NRF24_CE_Pin GPIO_PIN_1
+#define NRF24_CE_GPIO_Port GPIOB
+#define NRF24_CSN_Pin GPIO_PIN_2
+#define NRF24_CSN_GPIO_Port GPIOB
+#define DCDC_ENABLE_Pin GPIO_PIN_12
+#define DCDC_ENABLE_GPIO_Port GPIOB
+#define LED_USER_Pin GPIO_PIN_8
+#define LED_USER_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

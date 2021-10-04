@@ -28,7 +28,7 @@ void RadioTask(void const *argument)
 {
 	uint32_t taskTimer = (uint32_t)osKernelGetTickCount + RADIO_TASK_TIME_INTERVAL;
 	NRF24 radio;
-	void *rxData;
+	void * rxData;
 
 	for (;;)
 	{

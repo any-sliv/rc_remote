@@ -70,6 +70,11 @@ const osThreadAttr_t sensors_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for radioHeartbeat */
+osTimerId_t radioHeartbeatHandle;
+const osTimerAttr_t radioHeartbeat_attributes = {
+  .name = "radioHeartbeat"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -79,6 +84,7 @@ const osThreadAttr_t sensors_attributes = {
 void StartDefaultTask(void *argument);
 extern void RadioTask(void *argument);
 extern void SensorsTask(void *argument);
+extern void radioHeartbeatCallback(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -99,6 +105,10 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
+
+  /* Create the timer(s) */
+  /* creation of radioHeartbeat */
+  radioHeartbeatHandle = osTimerNew(radioHeartbeatCallback, osTimerPeriodic, NULL, &radioHeartbeat_attributes);
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
