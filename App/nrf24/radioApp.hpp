@@ -34,6 +34,7 @@ public:
     /**
      * Transmit given payload, constant length
      * @param payload address 
+     * @return success(1) / fail(0)
      */
     bool Write(void *payload);
 

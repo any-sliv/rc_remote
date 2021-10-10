@@ -7,18 +7,24 @@
 
 #include "radioApp.hpp"
 #include "logger.hpp"
+#include "timers.h"
 
-#define RADIO_TASK_TIME_INTERVAL 5000
+#define RADIO_TASK_TIME_INTERVAL 	5
+#define RADIO_RECEIVE_TIMEOUT		5000
 
-#define RADIO_WRITE_PIPE 0xCAFEBABE
-#define RADIO_CHANNEL 52
-#define RADIO_PAYLOAD_SIZE 32
-#define RADIO_AUTO_ACK 1
+#define RADIO_WRITE_PIPE 	0xCAFEBABE
+#define RADIO_CHANNEL 		52
+#define RADIO_PAYLOAD_SIZE 	32
+#define RADIO_AUTO_ACK	 	1
 
-#define NRF24_CSN_PIN 0
-#define NRF24_CE_PIN 0
-
+// HAL SPI handle
 extern SPI_HandleTypeDef hspi1;
+// OS managed timer
+extern osTimerId_t radioHeartbeatHandle;
+
+uint32_t taskTimer = (uint32_t)osKernelGetTickCount + RADIO_TASK_TIME_INTERVAL;
+NRF24 radio;
+void * rxData;
 
 #ifdef __cplusplus
 extern "C" {
@@ -26,20 +32,30 @@ extern "C" {
 
 void RadioTask(void const *argument)
 {
-	uint32_t taskTimer = (uint32_t)osKernelGetTickCount + RADIO_TASK_TIME_INTERVAL;
-	NRF24 radio;
-	void * rxData;
-
-	for (;;)
-	{
-		if (radio.IsAvailable())
-		{
+	for (;;) {
+		if (radio.IsAvailable()) {
 			radio.Read(rxData);
+			osTimerStop(radioHeartbeatHandle);
+		} else {
+			// Run timer if not already running
+			if(!(osTimerIsRunning(radioHeartbeatHandle))) {
+				osTimerStart(radioHeartbeatHandle, RADIO_TASK_TIME_INTERVAL);
+			}
 		}
+		
 		radio.Write((void *)"x");
 
 		vTaskDelay(taskTimer);
-	}
+	} // -------------------------------------------------------------------------
+}
+
+extern void radioHeartbeatCallback(void *argument)
+{
+	Logger::LogDebug("Radio no data recieved");
+	Logger::LogDebug("Entering sleep (zzz...)");
+
+	//radio.Sleep();
+	NRF24_powerDown();
 }
 
 #ifdef __cplusplus 
@@ -48,7 +64,7 @@ void RadioTask(void const *argument)
 
 NRF24::NRF24()
 {
-	NRF24_begin(GPIOB, NRF24_CSN_PIN, NRF24_CE_PIN, hspi1);
+	NRF24_begin(GPIOB, NRF24_CSN_Pin, NRF24_CE_Pin, hspi1);
 
 	//printRadioSettings();
 
@@ -66,6 +82,7 @@ bool NRF24::Write(void *payload)
 {
 	NRF24_stopListening();
 	return NRF24_write(payload, RADIO_PAYLOAD_SIZE);
+	NRF24_startListening();
 }
 
 bool NRF24::IsAvailable(void)

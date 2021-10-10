@@ -6,7 +6,26 @@
                 "${workspaceFolder}/App/**",
                 "${workspaceFolder}/Core/**",
                 "${workspaceFolder}/Drivers/**",
-                "${workspaceFolder}/Middlewares/**"
+                "${workspaceFolder}/Middlewares/**",
+                "${workspaceFolder}/App/gpio",
+                "${workspaceFolder}/App/nrf24",
+                "${workspaceFolder}/App/nrf24/drivers",
+                "${workspaceFolder}/App/logger",
+                "${workspaceFolder}/App/sensors",
+                "${workspaceFolder}/App/sensors/SS49",
+                "${workspaceFolder}/Core/Inc",
+                "${workspaceFolder}/Drivers/STM32L1xx_HAL_Driver/Inc",
+                "${workspaceFolder}/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy",
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/Drivers/CMSIS/STM32L1xx_HAL_Driver/Inc",
+                "${workspaceFolder}/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy",
+                "${workspaceFolder}/Drivers/Device/ST/STM32L1xx_HAL_Driver/Include",
+                "${workspaceFolder}/Drivers/Device/ST/STM32L1xx_HAL_Driver/Include/Legacy",
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32L1xx/Include",
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/include",
+                "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
+                "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3"
             ],
             "browse": {
                 "path": [
