@@ -7,4 +7,7 @@
         "statusBar.debuggingBackground": "#263238"
     },
     "cmake.configureOnOpen": true,
+    "files.associations": {
+        "stdbool.h": "c"
+    },
 }

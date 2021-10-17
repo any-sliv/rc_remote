@@ -13,6 +13,8 @@
                 "${workspaceFolder}/App/logger",
                 "${workspaceFolder}/App/sensors",
                 "${workspaceFolder}/App/sensors/SS49",
+                "${workspaceFolder}/App/ws2812",
+
                 "${workspaceFolder}/Core/Inc",
                 "${workspaceFolder}/Drivers/STM32L1xx_HAL_Driver/Inc",
                 "${workspaceFolder}/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy",
@@ -41,7 +43,7 @@
             "macFrameworkPath": [],
             "compilerPath": "/usr/local/bin/arm-none-eabi-gcc",
             "cStandard": "gnu17",
-            "cppStandard": "gnu++20",
+            "cppStandard": "gnu++14",
             "intelliSenseMode": "${default}",
             "configurationProvider": "ms-vscode.makefile-tools"
         }

@@ -2,21 +2,26 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 3.81
 # Copyright (C) 2006  Free Software Foundation, Inc.
 # This is free software; see the source for copying conditions.
+ 
 # There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sat Oct  9 19:46:47 2021
+# Make data base, printed on Sun Oct 17 17:00:06 2021
 
 # Variables
 
+# environment
  
+VSCODE_GIT_ASKPASS_MAIN = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -46,9 +51,9 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # makefile (from `Makefile', line 35)
 MAKESILENT = -s
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/4r/7f9kwz_s6m710rsk41jpyrhc0000gp/T/vscode-ipc-6e2877fa-388f-47d5-a79e-7c6da9441a75.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/4r/7f9kwz_s6m710rsk41jpyrhc0000gp/T/vscode-ipc-042f386e-1ad9-49fc-9769-4417c40d6ad8.sock
 # environment
-VSCODE_CWD = /
+VSCODE_CWD = /Users/macsli/Documents/dev/tmp/cpp_sandbox/stringiter
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 # environment
@@ -74,6 +79,8 @@ HOME = /Users/macsli
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
+VSCODE_CLI = 1
+# environment
 VSCODE_CODE_CACHE_PATH = /Users/macsli/Library/Application Support/Code/CachedData/ee8c7def80afc00dd6e593ef12f37756d8f504ea
 # environment
 LOGNAME = macsli
@@ -86,13 +93,17 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
+MAKELEVEL := 0
+# environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 3
 # default
 MAKE_VERSION := 3.81
 # environment
@@ -105,6 +116,8 @@ CMAKE_SOURCE_DIR = /Users/macsli/Documents/dev/engthesis/rc_remote
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# environment
+TERM_PROGRAM = vscode
 # default
 .VARIABLES := 
 # environment
@@ -113,6 +126,8 @@ TMPDIR = /var/folders/4r/7f9kwz_s6m710rsk41jpyrhc0000gp/T/
 *F = $(notdir $*)
 # environment
 VSCODE_IPC_HOOK = /Users/macsli/Library/Application Support/Code/1.61.0-main.sock
+# environment
+VSCODE_GIT_ASKPASS_NODE = /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer)
 # makefile
 MAKEFLAGS = sRrqp
 # environment
@@ -120,7 +135,9 @@ MFLAGS = -sRrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.11510675.11510681
+TERM_PROGRAM_VERSION = 1.61.0
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.13408814.13408820.9FC165FA-DA36-464A-9715-1C7EE11AB787
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -129,6 +146,8 @@ XPC_SERVICE_NAME = application.com.microsoft.VSCode.11510675.11510681
 __CF_USER_TEXT_ENCODING = 0x1F6:0x0:0x2
 # environment
 COMMAND_MODE = unix2003
+# environment
+GIT_ASKPASS = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
 # default
 MAKEFILES := 
 # automatic
@@ -144,14 +163,15 @@ SUFFIXES :=
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
-MAKELEVEL := 0
+VSCODE_GIT_IPC_HANDLE = /var/folders/4r/7f9kwz_s6m710rsk41jpyrhc0000gp/T/vscode-git-b3d3c3100d.sock
 # environment
 LANG = C
 # environment
-VSCODE_PID = 32934
+TERM = xterm-256color
+# environment
+VSCODE_PID = 42411
 # variable set hash-table stats:
- 
-# Load=68/1024=7%, Rehash=0, Collisions=3/100=3%
+# Load=78/1024=8%, Rehash=0, Collisions=5/110=5%
 
 # Pattern-specific Variable Values
 
@@ -172,6 +192,7 @@ VSCODE_PID = 32934
 %: RCS/%
 
 %: RCS/%,v
+ 
 
 %: SCCS/s.%
 
@@ -188,7 +209,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1057):
+#  commands to execute (from `Makefile', line 1081):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.i
 	
 
@@ -212,7 +233,7 @@ Middlewares/Third_Party/FreeRTOS/Source/list.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1145):
+#  commands to execute (from `Makefile', line 1169):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
 	
 
@@ -221,10 +242,15 @@ Core/Src/gpio.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 337):
- 
+#  commands to execute (from `Makefile', line 361):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.i
 	
+
+App/ws2812/ws2812App.s: App/ws2812/ws2812App.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 
 Core/Src/gpio.s: Core/Src/gpio.c.s
 #  Phony target (prerequisite of .PHONY).
@@ -237,7 +263,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 921):
+#  commands to execute (from `Makefile', line 945):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.s
 	
 
@@ -258,7 +284,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 785):
+#  commands to execute (from `Makefile', line 809):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj
 	
 
@@ -285,12 +311,11 @@ Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1097):
+#  commands to execute (from `Makefile', line 1121):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj
 	
 
 App/gpio/gpioApp.obj: App/gpio/gpioApp.cpp.obj
- 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -335,7 +360,7 @@ Core/Src/stm32l1xx_hal_msp.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 401):
+#  commands to execute (from `Makefile', line 425):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.obj
 	
 
@@ -344,13 +369,14 @@ Core/Src/adc.i: Core/Src/adc.c.i
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.i:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 577):
+#  commands to execute (from `Makefile', line 601):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.i
 	
 
@@ -359,11 +385,17 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 705):
+#  commands to execute (from `Makefile', line 729):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.s
 	
 
 Core/Src/syscalls.s: Core/Src/syscalls.c.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+App/ws2812/ws2812App.obj: App/ws2812/ws2812App.cpp.obj
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -380,7 +412,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 905):
+#  commands to execute (from `Makefile', line 929):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj
 	
 
@@ -398,7 +430,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.i: Drivers/STM32L1xx_HAL_D
 
 startup/startup_stm32l151xba.obj: startup/startup_stm32l151xba.s.obj
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -408,7 +439,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 777):
+#  commands to execute (from `Makefile', line 801):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.s
 	
 
@@ -417,7 +448,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 601):
+#  commands to execute (from `Makefile', line 625):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.i
 	
 
@@ -441,7 +472,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 985):
+#  commands to execute (from `Makefile', line 1009):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.i
 	
 
@@ -450,7 +481,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1177):
+#  commands to execute (from `Makefile', line 1201):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i
 	
 
@@ -477,6 +508,7 @@ Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.obj: Middlewares/Third_Par
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj
 #  Phony target (prerequisite of .PHONY).
@@ -489,7 +521,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 641):
+#  commands to execute (from `Makefile', line 665):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj
 	
 
@@ -498,19 +530,18 @@ Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1081):
+#  commands to execute (from `Makefile', line 1105):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.i
 	
 
 Middlewares/Third_Party/FreeRTOS/Source/queue.obj: Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 
-.PHONY: default_target cmake_force rebuild_cache rebuild_cache/fast edit_cache edit_cache/fast all clean clean/fast preinstall preinstall/fast depend rc_remote.elf rc_remote.elf/fast App/gpio/gpioApp.obj App/gpio/gpioApp.cpp.obj App/gpio/gpioApp.i App/gpio/gpioApp.cpp.i App/gpio/gpioApp.s App/gpio/gpioApp.cpp.s App/logger/logger.obj App/logger/logger.cpp.obj App/logger/logger.i App/logger/logger.cpp.i App/logger/logger.s App/logger/logger.cpp.s App/nrf24/drivers/nrf24.obj App/nrf24/drivers/nrf24.c.obj App/nrf24/drivers/nrf24.i App/nrf24/drivers/nrf24.c.i App/nrf24/drivers/nrf24.s App/nrf24/drivers/nrf24.c.s App/nrf24/radioApp.obj App/nrf24/radioApp.cpp.obj App/nrf24/radioApp.i App/nrf24/radioApp.cpp.i App/nrf24/radioApp.s App/nrf24/radioApp.cpp.s App/sensors/sensorsTask.obj App/sensors/sensorsTask.cpp.obj App/sensors/sensorsTask.i App/sensors/sensorsTask.cpp.i App/sensors/sensorsTask.s App/sensors/sensorsTask.cpp.s Core/Src/adc.obj Core/Src/adc.c.obj Core/Src/adc.i Core/Src/adc.c.i Core/Src/adc.s Core/Src/adc.c.s Core/Src/dma.obj Core/Src/dma.c.obj Core/Src/dma.i Core/Src/dma.c.i Core/Src/dma.s Core/Src/dma.c.s Core/Src/freertos.obj Core/Src/freertos.c.obj Core/Src/freertos.i Core/Src/freertos.c.i Core/Src/freertos.s Core/Src/freertos.c.s Core/Src/gpio.obj Core/Src/gpio.c.obj Core/Src/gpio.i Core/Src/gpio.c.i Core/Src/gpio.s Core/Src/gpio.c.s Core/Src/main.obj Core/Src/main.cpp.obj Core/Src/main.i Core/Src/main.cpp.i Core/Src/main.s Core/Src/main.cpp.s Core/Src/spi.obj Core/Src/spi.c.obj Core/Src/spi.i Core/Src/spi.c.i Core/Src/spi.s Core/Src/spi.c.s Core/Src/stm32l1xx_hal_msp.obj Core/Src/stm32l1xx_hal_msp.c.obj Core/Src/stm32l1xx_hal_msp.i Core/Src/stm32l1xx_hal_msp.c.i Core/Src/stm32l1xx_hal_msp.s Core/Src/stm32l1xx_hal_msp.c.s Core/Src/stm32l1xx_hal_timebase_tim.obj Core/Src/stm32l1xx_hal_timebase_tim.c.obj Core/Src/stm32l1xx_hal_timebase_tim.i Core/Src/stm32l1xx_hal_timebase_tim.c.i Core/Src/stm32l1xx_hal_timebase_tim.s Core/Src/stm32l1xx_hal_timebase_tim.c.s Core/Src/stm32l1xx_it.obj Core/Src/stm32l1xx_it.c.obj Core/Src/stm32l1xx_it.i Core/Src/stm32l1xx_it.c.i Core/Src/stm32l1xx_it.s Core/Src/stm32l1xx_it.c.s Core/Src/syscalls.obj Core/Src/syscalls.c.obj Core/Src/syscalls.i Core/Src/syscalls.c.i Core/Src/syscalls.s Core/Src/syscalls.c.s Core/Src/system_stm32l1xx.obj Core/Src/system_stm32l1xx.c.obj Core/Src/system_stm32l1xx.i Core/Src/system_stm32l1xx.c.i Core/Src/system_stm32l1xx.s Core/Src/system_stm32l1xx.c.s Core/Src/usart.obj Core/Src/usart.c.obj Core/Src/usart.i Core/Src/usart.c.i Core/Src/usart.s Core/Src/usart.c.s Core/Src/usb.obj Core/Src/usb.c.obj Core/Src/usb.i Core/Src/usb.c.i Core/Src/usb.s Core/Src/usb.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.obj Drivers/STM32L1xx_HAL_Driver/ 
-Src/stm32l1xx_hal_pwr_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.s Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.obj Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.i Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.i Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.s Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.s Middlewares/Third_Party/FreeRTOS/Source/croutine.obj Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj Middlewares/Third_Party/FreeRTOS/Source/croutine.i Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i Middlewares/Third_Party/FreeRTOS/Source/croutine.s Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s Middlewares/Third_Party/FreeRTOS/Source/event_groups.obj Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj Middlewares/Third_Party/FreeRTOS/Source/event_groups.i Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i Middlewares/Third_Party/FreeRTOS/Source/event_groups.s Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s Middlewares/Third_Party/FreeRTOS/Source/list.obj Middlewares/Third_Party/FreeRTOS/Source/list.c.obj Middlewares/Third_Party/FreeRTOS/Source/list.i Middlewares/Third_Party/FreeRTOS/Source/list.c.i Middlewares/Third_Party/FreeRTOS/Source/list.s Middlewares/Third_Party/FreeRTOS/Source/list.c.s Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.obj Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.i Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.s Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.obj Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.i Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.s Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s Middlewares/Third_Party/FreeRTOS/Source/queue.obj Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj Middlewares/Third_Party/FreeRTOS/Source/queue.i Middlewares/Third_Party/FreeRTOS/Source/queue.c.i Middlewares/Third_Party/FreeRTOS/Source/queue.s Middlewares/Third_Party/FreeRTOS/Source/queue.c.s Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.obj Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.i Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.s Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.s Middlewares/Third_Party/FreeRTOS/Source/tasks.obj Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj Middlewares/Third_Party/FreeRTOS/Source/tasks.i Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i Middlewares/Third_Party/FreeRTOS/Source/tasks.s Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s Middlewares/Third_Party/FreeRTOS/Source/timers.obj Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj Middlewares/Third_Party/FreeRTOS/Source/timers.i Middlewares/Third_Party/FreeRTOS/Source/timers.c.i Middlewares/Third_Party/FreeRTOS/Source/timers.s Middlewares/Third_Party/FreeRTOS/Source/timers.c.s startup/startup_stm32l151xba.obj startup/startup_stm32l151xba.s.obj help cmake_check_build_system
+.PHONY: default_target cmake_force rebuild_cache rebuild_cache/fast edit_cache edit_cache/fast all clean clean/fast preinstall preinstall/fast depend rc_remote.elf rc_remote.elf/fast App/gpio/gpioApp.obj App/gpio/gpioApp.cpp.obj App/gpio/gpioApp.i App/gpio/gpioApp.cpp.i App/gpio/gpioApp.s App/gpio/gpioApp.cpp.s App/logger/logger.obj App/logger/logger.cpp.obj App/logger/logger.i App/logger/logger.cpp.i App/logger/logger.s App/logger/logger.cpp.s App/nrf24/drivers/nrf24.obj App/nrf24/drivers/nrf24.c.obj App/nrf24/drivers/nrf24.i App/nrf24/drivers/nrf24.c.i App/nrf24/drivers/nrf24.s App/nrf24/drivers/nrf24.c.s App/nrf24/radioApp.obj App/nrf24/radioApp.cpp.obj App/nrf24/radioApp.i App/nrf24/radioApp.cpp.i App/nrf24/radioApp.s App/nrf24/radioApp.cpp.s App/sensors/sensorsTask.obj App/sensors/sensorsTask.cpp.obj App/sensors/sensorsTask.i App/sensors/sensorsTask.cpp.i App/sensors/sensorsTask.s App/sensors/sensorsTask.cpp.s App/ws2812/ws2812App.obj App/ws2812/ws2812App.cpp.obj App/ws2812/ws2812App.i App/ws2812/ws2812App.cpp.i App/ws2812/ws2812App.s App/ws2812/ws2812App.cpp.s Core/Src/adc.obj Core/Src/adc.c.obj Core/Src/adc.i Core/Src/adc.c.i Core/Src/adc.s Core/Src/adc.c.s Core/Src/dma.obj Core/Src/dma.c.obj Core/Src/dma.i Core/Src/dma.c.i Core/Src/dma.s Core/Src/dma.c.s Core/Src/freertos.obj Core/Src/freertos.c.obj Core/Src/freertos.i Core/Src/freertos.c.i Core/Src/freertos.s Core/Src/freertos.c.s Core/Src/gpio.obj Core/Src/gpio.c.obj Core/Src/gpio.i Core/Src/gpio.c.i Core/Src/gpio.s Core/Src/gpio.c.s Core/Src/main.obj Core/Src/main.cpp.obj Core/Src/main.i Core/Src/main.cpp.i Core/Src/main.s Core/Src/main.cpp.s Core/Src/spi.obj Core/Src/spi.c.obj Core/Src/spi.i Core/Src/spi.c.i Core/Src/spi.s Core/Src/spi.c.s Core/Src/stm32l1xx_hal_msp.obj Core/Src/stm32l1xx_hal_msp.c.obj Core/Src/stm32l1xx_hal_msp.i Core/Src/stm32l1xx_hal_msp.c.i Core/Src/stm32l1xx_hal_msp.s Core/Src/stm32l1xx_hal_msp.c.s Core/Src/stm32l1xx_hal_timebase_tim.obj Core/Src/stm32l1xx_hal_timebase_tim.c.obj Core/Src/stm32l1xx_hal_timebase_tim.i Core/Src/stm32l1xx_hal_timebase_tim.c.i Core/Src/stm32l1xx_hal_timebase_tim.s Core/Src/stm32l1xx_hal_timebase_tim.c.s Core/Src/stm32l1xx_it.obj Core/Src/stm32l1xx_it.c.obj Core/Src/stm32l1xx_it.i Core/Src/stm32l1xx_it.c.i Core/Src/stm32l1xx_it.s Core/Src/stm32l1xx_it.c.s Core/Src/syscalls.obj Core/Src/syscalls.c.obj Core/Src/syscalls.i Core/Src/syscalls.c.i Core/Src/syscalls.s Core/Src/syscalls.c.s Core/Src/system_stm32l1xx.obj Core/Src/system_stm32l1xx.c.obj Core/Src/system_stm32l1xx.i Core/Src/system_stm32l1xx.c.i Core/Src/system_stm32l1xx.s Core/Src/system_stm32l1xx.c.s Core/Src/usart.obj Core/Src/usart.c.obj Core/Src/usart.i Core/Src/usart.c.i Core/Src/usart.s Core/Src/usart.c.s Core/Src/usb.obj Core/Src/usb.c.obj Core/Src/usb.i Core/Src/usb.c.i Core/Src/usb.s Core/Src/usb.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.i Drivers/STM32L1xx_HAL 
+_Driver/Src/stm32l1xx_hal_gpio.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.s Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.obj Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.i Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.i Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.s Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.s Middlewares/Third_Party/FreeRTOS/Source/croutine.obj Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj Middlewares/Third_Party/FreeRTOS/Source/croutine.i Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i Middlewares/Third_Party/FreeRTOS/Source/croutine.s Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s Middlewares/Third_Party/FreeRTOS/Source/event_groups.obj Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj Middlewares/Third_Party/FreeRTOS/Source/event_groups.i Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i Middlewares/Third_Party/FreeRTOS/Source/event_groups.s Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s Middlewares/Third_Party/FreeRTOS/Source/list.obj Middlewares/Third_Party/FreeRTOS/Source/list.c.obj Middlewares/Third_Party/FreeRTOS/Source/list.i Middlewares/Third_Party/FreeRTOS/Source/list.c.i Middlewares/Third_Party/FreeRTOS/Source/list.s Middlewares/Third_Party/FreeRTOS/Source/list.c.s Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.obj Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.i Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.s Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.obj Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.i Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.s Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s Middlewares/Third_Party/FreeRTOS/Source/queue.obj Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj Middlewares/Third_Party/FreeRTOS/Source/queue.i Middlewares/Third_Party/FreeRTOS/Source/queue.c.i Middlewares/Third_Party/FreeRTOS/Source/queue.s Middlewares/Third_Party/FreeRTOS/Source/queue.c.s Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.obj Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.i Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.s Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.s Middlewares/Third_Party/FreeRTOS/Source/tasks.obj Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj Middlewares/Third_Party/FreeRTOS/Source/tasks.i Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i Middlewares/Third_Party/FreeRTOS/Source/tasks.s Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s Middlewares/Third_Party/FreeRTOS/Source/timers.obj Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj Middlewares/Third_Party/FreeRTOS/Source/timers.i Middlewares/Third_Party/FreeRTOS/Source/timers.c.i Middlewares/Third_Party/FreeRTOS/Source/timers.s Middlewares/Third_Party/FreeRTOS/Source/timers.c.s startup/startup_stm32l151xba.obj startup/startup_stm32l151xba.s.obj help cmake_check_build_system
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -529,16 +560,17 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 817):
+#  commands to execute (from `Makefile', line 841):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.i
 	
 
 Core/Src/freertos.c.i:
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 313):
+#  commands to execute (from `Makefile', line 337):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.i
 	
 
@@ -559,17 +591,16 @@ Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1249):
+#  commands to execute (from `Makefile', line 1273):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i
 	
 
- 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 689):
+#  commands to execute (from `Makefile', line 713):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj
 	
 
@@ -578,7 +609,7 @@ Core/Src/syscalls.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 489):
+#  commands to execute (from `Makefile', line 513):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.s
 	
 
@@ -599,7 +630,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 761):
+#  commands to execute (from `Makefile', line 785):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj
 	
 
@@ -608,7 +639,7 @@ Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1281):
+#  commands to execute (from `Makefile', line 1305):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s
 	
 
@@ -625,8 +656,9 @@ Core/Src/usart.c.s:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
+ 
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 537):
+#  commands to execute (from `Makefile', line 561):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.s
 	
 
@@ -635,7 +667,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1185):
+#  commands to execute (from `Makefile', line 1209):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s
 	
 
@@ -680,12 +712,11 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 753):
+#  commands to execute (from `Makefile', line 777):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.s
 	
 
 App/nrf24/drivers/nrf24.c.obj:
- 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -711,7 +742,7 @@ Core/Src/stm32l1xx_hal_msp.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 417):
+#  commands to execute (from `Makefile', line 441):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.s
 	
 
@@ -730,18 +761,21 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.obj: Drivers/STM32L1xx_HAL
 #  File does not exist.
 #  File has not been updated.
 
-Middlewares/Third_Party/FreeRTOS/Source/list.i: Middlewares/Third_Party/FreeRTOS/Source/list.c.i
+App/ws2812/ws2812App.cpp.i:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+#  commands to execute (from `Makefile', line 265):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/ws2812/ws2812App.cpp.i
+	
 
 Core/Src/syscalls.c.obj:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 473):
+#  commands to execute (from `Makefile', line 497):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.obj
 	
 
@@ -750,7 +784,7 @@ Core/Src/stm32l1xx_it.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 465):
+#  commands to execute (from `Makefile', line 489):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.s
 	
 
@@ -765,7 +799,7 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1305):
+#  commands to execute (from `Makefile', line 1329):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 	
 
@@ -774,7 +808,8 @@ Core/Src/usb.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 561):
+ 
+#  commands to execute (from `Makefile', line 585):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.s
 	
 
@@ -783,7 +818,7 @@ Core/Src/usart.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 521):
+#  commands to execute (from `Makefile', line 545):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.obj
 	
 
@@ -792,7 +827,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 945):
+#  commands to execute (from `Makefile', line 969):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.s
 	
 
@@ -824,11 +859,10 @@ App/nrf24/radioApp.cpp.s:
 
 Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj:
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1289):
+#  commands to execute (from `Makefile', line 1313):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
 	
 
@@ -855,14 +889,14 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 721):
+#  commands to execute (from `Makefile', line 745):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.i
 	
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-10-04 21:54:07
+#  Last modified 2021-10-17 16:46:43
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -882,7 +916,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1201):
+#  commands to execute (from `Makefile', line 1225):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i
 	
 
@@ -897,7 +931,7 @@ Core/Src/stm32l1xx_it.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 449):
+#  commands to execute (from `Makefile', line 473):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.obj
 	
 
@@ -918,7 +952,7 @@ Middlewares/Third_Party/FreeRTOS/Source/queue.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1225):
+#  commands to execute (from `Makefile', line 1249):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.i
 	
 
@@ -927,7 +961,7 @@ Core/Src/usb.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 545):
+#  commands to execute (from `Makefile', line 569):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.obj
 	
 
@@ -936,7 +970,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 929):
+#  commands to execute (from `Makefile', line 953):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj
 	
 
@@ -945,17 +979,16 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 673):
+#  commands to execute (from `Makefile', line 697):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.i
 	
 
 Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj:
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1121):
+#  commands to execute (from `Makefile', line 1145):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
 	
 
@@ -973,7 +1006,8 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 625):
+#  commands to execute (from `Makefile', line 649):
+ 
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.i
 	
 
@@ -982,16 +1016,22 @@ Core/Src/system_stm32l1xx.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 505):
+#  commands to execute (from `Makefile', line 529):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.i
 	
+
+Middlewares/Third_Party/FreeRTOS/Source/list.i: Middlewares/Third_Party/FreeRTOS/Source/list.c.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 
 Core/Src/main.cpp.s:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 369):
+#  commands to execute (from `Makefile', line 393):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.s
 	
 
@@ -1005,6 +1045,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.s: Drivers/STM32L1xx_HAL_D
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
+ 
 #  File has not been updated.
 
 Core/Src/system_stm32l1xx.s: Core/Src/system_stm32l1xx.c.s
@@ -1023,7 +1064,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1041):
+#  commands to execute (from `Makefile', line 1065):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.s
 	
 
@@ -1032,7 +1073,7 @@ Core/Src/stm32l1xx_hal_timebase_tim.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 441):
+#  commands to execute (from `Makefile', line 465):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.s
 	
 
@@ -1047,7 +1088,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 841):
+#  commands to execute (from `Makefile', line 865):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.i
 	
 
@@ -1056,7 +1097,7 @@ Core/Src/dma.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 297):
+#  commands to execute (from `Makefile', line 321):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.s
 	
 
@@ -1069,8 +1110,8 @@ Middlewares/Third_Party/FreeRTOS/Source/croutine.i: Middlewares/Third_Party/Free
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.obj: Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
- 
 #  File does not exist.
+ 
 #  File has not been updated.
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.s:
@@ -1078,7 +1119,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1017):
+#  commands to execute (from `Makefile', line 1041):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.s
 	
 
@@ -1093,7 +1134,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1065):
+#  commands to execute (from `Makefile', line 1089):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.s
 	
 
@@ -1120,7 +1161,7 @@ Core/Src/gpio.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 345):
+#  commands to execute (from `Makefile', line 369):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.s
 	
 
@@ -1129,7 +1170,7 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1297):
+#  commands to execute (from `Makefile', line 1321):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.i
 	
 
@@ -1138,7 +1179,7 @@ Core/Src/main.cpp.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 353):
+#  commands to execute (from `Makefile', line 377):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj
 	
 
@@ -1183,7 +1224,7 @@ Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1257):
+#  commands to execute (from `Makefile', line 1281):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.s
 	
 
@@ -1192,7 +1233,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1025):
+#  commands to execute (from `Makefile', line 1049):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj
 	
 
@@ -1201,7 +1242,7 @@ Core/Src/stm32l1xx_hal_timebase_tim.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 425):
+#  commands to execute (from `Makefile', line 449):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.obj
 	
 
@@ -1210,7 +1251,7 @@ Core/Src/dma.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 281):
+#  commands to execute (from `Makefile', line 305):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.obj
 	
 
@@ -1219,10 +1260,9 @@ Middlewares/Third_Party/FreeRTOS/Source/queue.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1233):
+#  commands to execute (from `Makefile', line 1257):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.s
 	
- 
 
 cmake_check_build_system:
 #  Phony target (prerequisite of .PHONY).
@@ -1230,6 +1270,7 @@ cmake_check_build_system:
 #  Implicit/static pattern stem: `'
 #  File does not exist.
 #  File has been updated.
+ 
 #  Needs to be updated (-q is set).
 # automatic
 # @ := cmake_check_build_system
@@ -1249,7 +1290,7 @@ cmake_check_build_system:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=3/13=23%
-#  commands to execute (from `Makefile', line 1484):
+#  commands to execute (from `Makefile', line 1511):
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 	
 
@@ -1258,7 +1299,7 @@ Core/Src/adc.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 265):
+#  commands to execute (from `Makefile', line 289):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.i
 	
 
@@ -1273,7 +1314,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1049):
+#  commands to execute (from `Makefile', line 1073):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj
 	
 
@@ -1312,7 +1353,7 @@ Core/Src/gpio.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 329):
+#  commands to execute (from `Makefile', line 353):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.obj
 	
 
@@ -1321,7 +1362,7 @@ Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1105):
+#  commands to execute (from `Makefile', line 1129):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i
 	
 
@@ -1330,7 +1371,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 649):
+#  commands to execute (from `Makefile', line 673):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.i
 	
 
@@ -1339,7 +1380,7 @@ startup/startup_stm32l151xba.s.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1313):
+#  commands to execute (from `Makefile', line 1337):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/startup/startup_stm32l151xba.s.obj
 	
 
@@ -1366,7 +1407,7 @@ help:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1318):
+#  commands to execute (from `Makefile', line 1342):
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
@@ -1377,6 +1418,7 @@ help:
 	@echo "... App/gpio/gpioApp.obj"
 	@echo "... App/gpio/gpioApp.i"
 	@echo "... App/gpio/gpioApp.s"
+ 
 	@echo "... App/logger/logger.obj"
 	@echo "... App/logger/logger.i"
 	@echo "... App/logger/logger.s"
@@ -1385,11 +1427,13 @@ help:
 	@echo "... App/nrf24/drivers/nrf24.s"
 	@echo "... App/nrf24/radioApp.obj"
 	@echo "... App/nrf24/radioApp.i"
- 
 	@echo "... App/nrf24/radioApp.s"
 	@echo "... App/sensors/sensorsTask.obj"
 	@echo "... App/sensors/sensorsTask.i"
 	@echo "... App/sensors/sensorsTask.s"
+	@echo "... App/ws2812/ws2812App.obj"
+	@echo "... App/ws2812/ws2812App.i"
+	@echo "... App/ws2812/ws2812App.s"
 	@echo "... Core/Src/adc.obj"
 	@echo "... Core/Src/adc.i"
 	@echo "... Core/Src/adc.s"
@@ -1501,7 +1545,6 @@ help:
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/event_groups.obj"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/event_groups.i"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/event_groups.s"
- 
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/list.obj"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/list.i"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/list.s"
@@ -1521,6 +1564,7 @@ help:
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/tasks.i"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/tasks.s"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/timers.obj"
+ 
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/timers.i"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/timers.s"
 	@echo "... startup/startup_stm32l151xba.obj"
@@ -1540,7 +1584,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 609):
+#  commands to execute (from `Makefile', line 633):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.s
 	
 
@@ -1549,7 +1593,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 993):
+#  commands to execute (from `Makefile', line 1017):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.s
 	
 
@@ -1558,7 +1602,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 961):
+#  commands to execute (from `Makefile', line 985):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.i
 	
 
@@ -1567,7 +1611,7 @@ Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1241):
+#  commands to execute (from `Makefile', line 1265):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
 	
 
@@ -1591,7 +1635,7 @@ Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1217):
+#  commands to execute (from `Makefile', line 1241):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
 	
 
@@ -1618,7 +1662,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 825):
+#  commands to execute (from `Makefile', line 849):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.s
 	
 
@@ -1627,7 +1671,7 @@ Core/Src/freertos.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 321):
+#  commands to execute (from `Makefile', line 345):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.s
 	
 
@@ -1649,7 +1693,7 @@ Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1273):
+#  commands to execute (from `Makefile', line 1297):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i
 	
 
@@ -1658,7 +1702,7 @@ Core/Src/spi.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 385):
+#  commands to execute (from `Makefile', line 409):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.i
 	
 
@@ -1692,11 +1736,12 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.s: Drivers/STM32L1xx_HAL_Dri
 #  File has not been updated.
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj:
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 593):
+#  commands to execute (from `Makefile', line 617):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj
 	
 
@@ -1714,7 +1759,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 977):
+#  commands to execute (from `Makefile', line 1001):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj
 	
 
@@ -1723,7 +1768,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1169):
+#  commands to execute (from `Makefile', line 1193):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj
 	
 
@@ -1732,7 +1777,7 @@ Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1137):
+#  commands to execute (from `Makefile', line 1161):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s
 	
 
@@ -1741,13 +1786,14 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 873):
+#  commands to execute (from `Makefile', line 897):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.s
 	
 
 App/gpio/gpioApp.cpp.s:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
+ 
 #  File does not exist.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 153):
@@ -1774,7 +1820,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 809):
+#  commands to execute (from `Makefile', line 833):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj
 	
 
@@ -1783,7 +1829,7 @@ Core/Src/freertos.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 305):
+#  commands to execute (from `Makefile', line 329):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/freertos.c.obj
 	
 
@@ -1792,15 +1838,18 @@ Middlewares/Third_Party/FreeRTOS/Source/list.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1153):
+#  commands to execute (from `Makefile', line 1177):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.i
 	
 
-Middlewares/Third_Party/FreeRTOS/Source/list.s: Middlewares/Third_Party/FreeRTOS/Source/list.c.s
+App/ws2812/ws2812App.cpp.s:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+#  commands to execute (from `Makefile', line 273):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/ws2812/ws2812App.cpp.s
+	
 
 Middlewares/Third_Party/FreeRTOS/Source/tasks.obj: Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
 #  Phony target (prerequisite of .PHONY).
@@ -1813,6 +1862,7 @@ Middlewares/Third_Party/FreeRTOS/Source/tasks.obj: Middlewares/Third_Party/FreeR
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 Core/Src/spi.obj: Core/Src/spi.c.obj
 #  Phony target (prerequisite of .PHONY).
@@ -1825,7 +1875,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 793):
+#  commands to execute (from `Makefile', line 817):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.i
 	
 
@@ -1844,10 +1894,9 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.s: Drivers/STM32L1xx_HAL_Dri
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
- 
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 857):
+#  commands to execute (from `Makefile', line 881):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj
 	
 
@@ -1878,18 +1927,25 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.s: Drivers/STM32L1xx_HAL
 #  File does not exist.
 #  File has not been updated.
 
+Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.i: Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1001):
+#  commands to execute (from `Makefile', line 1025):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj
 	
 
 Core/Src/dma.i: Core/Src/dma.c.i
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
+ 
 #  File does not exist.
 #  File has not been updated.
 
@@ -1904,7 +1960,7 @@ Core/Src/stm32l1xx_hal_msp.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 409):
+#  commands to execute (from `Makefile', line 433):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_msp.c.i
 	
 
@@ -1925,7 +1981,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 729):
+#  commands to execute (from `Makefile', line 753):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.s
 	
 
@@ -1935,11 +1991,14 @@ App/sensors/sensorsTask.s: App/sensors/sensorsTask.cpp.s
 #  File does not exist.
 #  File has not been updated.
 
-Middlewares/Third_Party/FreeRTOS/Source/list.obj: Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+App/ws2812/ws2812App.cpp.obj:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+#  commands to execute (from `Makefile', line 257):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/ws2812/ws2812App.cpp.obj
+	
 
 Core/Src/gpio.i: Core/Src/gpio.c.i
 #  Phony target (prerequisite of .PHONY).
@@ -1952,8 +2011,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
-#  commands to execute (from `Makefile', line 913):
+#  commands to execute (from `Makefile', line 937):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.i
 	
 
@@ -1963,6 +2021,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.s: Drivers/STM32L1xx_HAL_Driv
 #  File does not exist.
 #  File has not been updated.
 
+ 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -1989,7 +2048,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 681):
+#  commands to execute (from `Makefile', line 705):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.s
 	
 
@@ -2004,7 +2063,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 633):
+#  commands to execute (from `Makefile', line 657):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.s
 	
 
@@ -2013,7 +2072,7 @@ Core/Src/system_stm32l1xx.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 513):
+#  commands to execute (from `Makefile', line 537):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.s
 	
 
@@ -2043,20 +2102,20 @@ Core/Src/stm32l1xx_hal_msp.obj: Core/Src/stm32l1xx_hal_msp.c.obj
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj:
 #  Phony target (prerequisite of .PHONY).
+ 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 713):
+#  commands to execute (from `Makefile', line 737):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj
 	
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.i:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
- 
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1009):
+#  commands to execute (from `Makefile', line 1033):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.i
 	
 
@@ -2065,7 +2124,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 697):
+#  commands to execute (from `Makefile', line 721):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.i
 	
 
@@ -2092,7 +2151,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1193):
+#  commands to execute (from `Makefile', line 1217):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
 	
 
@@ -2101,7 +2160,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 585):
+#  commands to execute (from `Makefile', line 609):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.s
 	
 
@@ -2116,11 +2175,12 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 769):
+#  commands to execute (from `Makefile', line 793):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.i
 	
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -2142,7 +2202,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.i: Drivers/STM32L1xx_HAL_Dri
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
- 
 #  File has not been updated.
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.i: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.i
@@ -2151,7 +2210,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.i: Drivers/STM32L1xx_HAL_Driv
 #  File does not exist.
 #  File has not been updated.
 
-Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.i: Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i
+App/ws2812/ws2812App.i: App/ws2812/ws2812App.cpp.i
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -2162,7 +2221,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 665):
+#  commands to execute (from `Makefile', line 689):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj
 	
 
@@ -2177,7 +2236,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 617):
+#  commands to execute (from `Makefile', line 641):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj
 	
 
@@ -2186,7 +2245,7 @@ Core/Src/system_stm32l1xx.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 497):
+#  commands to execute (from `Makefile', line 521):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/system_stm32l1xx.c.obj
 	
 
@@ -2216,7 +2275,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 897):
+#  commands to execute (from `Makefile', line 921):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.s
 	
 
@@ -2225,7 +2284,7 @@ Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1089):
+#  commands to execute (from `Makefile', line 1113):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.s
 	
 
@@ -2234,7 +2293,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1209):
+#  commands to execute (from `Makefile', line 1233):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s
 	
 
@@ -2261,18 +2320,18 @@ Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1113):
+#  commands to execute (from `Makefile', line 1137):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s
 	
 
 Core/Src/syscalls.c.i:
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 481):
+#  commands to execute (from `Makefile', line 505):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/syscalls.c.i
+ 
 	
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj:
@@ -2280,7 +2339,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 833):
+#  commands to execute (from `Makefile', line 857):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj
 	
 
@@ -2295,7 +2354,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 737):
+#  commands to execute (from `Makefile', line 761):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj
 	
 
@@ -2304,9 +2363,10 @@ Core/Src/adc.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 273):
+#  commands to execute (from `Makefile', line 297):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.s
 	
+ 
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj
 #  Phony target (prerequisite of .PHONY).
@@ -2319,7 +2379,7 @@ Core/Src/usart.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 529):
+#  commands to execute (from `Makefile', line 553):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/usart.c.i
 	
 
@@ -2341,12 +2401,18 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.i: Drivers/STM32L1xx_HAL_Driv
 #  File does not exist.
 #  File has not been updated.
 
+Middlewares/Third_Party/FreeRTOS/Source/list.obj: Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.s:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 657):
+#  commands to execute (from `Makefile', line 681):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.s
 	
 
@@ -2361,7 +2427,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 881):
+#  commands to execute (from `Makefile', line 905):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj
 	
 
@@ -2370,7 +2436,7 @@ Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1073):
+#  commands to execute (from `Makefile', line 1097):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
 	
 
@@ -2382,7 +2448,6 @@ Core/Src/syscalls.obj: Core/Src/syscalls.c.obj
 
 App/nrf24/drivers/nrf24.obj: App/nrf24/drivers/nrf24.c.obj
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -2392,7 +2457,8 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 969):
+ 
+#  commands to execute (from `Makefile', line 993):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.s
 	
 
@@ -2416,7 +2482,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 849):
+#  commands to execute (from `Makefile', line 873):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.s
 	
 
@@ -2425,7 +2491,7 @@ Core/Src/stm32l1xx_it.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 457):
+#  commands to execute (from `Makefile', line 481):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_it.c.i
 	
 
@@ -2434,7 +2500,7 @@ Core/Src/adc.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 257):
+#  commands to execute (from `Makefile', line 281):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/adc.c.obj
 	
 
@@ -2455,7 +2521,7 @@ Core/Src/usb.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 553):
+#  commands to execute (from `Makefile', line 577):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/usb.c.i
 	
 
@@ -2464,7 +2530,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 937):
+#  commands to execute (from `Makefile', line 961):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.i
 	
 
@@ -2473,7 +2539,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 745):
+#  commands to execute (from `Makefile', line 769):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.i
 	
 
@@ -2500,7 +2566,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.s: Drivers/STM32L1xx_HAL_D
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 
 App/nrf24/radioApp.cpp.i:
 #  Phony target (prerequisite of .PHONY).
@@ -2522,7 +2587,7 @@ Core/Src/spi.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 393):
+#  commands to execute (from `Makefile', line 417):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.s
 	
 
@@ -2537,7 +2602,7 @@ Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1129):
+#  commands to execute (from `Makefile', line 1153):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i
 	
 
@@ -2546,7 +2611,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 953):
+#  commands to execute (from `Makefile', line 977):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj
 	
 
@@ -2582,7 +2647,6 @@ App/logger/logger.i: App/logger/logger.cpp.i
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 
 Core/Src/usb.obj: Core/Src/usb.c.obj
 #  Phony target (prerequisite of .PHONY).
@@ -2595,7 +2659,7 @@ Middlewares/Third_Party/FreeRTOS/Source/list.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1161):
+#  commands to execute (from `Makefile', line 1185):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.s
 	
 
@@ -2605,12 +2669,13 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.obj: Drivers/STM32L1xx_HAL
 #  File does not exist.
 #  File has not been updated.
 
+ 
 Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1265):
+#  commands to execute (from `Makefile', line 1289):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
 	
 
@@ -2619,7 +2684,7 @@ Core/Src/spi.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 377):
+#  commands to execute (from `Makefile', line 401):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/spi.c.obj
 	
 
@@ -2628,7 +2693,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 865):
+#  commands to execute (from `Makefile', line 889):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.i
 	
 
@@ -2637,7 +2702,7 @@ Core/Src/main.cpp.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 361):
+#  commands to execute (from `Makefile', line 385):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.i
 	
 
@@ -2670,11 +2735,17 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 801):
+#  commands to execute (from `Makefile', line 825):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.s
 	
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.i: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Middlewares/Third_Party/FreeRTOS/Source/list.s: Middlewares/Third_Party/FreeRTOS/Source/list.c.s
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -2685,7 +2756,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 889):
+#  commands to execute (from `Makefile', line 913):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.i
 	
 
@@ -2694,7 +2765,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 1033):
+#  commands to execute (from `Makefile', line 1057):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.i
 	
 
@@ -2703,7 +2774,7 @@ Core/Src/stm32l1xx_hal_timebase_tim.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 433):
+#  commands to execute (from `Makefile', line 457):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/stm32l1xx_hal_timebase_tim.c.i
 	
 
@@ -2724,7 +2795,7 @@ Core/Src/dma.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 289):
+#  commands to execute (from `Makefile', line 313):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/dma.c.i
 	
 
@@ -2733,7 +2804,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 569):
+#  commands to execute (from `Makefile', line 593):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj
 	
 
@@ -2778,7 +2849,7 @@ rebuild_cache:
 	
 
 # files hash-table stats:
-# Load=319/1024=31%, Rehash=0, Collisions=173/1114=16%
+# Load=325/1024=32%, Rehash=0, Collisions=185/1135=16%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -2790,7 +2861,6 @@ rebuild_cache:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
- 
-# Finished Make data base on Sat Oct  9 19:46:47 2021
+# Finished Make data base on Sun Oct 17 17:00:06 2021
 
  

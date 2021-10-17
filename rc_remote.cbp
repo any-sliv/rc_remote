@@ -52,6 +52,7 @@
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/logger"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors/SS49"/>
+					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/ws2812"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Inc"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy"/>
@@ -86,6 +87,7 @@
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/logger"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors/SS49"/>
+					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/App/ws2812"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/Inc"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc"/>
 					<Add directory="/Users/macsli/Documents/dev/engthesis/rc_remote/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy"/>
@@ -137,6 +139,12 @@
 			<Option target="rc_remote.elf"/>
 		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/sensors/sensorsTask.hpp">
+			<Option target="rc_remote.elf"/>
+		</Unit>
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/ws2812/ws2812.h">
+			<Option target="rc_remote.elf"/>
+		</Unit>
+		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/App/ws2812/ws2812App.cpp">
 			<Option target="rc_remote.elf"/>
 		</Unit>
 		<Unit filename="/Users/macsli/Documents/dev/engthesis/rc_remote/Core/.DS_Store">

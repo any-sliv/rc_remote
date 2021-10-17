@@ -12,8 +12,9 @@ extern "C" {
 #include "gpioApp.hpp"
 
 
-Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState = 0,
-           uint32_t mode = OUTPUT, uint32_t pull = NO_PULL) {
+Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, 
+            bool initState, uint32_t mode,
+      uint32_t pull) {
   pin = _pin;
   port = _port;
 

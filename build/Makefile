@@ -201,53 +201,29 @@ App/nrf24/drivers/nrf24.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.s
 .PHONY : App/nrf24/drivers/nrf24.c.s
 
-App/nrf24/radioClass.obj: App/nrf24/radioClass.cpp.obj
-.PHONY : App/nrf24/radioClass.obj
+App/nrf24/radioApp.obj: App/nrf24/radioApp.cpp.obj
+.PHONY : App/nrf24/radioApp.obj
 
 # target to build an object file
-App/nrf24/radioClass.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.obj
-.PHONY : App/nrf24/radioClass.cpp.obj
+App/nrf24/radioApp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioApp.cpp.obj
+.PHONY : App/nrf24/radioApp.cpp.obj
 
-App/nrf24/radioClass.i: App/nrf24/radioClass.cpp.i
-.PHONY : App/nrf24/radioClass.i
-
-# target to preprocess a source file
-App/nrf24/radioClass.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.i
-.PHONY : App/nrf24/radioClass.cpp.i
-
-App/nrf24/radioClass.s: App/nrf24/radioClass.cpp.s
-.PHONY : App/nrf24/radioClass.s
-
-# target to generate assembly for a file
-App/nrf24/radioClass.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioClass.cpp.s
-.PHONY : App/nrf24/radioClass.cpp.s
-
-App/nrf24/radioTask.obj: App/nrf24/radioTask.cpp.obj
-.PHONY : App/nrf24/radioTask.obj
-
-# target to build an object file
-App/nrf24/radioTask.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.obj
-.PHONY : App/nrf24/radioTask.cpp.obj
-
-App/nrf24/radioTask.i: App/nrf24/radioTask.cpp.i
-.PHONY : App/nrf24/radioTask.i
+App/nrf24/radioApp.i: App/nrf24/radioApp.cpp.i
+.PHONY : App/nrf24/radioApp.i
 
 # target to preprocess a source file
-App/nrf24/radioTask.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.i
-.PHONY : App/nrf24/radioTask.cpp.i
+App/nrf24/radioApp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioApp.cpp.i
+.PHONY : App/nrf24/radioApp.cpp.i
 
-App/nrf24/radioTask.s: App/nrf24/radioTask.cpp.s
-.PHONY : App/nrf24/radioTask.s
+App/nrf24/radioApp.s: App/nrf24/radioApp.cpp.s
+.PHONY : App/nrf24/radioApp.s
 
 # target to generate assembly for a file
-App/nrf24/radioTask.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioTask.cpp.s
-.PHONY : App/nrf24/radioTask.cpp.s
+App/nrf24/radioApp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioApp.cpp.s
+.PHONY : App/nrf24/radioApp.cpp.s
 
 App/sensors/sensorsTask.obj: App/sensors/sensorsTask.cpp.obj
 .PHONY : App/sensors/sensorsTask.obj
@@ -272,6 +248,30 @@ App/sensors/sensorsTask.s: App/sensors/sensorsTask.cpp.s
 App/sensors/sensorsTask.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.s
 .PHONY : App/sensors/sensorsTask.cpp.s
+
+App/ws2812/ws2812App.obj: App/ws2812/ws2812App.cpp.obj
+.PHONY : App/ws2812/ws2812App.obj
+
+# target to build an object file
+App/ws2812/ws2812App.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/ws2812/ws2812App.cpp.obj
+.PHONY : App/ws2812/ws2812App.cpp.obj
+
+App/ws2812/ws2812App.i: App/ws2812/ws2812App.cpp.i
+.PHONY : App/ws2812/ws2812App.i
+
+# target to preprocess a source file
+App/ws2812/ws2812App.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/ws2812/ws2812App.cpp.i
+.PHONY : App/ws2812/ws2812App.cpp.i
+
+App/ws2812/ws2812App.s: App/ws2812/ws2812App.cpp.s
+.PHONY : App/ws2812/ws2812App.s
+
+# target to generate assembly for a file
+App/ws2812/ws2812App.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/ws2812/ws2812App.cpp.s
+.PHONY : App/ws2812/ws2812App.cpp.s
 
 Core/Src/adc.obj: Core/Src/adc.c.obj
 .PHONY : Core/Src/adc.obj
@@ -1355,15 +1355,15 @@ help:
 	@echo "... App/nrf24/drivers/nrf24.obj"
 	@echo "... App/nrf24/drivers/nrf24.i"
 	@echo "... App/nrf24/drivers/nrf24.s"
-	@echo "... App/nrf24/radioClass.obj"
-	@echo "... App/nrf24/radioClass.i"
-	@echo "... App/nrf24/radioClass.s"
-	@echo "... App/nrf24/radioTask.obj"
-	@echo "... App/nrf24/radioTask.i"
-	@echo "... App/nrf24/radioTask.s"
+	@echo "... App/nrf24/radioApp.obj"
+	@echo "... App/nrf24/radioApp.i"
+	@echo "... App/nrf24/radioApp.s"
 	@echo "... App/sensors/sensorsTask.obj"
 	@echo "... App/sensors/sensorsTask.i"
 	@echo "... App/sensors/sensorsTask.s"
+	@echo "... App/ws2812/ws2812App.obj"
+	@echo "... App/ws2812/ws2812App.i"
+	@echo "... App/ws2812/ws2812App.s"
 	@echo "... Core/Src/adc.obj"
 	@echo "... Core/Src/adc.i"
 	@echo "... Core/Src/adc.s"

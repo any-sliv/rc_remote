@@ -249,6 +249,30 @@ App/sensors/sensorsTask.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.s
 .PHONY : App/sensors/sensorsTask.cpp.s
 
+App/ws2812/ws2812App.obj: App/ws2812/ws2812App.cpp.obj
+.PHONY : App/ws2812/ws2812App.obj
+
+# target to build an object file
+App/ws2812/ws2812App.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/ws2812/ws2812App.cpp.obj
+.PHONY : App/ws2812/ws2812App.cpp.obj
+
+App/ws2812/ws2812App.i: App/ws2812/ws2812App.cpp.i
+.PHONY : App/ws2812/ws2812App.i
+
+# target to preprocess a source file
+App/ws2812/ws2812App.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/ws2812/ws2812App.cpp.i
+.PHONY : App/ws2812/ws2812App.cpp.i
+
+App/ws2812/ws2812App.s: App/ws2812/ws2812App.cpp.s
+.PHONY : App/ws2812/ws2812App.s
+
+# target to generate assembly for a file
+App/ws2812/ws2812App.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/ws2812/ws2812App.cpp.s
+.PHONY : App/ws2812/ws2812App.cpp.s
+
 Core/Src/adc.obj: Core/Src/adc.c.obj
 .PHONY : Core/Src/adc.obj
 
@@ -1337,6 +1361,9 @@ help:
 	@echo "... App/sensors/sensorsTask.obj"
 	@echo "... App/sensors/sensorsTask.i"
 	@echo "... App/sensors/sensorsTask.s"
+	@echo "... App/ws2812/ws2812App.obj"
+	@echo "... App/ws2812/ws2812App.i"
+	@echo "... App/ws2812/ws2812App.s"
 	@echo "... Core/Src/adc.obj"
 	@echo "... Core/Src/adc.i"
 	@echo "... Core/Src/adc.s"
