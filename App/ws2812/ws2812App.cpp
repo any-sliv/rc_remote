@@ -1,25 +1,48 @@
-#include "stdint.h"
-#include "stm32l1xx_hal.h"
+/*
+ * ws2812App.cpp
+ *
+ *  Created on: Aug 11, 2021
+ *      Author: macsli
+ */
+
 #include "spi.h"
-#include "ws2812.h"
-
-
-#define ws_zero 0b1111100000000000
-#define ws_one 	0b1111111111000000
+#include "ws2812.hpp"
 
 Leds::Leds() {
     ledsEnablePin = new Gpio{DCDC_ENABLE_GPIO_Port, 
                                 DCDC_ENABLE_Pin};
+
+    extern SPI_HandleTypeDef hspi2;
+    ledSpi = &hspi2;
 }
 
-void Leds::SetColour(ws2812_diode_s * wsStruct, uint8_t ledNumber) {
+void Leds::SetColour(ws2812_diode_s wsStruct, uint8_t ledNumber) {
     if(ledNumber > sizeof(wsLed)) return;
-    //todo log
-    wsLed[ledNumber] = *wsStruct;
+    wsLed[ledNumber] = wsStruct;
 }
 
 void Leds::loadBuffer(void) {
-    //todo whole spi transfer
+        const uint8_t k = 0x80;
+        uint8_t bit = 0;
+
+        // each bit from wsLed[x] is extracted
+        for(bit = 0; bit < 8; bit++) {
+            buffer.append(wsLed[currentLed].green && (k >> bit));
+        }
+        for(bit = 0; bit < 8; bit++) {
+            buffer.append(wsLed[currentLed].red && (k >> bit));
+        }
+        for(bit = 0; bit < 8; bit++) {
+            buffer.append(wsLed[currentLed].blue && (k >> bit));
+        }
+
+        buffer.flip();
+
+        if(!(currentLed >= sizeof(wsLed))) {
+            currentLed++;
+        }
+
+
 }
 
 void Leds::Clear(void) {
@@ -31,9 +54,22 @@ void Leds::Clear(void) {
 }
 
 void Leds::Refresh(void) {
-    //todo refresh - let dma send data from whole structure
+    ledsEnablePin -> Set();
+
+    HAL_SPI_Transmit_DMA(hspi1, buffer.active())
 
 }
+
+void HAL_SPI_TxHalfCpltCallback(SPI_HandleTypeDef *hspi)
+{
+	if(hspi == &hspi2) {
+    }
+}
+
+void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
+
+}
+
 
 static const uint8_t _sineTable[256] = {
 	0x40,0x41,0x43,0x44,0x46,0x47,0x49,0x4a,0x4c,0x4d,0x4f,0x50,0x52,0x53,
