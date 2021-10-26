@@ -14,7 +14,7 @@
 #define WS_ZERO ((const uint16_t)0b1111100000000000)
 #define WS_ONE 	((const uint16_t)0b1111111111000000)
 
-#define WS2812_LEDS_NUMBER 5
+#define WS2812_LEDS_NUMBER      5
 
 struct ws2812_diode_s {
     uint8_t red = 0;
@@ -37,7 +37,7 @@ public:
     void append(bool val) {
         val ? active()[currentBit] = WS_ONE : active()[currentBit] = WS_ZERO;
         currentBit++;
-        if(currentBit >= sizeof(buffer1) - 1) currentBit = 0;
+        if(currentBit >= (24 - 1)) currentBit = 0;
     }
 
     /**
@@ -54,6 +54,9 @@ public:
 
 class Leds {
 private:
+    const uint32_t power_timeout = 2000;
+    uint8_t numberOfLeds;
+
     SPI_HandleTypeDef * ledSpi;
     
     /**
@@ -66,13 +69,19 @@ private:
     struct ws2812_diode_s wsLed [WS2812_LEDS_NUMBER];
 
     uint8_t currentLed;
+public:
+    /**
+     * WS2812 leds constructor
+     * @param _numberOfLeds - :)
+     */
+    Leds(uint8_t _numberOfLeds);
+
+    void Powerdown(void);
 
     /**
-     * Loads data for next two diodes
+     * Loads data for next two diodes, use only in callback
      */
-    void loadBuffer(void);
-public:
-    Leds();
+    uint16_t * loadBuffer(void);
 
     /**
      * Put desired colour, in particular led into diodes structure.
@@ -83,4 +92,6 @@ public:
     void Clear(void);
 
     void Refresh(void);
+
+    uint8_t GetCurrentLed(void);
 };

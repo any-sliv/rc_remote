@@ -7,13 +7,25 @@
 
 #include "spi.h"
 #include "ws2812.hpp"
+#include "logger.hpp"
+#include "cmsis_os.h"
 
-Leds::Leds() {
+// Global variables only for callback functions
+extern osTimerId_t ledTimeoutHandle;
+Leds * ledsPointer = NULL;
+
+Leds::Leds(uint8_t _numberOfLeds) {
+    ledsPointer = this;
+    numberOfLeds = _numberOfLeds;
+    
     ledsEnablePin = new Gpio{DCDC_ENABLE_GPIO_Port, 
                                 DCDC_ENABLE_Pin};
 
+    MX_SPI2_Init();
     extern SPI_HandleTypeDef hspi2;
     ledSpi = &hspi2;
+
+    Logger::LogDebug("Leds Init");
 }
 
 void Leds::SetColour(ws2812_diode_s wsStruct, uint8_t ledNumber) {
@@ -21,9 +33,11 @@ void Leds::SetColour(ws2812_diode_s wsStruct, uint8_t ledNumber) {
     wsLed[ledNumber] = wsStruct;
 }
 
-void Leds::loadBuffer(void) {
+uint16_t * Leds::loadBuffer(void) {
         const uint8_t k = 0x80;
         uint8_t bit = 0;
+
+        buffer.flip();
 
         // each bit from wsLed[x] is extracted
         for(bit = 0; bit < 8; bit++) {
@@ -36,13 +50,11 @@ void Leds::loadBuffer(void) {
             buffer.append(wsLed[currentLed].blue && (k >> bit));
         }
 
-        buffer.flip();
-
         if(!(currentLed >= sizeof(wsLed))) {
             currentLed++;
         }
 
-
+        return buffer.active();
 }
 
 void Leds::Clear(void) {
@@ -54,22 +66,51 @@ void Leds::Clear(void) {
 }
 
 void Leds::Refresh(void) {
-    ledsEnablePin -> Set();
-
-    HAL_SPI_Transmit_DMA(hspi1, buffer.active())
-
+    ledsEnablePin->Set();
+    // Run a timer which expiry disables leds power supply
+    osTimerStart(ledTimeoutHandle, power_timeout);
+    loadBuffer();
+    HAL_SPI_Transmit_DMA(ledSpi, (uint8_t *)buffer.active(), 24);
 }
 
-void HAL_SPI_TxHalfCpltCallback(SPI_HandleTypeDef *hspi)
-{
+uint8_t Leds::GetCurrentLed(void) {
+    return currentLed;
+}
+
+void Leds::Powerdown(void) {
+    ledsEnablePin->Reset();
+}
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void HAL_SPI_TxHalfCpltCallback(SPI_HandleTypeDef *hspi) {
 	if(hspi == &hspi2) {
+        if(ledsPointer->GetCurrentLed() > WS2812_LEDS_NUMBER) {
+            HAL_SPI_DMAStop(hspi);
+            return;
+        }
+
+        uint16_t * bufferPointer = ledsPointer->loadBuffer();
+        HAL_SPI_Transmit_DMA(hspi, (uint8_t *)bufferPointer, 24);
     }
 }
 
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
-
+    if(hspi == &hspi2) {
+        
+    }
 }
 
+void ledTimeoutCallback(void *argument) {
+    ledsPointer->Powerdown();
+}
+
+#ifdef __cplusplus 
+}
+#endif
 
 static const uint8_t _sineTable[256] = {
 	0x40,0x41,0x43,0x44,0x46,0x47,0x49,0x4a,0x4c,0x4d,0x4f,0x50,0x52,0x53,
