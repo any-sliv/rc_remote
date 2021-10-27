@@ -75,6 +75,11 @@ osTimerId_t radioHeartbeatHandle;
 const osTimerAttr_t radioHeartbeat_attributes = {
   .name = "radioHeartbeat"
 };
+/* Definitions for ledTimeout */
+osTimerId_t ledTimeoutHandle;
+const osTimerAttr_t ledTimeout_attributes = {
+  .name = "ledTimeout"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -85,6 +90,7 @@ void StartDefaultTask(void *argument);
 extern void RadioTask(void *argument);
 extern void SensorsTask(void *argument);
 extern void radioHeartbeatCallback(void *argument);
+extern void ledTimeoutCallback(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -109,6 +115,9 @@ void MX_FREERTOS_Init(void) {
   /* Create the timer(s) */
   /* creation of radioHeartbeat */
   radioHeartbeatHandle = osTimerNew(radioHeartbeatCallback, osTimerPeriodic, NULL, &radioHeartbeat_attributes);
+
+  /* creation of ledTimeout */
+  ledTimeoutHandle = osTimerNew(ledTimeoutCallback, osTimerOnce, NULL, &ledTimeout_attributes);
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */

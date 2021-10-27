@@ -14,9 +14,8 @@
 extern osTimerId_t ledTimeoutHandle;
 Leds * ledsPointer = NULL;
 
-Leds::Leds(uint8_t _numberOfLeds) {
+Leds::Leds() {
     ledsPointer = this;
-    numberOfLeds = _numberOfLeds;
     
     ledsEnablePin = new Gpio{DCDC_ENABLE_GPIO_Port, 
                                 DCDC_ENABLE_Pin};
@@ -68,7 +67,7 @@ void Leds::Clear(void) {
 void Leds::Refresh(void) {
     ledsEnablePin->Set();
     // Run a timer which expiry disables leds power supply
-    osTimerStart(ledTimeoutHandle, power_timeout);
+    osTimerStart(ledTimeoutHandle, timeout);
     loadBuffer();
     HAL_SPI_Transmit_DMA(ledSpi, (uint8_t *)buffer.active(), 24);
 }
@@ -82,9 +81,7 @@ void Leds::Powerdown(void) {
 }
 
 
-#ifdef __cplusplus
 extern "C" {
-#endif
 
 void HAL_SPI_TxHalfCpltCallback(SPI_HandleTypeDef *hspi) {
 	if(hspi == &hspi2) {
@@ -108,9 +105,7 @@ void ledTimeoutCallback(void *argument) {
     ledsPointer->Powerdown();
 }
 
-#ifdef __cplusplus 
-}
-#endif
+} // extern C close
 
 static const uint8_t _sineTable[256] = {
 	0x40,0x41,0x43,0x44,0x46,0x47,0x49,0x4a,0x4c,0x4d,0x4f,0x50,0x52,0x53,

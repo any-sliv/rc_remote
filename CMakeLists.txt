@@ -51,7 +51,7 @@ App/nrf24
 App/nrf24/drivers
 App/logger
 App/sensors
-App/sensors/SS49
+App/sensors/hall_sensor
 App/ws2812
 Core/Inc
 Drivers/STM32L1xx_HAL_Driver/Inc 
@@ -76,7 +76,7 @@ file(GLOB_RECURSE SOURCES
 "App/nrf24/drivers/*.*"
 "App/logger/*.*"
 "App/sensors/*.*"
-"App/sensors/SS49/*.*"
+"App/sensors/hall_sensor/*.*"
 "App/ws2812/*.*"
 
 "Core/*.*" 

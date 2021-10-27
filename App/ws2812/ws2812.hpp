@@ -11,16 +11,16 @@
 // gpio.h used only for pins naming - sourced from CubeMX
 #include "gpio.h"
 
+#define WS2812_LEDS_NUMBER 5
+
 #define WS_ZERO ((const uint16_t)0b1111100000000000)
 #define WS_ONE 	((const uint16_t)0b1111111111000000)
-
-#define WS2812_LEDS_NUMBER      5
 
 struct ws2812_diode_s {
     uint8_t red = 0;
     uint8_t green = 0;
     uint8_t blue = 0;
-};
+}; // -------------------------------------
 
 class bufferWrapper {
 private:
@@ -50,11 +50,11 @@ public:
     void flip(void) {
         isActive ^= (bool)1;
     }
-};
+}; // -------------------------------------
 
 class Leds {
 private:
-    const uint32_t power_timeout = 2000;
+    const uint32_t timeout = 2000;
     uint8_t numberOfLeds;
 
     SPI_HandleTypeDef * ledSpi;
@@ -70,14 +70,10 @@ private:
 
     uint8_t currentLed;
 public:
-    /**
-     * WS2812 leds constructor
-     * @param _numberOfLeds - :)
-     */
-    Leds(uint8_t _numberOfLeds);
+    Leds ();
 
     void Powerdown(void);
-
+    
     /**
      * Loads data for next two diodes, use only in callback
      */
@@ -94,4 +90,4 @@ public:
     void Refresh(void);
 
     uint8_t GetCurrentLed(void);
-};
+}; // -------------------------------------
