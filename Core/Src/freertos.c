@@ -63,13 +63,6 @@ const osThreadAttr_t radio_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
-/* Definitions for sensors */
-osThreadId_t sensorsHandle;
-const osThreadAttr_t sensors_attributes = {
-  .name = "sensors",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityLow,
-};
 /* Definitions for radioHeartbeat */
 osTimerId_t radioHeartbeatHandle;
 const osTimerAttr_t radioHeartbeat_attributes = {
@@ -88,7 +81,6 @@ const osTimerAttr_t ledTimeout_attributes = {
 
 void StartDefaultTask(void *argument);
 extern void RadioTask(void *argument);
-extern void SensorsTask(void *argument);
 extern void radioHeartbeatCallback(void *argument);
 extern void ledTimeoutCallback(void *argument);
 
@@ -133,9 +125,6 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of radio */
   radioHandle = osThreadNew(RadioTask, NULL, &radio_attributes);
-
-  /* creation of sensors */
-  sensorsHandle = osThreadNew(SensorsTask, NULL, &sensors_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

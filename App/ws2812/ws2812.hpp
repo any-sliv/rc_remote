@@ -71,6 +71,7 @@ private:
     uint8_t currentLed;
 public:
     Leds ();
+    ~Leds();
 
     void Powerdown(void);
     

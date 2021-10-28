@@ -27,6 +27,10 @@ Leds::Leds() {
     Logger::LogDebug("Leds Init");
 }
 
+Leds::~Leds() {
+    HAL_SPI_MspDeInit(ledSpi);
+}
+
 void Leds::SetColour(ws2812_diode_s wsStruct, uint8_t ledNumber) {
     if(ledNumber > sizeof(wsLed)) return;
     wsLed[ledNumber] = wsStruct;
