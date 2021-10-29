@@ -33,7 +33,6 @@ extern "C"
 #include "gpio.h"
 #include "radioApp.hpp"
 #include "gpioApp.hpp"
-#include "sensorsTask.hpp"
 
   /* Private includes
   * ----------------------------------------------------------*/
