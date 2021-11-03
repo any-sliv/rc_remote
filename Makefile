@@ -225,29 +225,29 @@ App/nrf24/radioApp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioApp.cpp.s
 .PHONY : App/nrf24/radioApp.cpp.s
 
-App/sensors/sensorsTask.obj: App/sensors/sensorsTask.cpp.obj
-.PHONY : App/sensors/sensorsTask.obj
+App/sensors/hall_sensor/ss49.obj: App/sensors/hall_sensor/ss49.cpp.obj
+.PHONY : App/sensors/hall_sensor/ss49.obj
 
 # target to build an object file
-App/sensors/sensorsTask.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.obj
-.PHONY : App/sensors/sensorsTask.cpp.obj
+App/sensors/hall_sensor/ss49.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/hall_sensor/ss49.cpp.obj
+.PHONY : App/sensors/hall_sensor/ss49.cpp.obj
 
-App/sensors/sensorsTask.i: App/sensors/sensorsTask.cpp.i
-.PHONY : App/sensors/sensorsTask.i
+App/sensors/hall_sensor/ss49.i: App/sensors/hall_sensor/ss49.cpp.i
+.PHONY : App/sensors/hall_sensor/ss49.i
 
 # target to preprocess a source file
-App/sensors/sensorsTask.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.i
-.PHONY : App/sensors/sensorsTask.cpp.i
+App/sensors/hall_sensor/ss49.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/hall_sensor/ss49.cpp.i
+.PHONY : App/sensors/hall_sensor/ss49.cpp.i
 
-App/sensors/sensorsTask.s: App/sensors/sensorsTask.cpp.s
-.PHONY : App/sensors/sensorsTask.s
+App/sensors/hall_sensor/ss49.s: App/sensors/hall_sensor/ss49.cpp.s
+.PHONY : App/sensors/hall_sensor/ss49.s
 
 # target to generate assembly for a file
-App/sensors/sensorsTask.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/sensorsTask.cpp.s
-.PHONY : App/sensors/sensorsTask.cpp.s
+App/sensors/hall_sensor/ss49.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/sensors/hall_sensor/ss49.cpp.s
+.PHONY : App/sensors/hall_sensor/ss49.cpp.s
 
 App/ws2812/ws2812App.obj: App/ws2812/ws2812App.cpp.obj
 .PHONY : App/ws2812/ws2812App.obj
@@ -1358,9 +1358,9 @@ help:
 	@echo "... App/nrf24/radioApp.obj"
 	@echo "... App/nrf24/radioApp.i"
 	@echo "... App/nrf24/radioApp.s"
-	@echo "... App/sensors/sensorsTask.obj"
-	@echo "... App/sensors/sensorsTask.i"
-	@echo "... App/sensors/sensorsTask.s"
+	@echo "... App/sensors/hall_sensor/ss49.obj"
+	@echo "... App/sensors/hall_sensor/ss49.i"
+	@echo "... App/sensors/hall_sensor/ss49.s"
 	@echo "... App/ws2812/ws2812App.obj"
 	@echo "... App/ws2812/ws2812App.i"
 	@echo "... App/ws2812/ws2812App.s"

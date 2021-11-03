@@ -13,6 +13,8 @@
 
 extern UART_HandleTypeDef huart1;
 
+//todo create a queue for logger messages and
+//todo post them in some task periodically
 
 bool Logger::ILogDebug(std::string textString, va_list args) {
     uint8_t * txBuffer = reinterpret_cast<uint8_t *> (textString[0]);
