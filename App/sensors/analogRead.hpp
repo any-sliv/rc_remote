@@ -12,24 +12,21 @@ extern ADC_HandleTypeDef hadc;
 
 class AnalogRead {
 private:
-    bool isInitialized = false;
+    const uint32_t conversionTimeout = 1; //[ms]
 
 public:
     AnalogRead() {
-        if(!(isInitialized)) MX_ADC_Init();
-    }
-
-    ~AnalogRead() {
-        HAL_ADC_DeInit(&hadc);
+        // If ADC not initialized yet - init!
+        if(hadc.State == HAL_ADC_STATE_RESET) MX_ADC_Init();
     }
 
     /**
+     * Blocking function
      * @param channel configuration of desired channel
      * @return value of ADC measurement
      */
     uint32_t GetAdcValue(const ADC_ChannelConfTypeDef * channel) {
         HAL_ADC_Start(&hadc);
-        if(channel->Channel == 0xFFFF) return -1;
         HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef *)channel);
         while(HAL_ADC_PollForConversion(&hadc, conversionTimeout) == HAL_BUSY);
 

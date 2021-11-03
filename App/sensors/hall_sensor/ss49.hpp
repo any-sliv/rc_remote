@@ -11,9 +11,9 @@
 class SS49 : AnalogRead {
 private:
     const ADC_ChannelConfTypeDef channelConfig = {
-        ADC_CHANNEL_0,  /* channel */
-        (uint32_t) 1,   /* rank */
-        1               /* conversionTimeout */
+        ADC_CHANNEL_0,          /* channel */
+        (uint32_t) 1,           /* rank */
+        ADC_SAMPLETIME_48CYCLES /* conversionTimeout */
     };
 
     // Each sample colected once a milisecond
@@ -31,7 +31,6 @@ private:
 
 public:
     SS49();
-
 
     /**
      * Return position of hall sensor.
