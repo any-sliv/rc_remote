@@ -12,7 +12,8 @@
                 "${workspaceFolder}/App/nrf24/drivers",
                 "${workspaceFolder}/App/logger",
                 "${workspaceFolder}/App/sensors",
-                "${workspaceFolder}/App/sensors/SS49",
+                "${workspaceFolder}/App/sensors/hall_sensor",
+                "${workspaceFolder}/App/sensors/battery",
                 "${workspaceFolder}/App/ws2812",
 
                 "${workspaceFolder}/Core/Inc",
