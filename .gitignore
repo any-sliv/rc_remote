@@ -5,8 +5,7 @@ cmake-build-debug/
 out/
 
 CmakeCache.txt
-
-Drivers/rc_remote.map
+./rc_remote.map
 
 # Vsc files
 .vscode/*.log
