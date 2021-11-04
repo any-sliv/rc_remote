@@ -18,6 +18,7 @@ build:
     before_script:
     - apt-get update --yes
     - apt-get install --yes cmake
+    - apt-get install --yes gcc-arm-none-eabi
     script:
     - mkdir build
     - cd build
