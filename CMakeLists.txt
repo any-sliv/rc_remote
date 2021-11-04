@@ -98,8 +98,8 @@ add_link_options(-T ${LINKER_SCRIPT})
 
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
 
-set(HEX_FILE ${PROJECT_BINARY_DIR}/out/${PROJECT_NAME}.hex)
-set(BIN_FILE ${PROJECT_BINARY_DIR}/out/${PROJECT_NAME}.bin)
+set(HEX_FILE ${CMAKE_SOURCE_DIR}/out/${PROJECT_NAME}.hex)
+set(BIN_FILE ${CMAKE_SOURCE_DIR}/out/${PROJECT_NAME}.bin)
 
 add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
         COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${HEX_FILE}

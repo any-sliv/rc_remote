@@ -21,6 +21,7 @@ build:
     - apt-get install --yes gcc-arm-none-eabi
     script:
     - mkdir build
+    - mkdir out
     - cd build
     - cmake ..
     - cmake --build .
