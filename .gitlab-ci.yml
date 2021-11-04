@@ -8,22 +8,21 @@
 # can use verions as well, like gcc:5.2
 # see https://hub.docker.com/_/gcc/
 
-stages:
-- build
-
-build-job:
-stage: build
-tags:
-- linux
 image: gcc
-before_script:
-- apt-get update --yes
-- apt-get install --yes cmake
-script:
-- mkdir build
-- cd build
-- cmake ..
-- cmake --build .
-artifacts:
-paths:
-- build
+
+build:
+    stage: build
+    tags:
+    - linux
+
+    before_script:
+    - apt-get update --yes
+    - apt-get install --yes cmake
+    script:
+    - mkdir build
+    - cd build
+    - cmake ..
+    - cmake --build .
+    artifacts:
+        paths:
+        - build
