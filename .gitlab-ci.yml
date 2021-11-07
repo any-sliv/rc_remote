@@ -13,7 +13,7 @@ image: gcc
 build:
     stage: build
     tags:
-    - linux
+    - raspberry
 
     before_script:
     - apt-get update --yes
