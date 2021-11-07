@@ -15,10 +15,10 @@ build:
     tags:
     - raspberry
 
-    before_script:
-    - sudo apt-get update --yes
-    - sudo apt-get install --yes cmake
-    - sudo apt-get install --yes gcc-arm-none-eabi
+    #before_script:
+    #- sudo apt-get update --yes
+    #- sudo apt-get install --yes cmake
+    #- sudo apt-get install --yes gcc-arm-none-eabi
     script:
     - mkdir build
     - mkdir out
