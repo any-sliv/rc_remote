@@ -16,9 +16,9 @@ build:
     - raspberry
 
     before_script:
-    - apt-get update --yes
-    - apt-get install --yes cmake
-    - apt-get install --yes gcc-arm-none-eabi
+    - sudo apt-get update --yes
+    - sudo apt-get install --yes cmake
+    - sudo apt-get install --yes gcc-arm-none-eabi
     script:
     - mkdir build
     - mkdir out
