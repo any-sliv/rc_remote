@@ -5,6 +5,7 @@ cmake-build-debug/
 out/
 
 CmakeCache.txt
+./rc_remote.map
 
 # Vsc files
 .vscode/*.log
@@ -19,7 +20,6 @@ CmakeCache.txt
 
 # Linker output
 *.ilk
-*.map
 *.exp
 
 # Precompiled Headers
