@@ -1,4 +1,6 @@
-#include "stm32l1xx_hal_gpio.h"
+extern "C" {
+  #include "stm32l1xx_hal_gpio.h"
+} // extern C close
 
 void HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState)
 {

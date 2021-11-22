@@ -5,7 +5,7 @@
 
 class gpioAppTest : public ::testing::Test {
 public:
-    GPIO_TypeDef * portAddr;
+    GPIO_TypeDef * portAddr = NULL;
 
     void SetUp() override {
         portAddr = new GPIO_TypeDef;
@@ -17,5 +17,7 @@ public:
 };
 
 TEST_F(gpioAppTest, setValue) {
-    Gpio * pin = new Gpio{portAddr, 0};
+    Gpio * pin = new Gpio{portAddr, 2};
+    pin->Set();
+    EXPECT_EQ(portAddr->BSRR, 2);
 }

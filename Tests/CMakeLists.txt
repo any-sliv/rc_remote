@@ -19,7 +19,6 @@ include_directories(
     Fixtures
     Modules
     Modules/gpio
-    Modules/gpio/fake_includes
     googletest
     googletest/include/gtest
     ${GTEST_INCLUDE_DIRS}
@@ -40,7 +39,6 @@ file(GLOB_RECURSE SOURCES
     Fixtures/*.*
     Modules/*.*
     Modules/gpio/*.*
-    Modules/gpio/fake_includes/*.*
 )
 
 add_subdirectory(googletest)
