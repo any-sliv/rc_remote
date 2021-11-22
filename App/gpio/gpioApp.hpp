@@ -55,6 +55,11 @@ public:
 
   // Sets pin value to '0'
   void Reset(void);
+
+  /**
+   * @retval Value of current pin state
+   */
+  bool Read(void);
 };
 
 #endif /* INC_GPIOAPP_H_ */

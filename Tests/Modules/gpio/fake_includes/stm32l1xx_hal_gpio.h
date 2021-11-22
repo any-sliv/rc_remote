@@ -3,8 +3,6 @@
 
 #include "stdint.h"
 
-int getone(void);
-
 typedef struct
 {
   uint32_t Pin;       /*!< Specifies the GPIO pins to be configured.
@@ -23,6 +21,16 @@ typedef struct
                             This parameter can be a value of @ref GPIOEx_Alternate_function_selection */
 } GPIO_InitTypeDef;
 
+typedef struct
+{
+  uint32_t MODER;        /*!< GPIO port mode register,      */
+  uint32_t OTYPER;       /*!< GPIO port output type register,      */
+  uint32_t PUPDR;        /*!< GPIO port pull-up/pull-down register,      */
+  uint32_t IDR;          /*!< GPIO port input data register, */              
+  uint32_t ODR;          /*!< GPIO port output data register,  */          
+  uint32_t BSRR;         /*!< GPIO port bit set/reset registerBSRR, */    
+} GPIO_TypeDef;
+
 typedef enum
 {
   GPIO_PIN_RESET = 0,
@@ -32,5 +40,11 @@ typedef enum
 #define  GPIO_NOPULL        (0x00000000U)   /*!< No Pull-up or Pull-down activation  */
 #define  GPIO_PULLUP        (0x00000001U)   /*!< Pull-up activation                  */
 #define  GPIO_PULLDOWN      (0x00000002U)   /*!< Pull-down activation                */
+
+#define GPIO_SPEED_FREQ_LOW 0 
+
+void HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+GPIO_PinState HAL_GPIO_ReadPin(GPIO_TypeDef  *GPIOx, uint16_t GPIO_Pin);
+void HAL_GPIO_Init(GPIO_TypeDef  *GPIOx, GPIO_InitTypeDef *GPIO_Init);
 
 #endif //------------------------------------

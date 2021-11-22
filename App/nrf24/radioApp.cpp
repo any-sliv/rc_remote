@@ -81,8 +81,9 @@ NRF24::NRF24()
 bool NRF24::Write(void *payload)
 {
 	NRF24_stopListening();
-	return NRF24_write(payload, RADIO_PAYLOAD_SIZE);
+	bool ret = NRF24_write(payload, RADIO_PAYLOAD_SIZE);
 	NRF24_startListening();
+	return ret;
 }
 
 bool NRF24::IsAvailable(void)
