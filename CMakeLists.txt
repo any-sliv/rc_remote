@@ -29,7 +29,7 @@ add_compile_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)
 add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
 
 # uncomment to mitigate c++17 absolute addresses warnings
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-register")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-register -Wno-volatile")
 
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     message(STATUS "Maximum optimization for speed")
@@ -46,48 +46,48 @@ else ()
 endif ()
 
 include_directories(
-App/gpio
-App/nrf24
-App/nrf24/drivers
-App/logger
-App/sensors
-App/sensors/hall_sensor
-App/sensors/battery
-App/ws2812
+    App/gpio
+    App/nrf24
+    App/nrf24/drivers
+    App/logger
+    App/sensors
+    App/sensors/hall_sensor
+    App/sensors/battery
+    App/ws2812
 
-Core/Inc
-Drivers/STM32L1xx_HAL_Driver/Inc 
-Drivers/STM32L1xx_HAL_Driver/Inc/Legacy 
-Drivers/CMSIS/Include
-Drivers/CMSIS/STM32L1xx_HAL_Driver/Inc
-Drivers/STM32L1xx_HAL_Driver/Inc/Legacy
-Drivers/Device/ST/STM32L1xx_HAL_Driver/Include
-Drivers/Device/ST/STM32L1xx_HAL_Driver/Include/Legacy
-Drivers/CMSIS/Device/ST/STM32L1xx/Include 
-Drivers/CMSIS/Include
-Middlewares/Third_Party/FreeRTOS/Source/include 
-Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 
-Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3
+    Core/Inc
+    Drivers/STM32L1xx_HAL_Driver/Inc 
+    Drivers/STM32L1xx_HAL_Driver/Inc/Legacy 
+    Drivers/CMSIS/Include
+    Drivers/CMSIS/STM32L1xx_HAL_Driver/Inc
+    Drivers/STM32L1xx_HAL_Driver/Inc/Legacy
+    Drivers/Device/ST/STM32L1xx_HAL_Driver/Include
+    Drivers/Device/ST/STM32L1xx_HAL_Driver/Include/Legacy
+    Drivers/CMSIS/Device/ST/STM32L1xx/Include 
+    Drivers/CMSIS/Include
+    Middlewares/Third_Party/FreeRTOS/Source/include 
+    Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 
+    Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3
 )
 
 add_definitions(-DUSE_HAL_DRIVER -DSTM32L151xBA)
 
 file(GLOB_RECURSE SOURCES 
-"App/gpio/*.*"
-"App/nrf24/*.*"
-"App/nrf24/drivers/*.*"
-"App/logger/*.*"
-"App/sensors/*.*"
-"App/sensors/hall_sensor/*.*"
-"App/sensors/battery/*.*"
-"App/ws2812/*.*"
+    "App/gpio/*.*"
+    "App/nrf24/*.*"
+    "App/nrf24/drivers/*.*"
+    "App/logger/*.*"
+    "App/sensors/*.*"
+    "App/sensors/hall_sensor/*.*"
+    "App/sensors/battery/*.*"
+    "App/ws2812/*.*"
 
-"Core/*.*" 
-"Core/Src/*.*" 
-"startup/*.*" 
-"Middlewares/*.*" 
-"Drivers/*.*" 
-"Drivers/STM32L1xx_HAL_Driver/*.*"
+    "Core/*.*" 
+    "Core/Src/*.*" 
+    "startup/*.*" 
+    "Middlewares/*.*" 
+    "Drivers/*.*" 
+    "Drivers/STM32L1xx_HAL_Driver/*.*"
 )
 
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/Drivers/STM32L151CBTxA_FLASH.ld)
@@ -102,7 +102,6 @@ set(HEX_FILE ${CMAKE_SOURCE_DIR}/out/${PROJECT_NAME}.hex)
 set(BIN_FILE ${CMAKE_SOURCE_DIR}/out/${PROJECT_NAME}.bin)
 
 add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
-        COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${HEX_FILE}
-        COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${BIN_FILE}
-        COMMENT "Building ${HEX_FILE}
-Building ${BIN_FILE}")
+    COMMAND ${CMAKE_OBJCOPY} ARGS -O ihex ${PROJECT_NAME}.elf ${HEX_FILE}
+    COMMAND ${CMAKE_OBJCOPY} ARGS -O binary ${PROJECT_NAME}.elf ${BIN_FILE}
+    COMMENT "Building ${HEX_FILE} Building ${BIN_FILE}")

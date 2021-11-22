@@ -7,6 +7,16 @@ out/
 CmakeCache.txt
 ./rc_remote.map
 
+# Test junk
+Tests/bin
+Tests/CMakeFiles
+Tests/googletest
+Tests/lib
+Tests/CmakeCache.txt
+Tests/cmake_install.cmake
+Tests/Makefile
+Tests/utest
+
 # Vsc files
 .vscode/*.log
 # Prerequisites
@@ -62,3 +72,5 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+workspace.code-workspace
