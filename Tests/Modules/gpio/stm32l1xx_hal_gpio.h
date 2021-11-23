@@ -25,10 +25,9 @@ typedef struct
 {
   uint32_t MODER;        /*!< GPIO port mode register,      */
   uint32_t OTYPER;       /*!< GPIO port output type register,      */
-  uint32_t PUPDR;        /*!< GPIO port pull-up/pull-down register,      */
   uint32_t IDR;          /*!< GPIO port input data register, */              
   uint32_t ODR;          /*!< GPIO port output data register,  */          
-  uint32_t BSRR;         /*!< GPIO port bit set/reset registerBSRR, */    
+  uint32_t BSRR;         /*!< GPIO port bit set/reset registerBSRR, */
 } GPIO_TypeDef;
 
 typedef enum

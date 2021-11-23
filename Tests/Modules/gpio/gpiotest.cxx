@@ -17,7 +17,28 @@ public:
 };
 
 TEST_F(gpioAppTest, setValue) {
-    Gpio * pin = new Gpio{portAddr, 2};
+    uint16_t pinNumber = 4;
+    Gpio * pin = new Gpio{portAddr, pinNumber};
+    EXPECT_EQ(pin->GetPinNumber(), pinNumber);
+
     pin->Set();
-    EXPECT_EQ(portAddr->BSRR, 2);
+    EXPECT_EQ(portAddr->ODR, (1 << pinNumber)); 
+}
+
+TEST_F(gpioAppTest, resetValue) {
+    uint16_t pinNumber = 11;
+    Gpio * pin = new Gpio{portAddr, pinNumber};
+    pin->Set(1);
+
+    EXPECT_EQ(portAddr->ODR, (1 << pinNumber)); 
+    pin->Reset();
+    EXPECT_EQ(portAddr->ODR, (0 << pinNumber)) << "Value not reset"; 
+}
+
+TEST_F(gpioAppTest, pinDuplicate) {
+    uint16_t pinNumber = 7;
+    Gpio * pin = new Gpio{portAddr, pinNumber};
+    pin->Set();
+
+    EXPECT_EQ(portAddr->ODR, (1 << pinNumber)); 
 }

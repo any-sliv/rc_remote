@@ -59,6 +59,8 @@ public:
    * @retval Value of current pin state
    */
   bool Read(void);
+
+  uint32_t GetPinNumber(void);
 };
 
 #endif /* INC_GPIOAPP_H_ */

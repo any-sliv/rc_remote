@@ -45,6 +45,10 @@ bool Gpio::Read(void) {
   return (bool)HAL_GPIO_ReadPin(port, pin);
 }
 
+uint32_t Gpio::GetPinNumber(void) {
+  return pin;
+}
+
 #ifdef __cplusplus 
 } 
 #endif 
