@@ -4,38 +4,40 @@
  *  Created on: Oct 27, 2021
  *      Author: macsli
  */
-
+extern "C"
+{
 #include "stm32l1xx_hal.h"
+} // extern C close
+
 #include "analogRead.hpp"
 
-class SS49 : AnalogRead {
+class SS49 : AnalogRead
+{
 private:
-    const ADC_ChannelConfTypeDef channelConfig = {
-        ADC_CHANNEL_0,          /* channel */
-        (uint32_t) 1,           /* rank */
-        ADC_SAMPLETIME_48CYCLES /* conversionTimeout */
-    };
+    ADC_ChannelConfTypeDef channelConfig;
 
-    // Each sample colected once a milisecond
-    const int calibrationSamplingTime = 200;
+    // todo try to make it constant and assign value after init
+    int neutralThrottle = 0;
 
-    //todo try to make it constant and assign value after init
-    int neutralThrottle;
+public:
+    /**
+     * Initiate the sensor.
+     * @param channel configuration
+     */
+    SS49(ADC_ChannelConfTypeDef *channel);
 
     /**
      * Blocking function
      * @return Value of average throttle position measured
-     * in time given by <this>.calibrationSamplingTime * 1
+     * @param samplingPeriod period of samples gathering [ms]
+     * in time given by <this>.samplingPeriod * 1
+     * Calibration value is saved in variable "neutralThrottle"
      */
-    uint32_t CalibrateInitialPosition(void);
-
-public:
-    SS49();
+    void CalibrateInitialPosition(uint32_t samplingPeriod);
 
     /**
      * Return position of hall sensor.
      * @return 0 - neutral, negative values when braking, positive when accelerating
      */
     int GetPosition(void);
-
 };

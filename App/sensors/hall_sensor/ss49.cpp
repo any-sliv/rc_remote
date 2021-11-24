@@ -10,32 +10,38 @@
 
 extern ADC_HandleTypeDef hadc;
 
-SS49::SS49() {
-    neutralThrottle = (int)CalibrateInitialPosition();
+// todo add save in flash previous position and check if current calibration
+// todo is not much higher than previous position
+// todo but until you write to flash read and decide on write
+// todo to prevent often write cycles
+
+SS49::SS49(ADC_ChannelConfTypeDef *channel)
+{
+    channelConfig = *channel;
 }
 
-int SS49::GetPosition(void) {
-    return (GetAdcValue(&channelConfig) - neutralThrottle);
-}
+void SS49::CalibrateInitialPosition(uint32_t samplingPeriod)
+{
+    uint32_t *sample = new uint32_t(samplingPeriod);
+    uint32_t sum = 0;
 
-uint32_t SS49::CalibrateInitialPosition(void) {
-    std::vector<uint32_t> samplesVector;
-    
-    for(int i = 0; i < calibrationSamplingTime; i++) {
-        samplesVector.push_back(
-                    GetAdcValue(&channelConfig));
+    for (int i = 0; i < samplingPeriod; i++)
+    {
+        sample[i] = GetAdcValue(&channelConfig);
         HAL_Delay(1);
     }
+    // additional processing here. all samples ready
 
-    uint32_t sum;
-    for (auto && sample : samplesVector) {
-        sum += sample;
+    for (int i = 0; i < samplingPeriod; i++)
+    {
+        sum += sample[i];
     }
-    
-    return (sum / (uint32_t)samplesVector.size());
+    neutralThrottle = (int)(sum / samplingPeriod);
+
+    delete sample;
 }
 
-//todo add save in flash previous position and check if current calibration
-//todo is not much higher than previous position
-//todo but until you write to flash read and decide on write
-//todo to prevent often write cycles
+int SS49::GetPosition(void)
+{
+    return (int)((int)GetAdcValue(&channelConfig) - neutralThrottle);
+}

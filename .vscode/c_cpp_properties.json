@@ -7,6 +7,8 @@
                 "${workspaceFolder}/Core/**",
                 "${workspaceFolder}/Drivers/**",
                 "${workspaceFolder}/Middlewares/**",
+                "${workspaceFolder}/Tests/**",
+
                 "${workspaceFolder}/App/gpio",
                 "${workspaceFolder}/App/nrf24",
                 "${workspaceFolder}/App/nrf24/drivers",
@@ -15,6 +17,22 @@
                 "${workspaceFolder}/App/sensors/hall_sensor",
                 "${workspaceFolder}/App/sensors/battery",
                 "${workspaceFolder}/App/ws2812",
+
+                "${workspaceFolder}/Tests",
+                "${workspaceFolder}/Tests/Modules",
+                "${workspaceFolder}/Tests/Modules/gpio",
+                "${workspaceFolder}/Tests/Modules/hall_sensor",
+                //"${workspaceFolder}/Tests/Modules/logger",
+                //"${workspaceFolder}/Tests/Modules/radio",
+                //"${workspaceFolder}/Tests/Modules/ws2812",
+
+                "${workspaceFolder}/Tests/googletest",
+                "${workspaceFolder}/Tests/googletest/googletest/include",
+                "${workspaceFolder}/Tests/googletest/googletest/include/gtest",
+                "${workspaceFolder}/Tests/googletest/googletest/include/gtest/internal",
+                "${workspaceFolder}/Tests/googletest/googletest/include/gtest/internal/custom",
+                "${workspaceFolder}/Tests/googletest/googletest/src",
+                "${workspaceFolder}/Tests/googletest/googletest/test",
 
                 "${workspaceFolder}/Core/Inc",
                 "${workspaceFolder}/Drivers/STM32L1xx_HAL_Driver/Inc",

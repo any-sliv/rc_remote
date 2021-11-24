@@ -8,12 +8,11 @@
 #ifndef INC_GPIOAPP_H_
 #define INC_GPIOAPP_H_
 
-#include "stdint.h"
 #include "stm32l1xx_hal.h"
+#include "stdint.h"
 
 #define INIT_LOW  0
 #define INIT_HIGH 1
-
 
 enum Mode {
   INPUT,
@@ -30,12 +29,6 @@ class Gpio {
 private:
   uint16_t pin;
   GPIO_TypeDef *port;
-
-// GPIO_TypeDef *_port, uint32_t _pin, bool initState = 0,
-//            uint32_t mode = OUTPUT, uint32_t pull = NO_PULL
-
-// GPIO_TypeDef *_port, uint32_t _pin, bool initState, uint32_t mode,
-//       uint32_t pull
 
 public:
   /**
@@ -61,6 +54,13 @@ public:
 
   // Sets pin value to '0'
   void Reset(void);
+
+  /**
+   * @retval Value of current pin state
+   */
+  bool Read(void);
+
+  uint32_t GetPinNumber(void);
 };
 
 #endif /* INC_GPIOAPP_H_ */

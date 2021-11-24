@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Nov  4 18:14:49 2021
+# Make data base, printed on Mon Nov 22 19:34:24 2021
 
 # Variables
 
@@ -35,8 +35,9 @@ VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 63)
-CMAKE_BINARY_DIR = /Users/macsli/Documents/dev/engthesis/rc_remote
+CMAKE_BINARY_DIR = /Users/macsli/Documents/dev/engthesis/remote_thesis
 # makefile (from `Makefile', line 1)
+ 
 MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
@@ -45,13 +46,11 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # makefile (from `Makefile', line 35)
 MAKESILENT = -s
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/4r/7f9kwz_s6m710rsk41jpyrhc0000gp/T/vscode-ipc-0f525504-6e8f-4576-9a5c-2d957f440e7d.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/4r/7f9kwz_s6m710rsk41jpyrhc0000gp/T/vscode-ipc-e3e9bedd-f7d6-40d7-ac16-dfed45a11556.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
-# environment
-LaunchInstanceID = 84F76CE6-9592-4841-B198-F230917D8183
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -59,7 +58,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Wzbpn0TWoC/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.idC5mcmFAI/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -75,7 +74,7 @@ HOME = /Users/macsli
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/macsli/Library/Application Support/Code/CachedData/6cba118ac49a1b88332f312a8f67186f7f3c1643
+VSCODE_CODE_CACHE_PATH = /Users/macsli/Library/Application Support/Code/CachedData/3a6960b964327f0e3882ce18fcebd07ed191b316
 # environment
 LOGNAME = macsli
 # environment
@@ -91,7 +90,6 @@ XPC_FLAGS = 0x0
 # default
 MAKE = $(MAKE_COMMAND)
 # default
- 
 MAKECMDGOALS := all
 # environment
 SHLVL = 1
@@ -102,7 +100,7 @@ USER = macsli
 # makefile
 .DEFAULT_GOAL := default_target
 # makefile (from `Makefile', line 60)
-CMAKE_SOURCE_DIR = /Users/macsli/Documents/dev/engthesis/rc_remote
+CMAKE_SOURCE_DIR = /Users/macsli/Documents/dev/engthesis/remote_thesis
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -114,7 +112,7 @@ TMPDIR = /var/folders/4r/7f9kwz_s6m710rsk41jpyrhc0000gp/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/macsli/Library/Application Support/Code/1.61.2-main.sock
+VSCODE_IPC_HOOK = /Users/macsli/Library/Application Support/Code/1.62.2-main.sock
 # makefile
 MAKEFLAGS = sRrqp
 # environment
@@ -122,7 +120,7 @@ MFLAGS = -sRrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.14596108.14596114
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.18202409.18202415
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -137,8 +135,6 @@ MAKEFILES :=
 <F = $(notdir $<)
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a8
 # makefile (from `Makefile', line 51)
 CMAKE_COMMAND = /usr/local/Cellar/cmake/3.21.2/bin/cmake
 # automatic
@@ -152,9 +148,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 456
+VSCODE_PID = 24181
 # variable set hash-table stats:
-# Load=70/1024=7%, Rehash=0, Collisions=3/102=3%
+# Load=68/1024=7%, Rehash=0, Collisions=3/100=3%
 
 # Pattern-specific Variable Values
 
@@ -223,6 +219,7 @@ Core/Src/gpio.c.i:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
+ 
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 361):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/gpio.c.i
@@ -236,7 +233,6 @@ App/ws2812/ws2812App.s: App/ws2812/ws2812App.cpp.s
 
 Core/Src/gpio.s: Core/Src/gpio.c.s
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -423,7 +419,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.s:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 801):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.s
- 
 	
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.i:
@@ -432,6 +427,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.i:
 #  File does not exist.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 625):
+ 
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.i
 	
 
@@ -445,9 +441,9 @@ all: cmake_check_build_system
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  commands to execute (from `Makefile', line 90):
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles /Users/macsli/Documents/dev/engthesis/rc_remote//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macsli/Documents/dev/engthesis/remote_thesis/CMakeFiles /Users/macsli/Documents/dev/engthesis/remote_thesis//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macsli/Documents/dev/engthesis/rc_remote/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macsli/Documents/dev/engthesis/remote_thesis/CMakeFiles 0
 	
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.i:
@@ -522,9 +518,9 @@ Middlewares/Third_Party/FreeRTOS/Source/queue.obj: Middlewares/Third_Party/FreeR
 #  File does not exist.
 #  File has not been updated.
 
-.PHONY: default_target cmake_force rebuild_cache rebuild_cache/fast edit_cache edit_cache/fast all clean clean/fast preinstall preinstall/fast depend rc_remote.elf rc_remote.elf/fast App/gpio/gpioApp.obj App/gpio/gpioApp.cpp.obj App/gpio/gpioApp.i App/gpio/gpioApp.cpp.i App/gpio/gpioApp.s App/gpio/gpioApp.cpp.s App/logger/logger.obj App/logger/logger.cpp.obj App/logger/logger.i App/logger/logger.cpp.i App/logger/logger.s App/logger/logger.cpp.s App/nrf24/drivers/nrf24.obj App/nrf24/drivers/nrf24.c.obj App/nrf24/drivers/nrf24.i App/nrf24/drivers/nrf24.c.i App/nrf24/drivers/nrf24.s App/nrf24/drivers/nrf24.c.s App/nrf24/radioApp.obj App/nrf24/radioApp.cpp.obj App/nrf24/radioApp.i App/nrf24/radioApp.cpp.i App/nrf24/radioApp.s App/nrf24/radioApp.cpp.s App/sensors/hall_sensor/ss49.obj App/sensors/hall_sensor/ss49.cpp.obj App/sensors/hall_sensor/ss49.i App/sensors/hall_sensor/ss49.cpp.i App/sensors/hall_sensor/ss49.s App/sensors/hall_sensor/ss49.cpp.s App/ws2812/ws2812App.obj App/ws2812/ws2812App.cpp.obj App/ws2812/ws2812App.i App/ws2812/ws2812App.cpp.i App/ws2812/ws2812App.s App/ws2812/ws2812App.cpp.s Core/Src/adc.obj Core/Src/adc.c.obj Core/Src/adc.i Core/Src/adc.c.i Core/Src/adc.s Core/Src/adc.c.s Core/Src/dma.obj Core/Src/dma.c.obj Core/Src/dma.i Core/Src/dma.c.i Core/Src/dma.s Core/Src/dma.c.s Core/Src/freertos.obj Core/Src/freertos.c.obj Core/Src/freertos.i Core/Src/freertos.c.i Core/Src/freertos.s Core/Src/freertos.c.s Core/Src/gpio.obj Core/Src/gpio.c.obj Core/Src/gpio.i Core/Src/gpio.c.i Core/Src/gpio.s Core/Src/gpio.c.s Core/Src/main.obj Core/Src/main.cpp.obj Core/Src/main.i Core/Src/main.cpp.i Core/Src/main.s Core/Src/main.cpp.s Core/Src/spi.obj Core/Src/spi.c.obj Core/Src/spi.i Core/Src/spi.c.i Core/Src/spi.s Core/Src/spi.c.s Core/Src/stm32l1xx_hal_msp.obj Core/Src/stm32l1xx_hal_msp.c.obj Core/Src/stm32l1xx_hal_msp.i Core/Src/stm32l1xx_hal_msp.c.i Core/Src/stm32l1xx_hal_msp.s Core/Src/stm32l1xx_hal_msp.c.s Core/Src/stm32l1xx_hal_timebase_tim.obj Core/Src/stm32l1xx_hal_timebase_tim.c.obj Core/Src/stm32l1xx_hal_timebase_tim.i Core/Src/stm32l1xx_hal_timebase_tim.c.i Core/Src/stm32l1xx_hal_timebase_tim.s Core/Src/stm32l1xx_hal_timebase_tim.c.s Core/Src/stm32l1xx_it.obj Core/Src/stm32l1xx_it.c.obj Core/Src/stm32l1xx_it.i Core/Src/stm32l1xx_it.c.i Core/Src/stm32l1xx_it.s Core/Src/stm32l1xx_it.c.s Core/Src/syscalls.obj Core/Src/syscalls.c.obj Core/Src/syscalls.i Core/Src/syscalls.c.i Core/Src/syscalls.s Core/Src/syscalls.c.s Core/Src/system_stm32l1xx.obj Core/Src/system_stm32l1xx.c.obj Core/Src/system_stm32l1xx.i Core/Src/system_stm32l1xx.c.i Core/Src/system_stm32l1xx.s Core/Src/system_stm32l1xx.c.s Core/Src/usart.obj Core/Src/usart.c.obj Core/Src/usart.i Core/Src/usart.c.i Core/Src/usart.s Core/Src/usart.c.s Core/Src/usb.obj Core/Src/usb.c.obj Core/Src/usb.i Core/Src/usb.c.i Core/Src/usb.s Core/Src/usb.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.i Drivers/STM 
-32L1xx_HAL_Driver/Src/stm32l1xx_hal.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.s Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.obj Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.i Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.i Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.s Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.s Middlewares/Third_Party/FreeRTOS/Source/croutine.obj Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj Middlewares/Third_Party/FreeRTOS/Source/croutine.i Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i Middlewares/Third_Party/FreeRTOS/Source/croutine.s Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s Middlewares/Third_Party/FreeRTOS/Source/event_groups.obj Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj Middlewares/Third_Party/FreeRTOS/Source/event_groups.i Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i Middlewares/Third_Party/FreeRTOS/Source/event_groups.s Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s Middlewares/Third_Party/FreeRTOS/Source/list.obj Middlewares/Third_Party/FreeRTOS/Source/list.c.obj Middlewares/Third_Party/FreeRTOS/Source/list.i Middlewares/Third_Party/FreeRTOS/Source/list.c.i Middlewares/Third_Party/FreeRTOS/Source/list.s Middlewares/Thir 
-d_Party/FreeRTOS/Source/list.c.s Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.obj Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.i Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.s Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.obj Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.i Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.s Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s Middlewares/Third_Party/FreeRTOS/Source/queue.obj Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj Middlewares/Third_Party/FreeRTOS/Source/queue.i Middlewares/Third_Party/FreeRTOS/Source/queue.c.i Middlewares/Third_Party/FreeRTOS/Source/queue.s Middlewares/Third_Party/FreeRTOS/Source/queue.c.s Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.obj Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.i Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.s Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.s Middlewares/Third_Party/FreeRTOS/Source/tasks.obj Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj Middlewares/Third_Party/FreeRTOS/Source/tasks.i Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i Middlewares/Third_Party/FreeRTOS/Source/tasks.s Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s Middlewares/Third_Party/FreeRTOS/Source/timers.obj Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj Middlewares/Third_Party/FreeRTOS/Source/timers.i Middlewares/Third_Party/FreeRTOS/Source/timers.c.i Middlewares/Third_Party/FreeRTOS/Source/timers.s Middlewares/Third_Party/FreeRTOS/Source/timers.c.s startup/startup_stm32l151xba.obj startup/startup_stm32l151xba.s.obj help cmake_check_build_system
+.PHONY: default_target cmake_force rebuild_cache rebuild_cache/fast edit_cache edit_cache/fast all clean clean/fast preinstall preinstall/fast depend rc_remote.elf rc_remote.elf/fast App/gpio/gpioApp.obj App/gpio/gpioApp.cpp.obj App/gpio/gpioApp.i App/gpio/gpioApp.cpp.i App/gpio/gpioApp.s App/gpio/gpioApp.cpp.s App/logger/logger.obj App/logger/logger.cpp.obj App/logger/logger.i App/logger/logger.cpp.i App/logger/logger.s App/logger/logger.cpp.s App/nrf24/drivers/nrf24.obj App/nrf24/drivers/nrf24.c.obj App/nrf24/drivers/nrf24.i App/nrf24/drivers/nrf24.c.i App/nrf24/drivers/nrf24.s App/nrf24/drivers/nrf24.c.s App/nrf24/radioApp.obj App/nrf24/radioApp.cpp.obj App/nrf24/radioApp.i App/nrf24/radioApp.cpp.i App/nrf24/radioApp.s App/nrf24/radioApp.cpp.s App/sensors/hall_sensor/ss49.obj App/sensors/hall_sensor/ss49.cpp.obj App/sensors/hall_sensor/ss49.i App/sensors/hall_sensor/ss49.cpp.i App/sensors/hall_sensor/ss49.s App/sensors/hall_sensor/ss49.cpp.s App/ws2812/ws2812App.obj App/ws2812/ws2812App.cpp.obj App/ws2812/ws2812App.i App/ws2812/ws2812App.cpp.i App/ws2812/ws2812App.s App/ws2812/ws2812App.cpp.s Core/Src/adc.obj Core/Src/adc.c.obj Core/Src/adc.i Core/Src/adc.c.i Core/Src/adc.s Core/Src/adc.c.s Core/Src/dma.obj Core/Src/dma.c.obj Core/Src/dma.i Core/Src/dma.c.i Core/Src/dma.s Core/Src/dma.c.s Core/Src/freertos.obj Core/Src/freertos.c.obj Core/Src/freertos.i Core/Src/freertos.c.i Core/Src/freertos.s Core/Src/freertos.c.s Core/Src/gpio.obj Core/Src/gpio.c.obj Core/Src/gpio.i Core/Src/gpio.c.i Core/Src/gpio.s Core/Src/gpio.c.s Core/Src/main.obj Core/Src/main.cpp.obj Core/Src/main.i Core/Src/main.cpp.i Core/Src/main.s Core/Src/main.cpp.s Core/Src/spi.obj Core/Src/spi.c.obj Core/Src/spi.i Core/Src/spi.c.i Core/Src/spi.s Core/Src/spi.c.s Core/Src/stm32l1xx_hal_msp.obj Core/Src/stm32l1xx_hal_msp.c.obj Core/Src/stm32l1xx_hal_msp.i Core/Src/stm32l1xx_hal_msp.c.i Core/Src/stm32l1xx_hal_msp.s Core/Src/stm32l1xx_hal_msp.c.s Core/Src/stm32l1xx_hal_timebase_tim.obj Core/Src/stm32l1xx_hal_timebase_tim.c.obj Core/Src/stm32l1xx_hal_timebase_tim.i Core/Src/stm32l1xx_hal_timebase_tim.c.i Core/Src/stm32l1xx_hal_timebase_tim.s Core/Src/stm32l1xx_hal_timebase_tim.c.s Core/Src/stm32l1xx_it.obj Core/Src/stm32l1xx_it.c.obj Core/Src/stm32l1xx_it.i Core/Src/stm32l1xx_it.c.i Core/Src/stm32l1xx_it.s Core/Src/stm32l1xx_it.c.s Core/Src/syscalls.obj Core/Src/syscalls.c.obj Core/Src/syscalls.i Core/Src/syscalls.c.i Core/Src/syscalls.s Core/Src/syscalls.c.s Core/Src/system_stm32l1xx.obj Core/Src/system_stm32l1xx.c.obj Core/Src/system_stm32l1xx.i Core/Src/system_stm32l1xx.c.i Core/Src/system_stm32l1xx.s Core/Src/system_stm32l1xx.c.s Core/Src/usart.obj Core/Src/usart.c.obj Core/Src/usart.i Core/Src/usart.c.i Core/Src/usart.s Core/Src/usart.c.s Core/Src/usb.obj Core/Src/usb.c.obj Core/Src/usb.i Core/Src/usb.c.i Core/Src/usb.s Core/Src/usb.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.i Drivers/STM32L1xx_HAL_Driver/ 
+Src/stm32l1xx_hal_cortex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.obj Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.i Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.s Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c.s Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.obj Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.i Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.i Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.s Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.s Middlewares/Third_Party/FreeRTOS/Source/croutine.obj Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj Middlewares/Third_Party/FreeRTOS/Source/croutine.i Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i Middlewares/Third_Party/FreeRTOS/Source/croutine.s Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s Middlewares/Third_Party/FreeRTOS/Source/event_groups.obj Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj Middlewares/Third_Party/FreeRTOS/Source/event_groups.i Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i Middlewares/Third_Party/FreeRTOS/Source/event_groups.s Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s Middlewares/Third_Party/FreeRTOS/Source/list.obj Middlewares/Third_Party/FreeRTOS/Source/list.c.obj Middlewares/Third_Party/FreeRTOS/Source/list.i Middlewares/Third_Party/FreeRTOS/Source/list.c.i Middlewares/Third_Party/FreeRTOS/Source/list.s Middlewares/Third_Party/FreeRTOS/Source/list.c.s Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.obj Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.obj Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.i Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.s Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.obj Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.i Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.s Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s Middlewares/Third_Party/FreeRTOS/Source/queue.obj Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj Middlewares/Third_Party/FreeRTOS/Source/queue.i Middlewares/Third 
+_Party/FreeRTOS/Source/queue.c.i Middlewares/Third_Party/FreeRTOS/Source/queue.s Middlewares/Third_Party/FreeRTOS/Source/queue.c.s Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.obj Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.i Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.s Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.s Middlewares/Third_Party/FreeRTOS/Source/tasks.obj Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj Middlewares/Third_Party/FreeRTOS/Source/tasks.i Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i Middlewares/Third_Party/FreeRTOS/Source/tasks.s Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s Middlewares/Third_Party/FreeRTOS/Source/timers.obj Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj Middlewares/Third_Party/FreeRTOS/Source/timers.i Middlewares/Third_Party/FreeRTOS/Source/timers.c.i Middlewares/Third_Party/FreeRTOS/Source/timers.s Middlewares/Third_Party/FreeRTOS/Source/timers.c.s startup/startup_stm32l151xba.obj startup/startup_stm32l151xba.s.obj help cmake_check_build_system
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -674,7 +670,6 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.obj: Middlewar
 #  File has not been updated.
 
 preinstall/fast:
- 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -702,12 +697,12 @@ App/nrf24/drivers/nrf24.c.obj:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
+ 
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 185):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/drivers/nrf24.c.obj
 	
 
- 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c.obj
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -809,7 +804,6 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.obj: Middlewares/Third_Party/Free
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.obj: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.obj
 #  Phony target (prerequisite of .PHONY).
@@ -864,6 +858,7 @@ Core/Src/stm32l1xx_hal_msp.i: Core/Src/stm32l1xx_hal_msp.c.i
 #  File does not exist.
 #  File has not been updated.
 
+ 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.i:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -876,7 +871,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c.i:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-11-03 21:43:19
+#  Last modified 2021-11-20 16:08:54
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -946,7 +941,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.obj:
 	
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c.i:
- 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -1038,6 +1032,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c.s
 	
 
+ 
 Core/Src/stm32l1xx_hal_timebase_tim.c.s:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -1149,7 +1144,6 @@ Core/Src/main.cpp.obj:
 #  File does not exist.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 377):
- 
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Core/Src/main.cpp.obj
 	
 
@@ -1234,6 +1228,7 @@ Middlewares/Third_Party/FreeRTOS/Source/queue.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.s
 	
 
+ 
 cmake_check_build_system:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -1366,7 +1361,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.s: Drivers/STM32L1xx_HAL_D
 #  File has not been updated.
 
 Middlewares/Third_Party/FreeRTOS/Source/croutine.s: Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s
- 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -1402,7 +1396,6 @@ help:
 	@echo "... App/nrf24/drivers/nrf24.s"
 	@echo "... App/nrf24/radioApp.obj"
 	@echo "... App/nrf24/radioApp.i"
- 
 	@echo "... App/nrf24/radioApp.s"
 	@echo "... App/sensors/hall_sensor/ss49.obj"
 	@echo "... App/sensors/hall_sensor/ss49.i"
@@ -1425,6 +1418,7 @@ help:
 	@echo "... Core/Src/main.obj"
 	@echo "... Core/Src/main.i"
 	@echo "... Core/Src/main.s"
+ 
 	@echo "... Core/Src/spi.obj"
 	@echo "... Core/Src/spi.i"
 	@echo "... Core/Src/spi.s"
@@ -1536,7 +1530,6 @@ help:
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.obj"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.i"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.s"
- 
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/tasks.obj"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/tasks.i"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/tasks.s"
@@ -1568,6 +1561,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.s:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
+ 
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 1017):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c.s
@@ -1666,7 +1660,6 @@ Core/Src/usb.i: Core/Src/usb.c.i
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.i: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c.i
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
- 
 #  File does not exist.
 #  File has not been updated.
 
@@ -1718,6 +1711,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.s: Drivers/STM32L1xx_HAL_Dri
 #  File has not been updated.
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c.obj:
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -1761,7 +1755,6 @@ Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s:
 #  commands to execute (from `Makefile', line 1161):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s
 	
- 
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c.s:
 #  Phony target (prerequisite of .PHONY).
@@ -1855,6 +1848,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 #  commands to execute (from `Makefile', line 817):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c.i
 	
@@ -1918,7 +1912,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 #  commands to execute (from `Makefile', line 1025):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.obj
 	
@@ -1989,6 +1982,7 @@ Core/Src/gpio.i: Core/Src/gpio.c.i
 #  File does not exist.
 #  File has not been updated.
 
+ 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.i:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -2009,7 +2003,6 @@ App/sensors/hall_sensor/ss49.cpp.s:
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.s: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c.s
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -2106,7 +2099,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 #  commands to execute (from `Makefile', line 1033):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c.i
 	
@@ -2123,6 +2115,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c.i:
 edit_cache/fast: edit_cache
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
+ 
 #  File does not exist.
 #  File has not been updated.
 
@@ -2225,7 +2218,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c.obj
 	
 
- 
 Core/Src/system_stm32l1xx.c.obj:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -2261,6 +2253,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.s:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 #  commands to execute (from `Makefile', line 921):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.s
 	
@@ -2334,7 +2327,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.obj: Drivers/STM32L1xx_HAL_D
 #  File does not exist.
 #  File has not been updated.
 
- 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c.obj:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -2393,6 +2385,7 @@ Middlewares/Third_Party/FreeRTOS/Source/list.obj: Middlewares/Third_Party/FreeRT
 #  File has not been updated.
 
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c.s:
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -2445,7 +2438,6 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.s:
 #  commands to execute (from `Makefile', line 993):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c.s
 	
- 
 
 Core/Src/main.i: Core/Src/main.cpp.i
 #  Phony target (prerequisite of .PHONY).
@@ -2541,6 +2533,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.s: Drivers/STM32L1xx_HAL_D
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
+ 
 #  File has not been updated.
 
 App/nrf24/radioApp.cpp.i:
@@ -2549,7 +2542,6 @@ App/nrf24/radioApp.cpp.i:
 #  File does not exist.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 217):
- 
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rc_remote.elf.dir/build.make CMakeFiles/rc_remote.elf.dir/App/nrf24/radioApp.cpp.i
 	
 
@@ -2639,7 +2631,6 @@ Core/Src/usb.obj: Core/Src/usb.c.obj
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 
 Middlewares/Third_Party/FreeRTOS/Source/list.c.s:
 #  Phony target (prerequisite of .PHONY).
@@ -2699,6 +2690,7 @@ Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.i: Drivers/STM32L1xx_HAL_Driv
 #  File has not been updated.
 
 Middlewares/Third_Party/FreeRTOS/Source/event_groups.obj: Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -2740,7 +2732,6 @@ Middlewares/Third_Party/FreeRTOS/Source/list.s: Middlewares/Third_Party/FreeRTOS
 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c.i:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
- 
 #  File does not exist.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 913):
@@ -2838,11 +2829,11 @@ rebuild_cache:
 # No general (`VPATH' variable) search path.
 
 # # of strings in strcache: 1
- 
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+ 
 
-# Finished Make data base on Thu Nov  4 18:14:49 2021
+# Finished Make data base on Mon Nov 22 19:34:24 2021
 
  
