@@ -6,7 +6,7 @@
  */
 
 #include "adc.h"
-#include "stm32l1xx_hal_adc.h"
+#include "stm32l1xx_hal.h"
 
 extern ADC_HandleTypeDef hadc;
 

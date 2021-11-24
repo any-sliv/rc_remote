@@ -11,14 +11,17 @@ include_directories(
     #${WORKSPACE_PATH}/App/nrf24
     #${WORKSPACE_PATH}/App/nrf24/drivers
     #${WORKSPACE_PATH}/App/logger
-    #${WORKSPACE_PATH}/App/sensors
-    #${WORKSPACE_PATH}/App/sensors/hall_sensor
+    ${WORKSPACE_PATH}/App/sensors
+    ${WORKSPACE_PATH}/App/sensors/hall_sensor
     #${WORKSPACE_PATH}/App/sensors/battery
     #${WORKSPACE_PATH}/App/ws2812
 
     Fixtures
     Modules
+    Modules/HAL
     Modules/gpio
+    Modules/hall_sensor
+    
     googletest
     googletest/include/gtest
     ${GTEST_INCLUDE_DIRS}
@@ -32,13 +35,15 @@ file(GLOB_RECURSE SOURCES
     #${WORKSPACE_PATH}/App/nrf24/*.*
     #${WORKSPACE_PATH}/App/nrf24/drivers/*.*
     #${WORKSPACE_PATH}/App/logger/*.*
-    #${WORKSPACE_PATH}/App/sensors/*.*
-    #${WORKSPACE_PATH}/App/sensors/hall_sensor/*.*
+    ${WORKSPACE_PATH}/App/sensors/*.*
+    ${WORKSPACE_PATH}/App/sensors/hall_sensor/*.*
     #${WORKSPACE_PATH}/App/sensors/battery/*.*
     #${WORKSPACE_PATH}/App/ws2812/*.*
     Fixtures/*.*
     Modules/*.*
+    Modules/HAL/*.*
     Modules/gpio/*.*
+    Modules/hall_sensor/*.*
 )
 
 add_subdirectory(googletest)

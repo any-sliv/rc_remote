@@ -2,6 +2,7 @@
 #define __STM32L1xx_HAL_GPIO_H
 
 #include "stdint.h"
+#include "stm32l1xx_hal_def.h"
 
 typedef struct
 {
