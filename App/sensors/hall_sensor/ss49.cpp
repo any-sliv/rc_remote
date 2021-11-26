@@ -22,23 +22,25 @@ SS49::SS49(ADC_ChannelConfTypeDef *channel)
 
 void SS49::CalibrateInitialPosition(uint32_t samplingPeriod)
 {
-    uint32_t *sample = new uint32_t(samplingPeriod);
+    std::vector <uint32_t> sample;
     uint32_t sum = 0;
 
-    for (int i = 0; i < samplingPeriod; i++)
-    {
-        sample[i] = GetAdcValue(&channelConfig);
-        HAL_Delay(1);
-    }
-    // additional processing here. all samples ready
+    // Discard x/8 worst samples
+    uint8_t discardSamples = samplingPeriod >> 3;
 
-    for (int i = 0; i < samplingPeriod; i++)
-    {
-        sum += sample[i];
+    for (int i = 0; i < samplingPeriod; i++) {
+        sample.push_back(GetAdcValue(&channelConfig));
     }
-    neutralThrottle = (int)(sum / samplingPeriod);
+    // Removing lowest and highest samples 
+    // Half of discard samples, because it = min+max 
+    for(int i = 0; i < (discardSamples >> 1); i++) {
+        sample.erase(std::min_element(sample.begin(), sample.end()));
+        sample.erase(std::max_element(sample.begin(), sample.end()));
+    }
 
-    delete sample;
+    for (auto &n : sample) sum += n;
+    
+    neutralThrottle = (int)(sum / sample.size());
 }
 
 int SS49::GetPosition(void)
