@@ -4,6 +4,8 @@ extern "C" {
 #include <chrono>
 #include <thread>
 
+ADC_HandleTypeDef hadc;
+
 uint32_t adcReturnValue = 0;
 bool conversionFlag = false;
 
@@ -15,8 +17,7 @@ void setAdcReturnValue(uint32_t val) {
     adcReturnValue = val;
 }
 
-void HAL_Delay(int t) {
-}
+void HAL_Delay(int t) {};
 
 void MX_ADC_Init(void) {};
 

@@ -5,35 +5,45 @@
  *      Author: macsli
  */
 
-#include "stm32l1xx_hal.h"
+extern "C" {
 #include "adc.h"
+#include "gpio.h"
+#include "stm32l1xx_hal.h"
+} // extern C close
 #include "analogRead.hpp"
+#include "gpioApp.hpp"
 
 class Battery : AnalogRead {
 private:
-    const ADC_ChannelConfTypeDef channelConfig = {
-        ADC_CHANNEL_1,          /* channel */
-        (uint32_t) 2,           /* rank */
-        ADC_SAMPLETIME_48CYCLES /* conversionTimeout */
-    };
+    Gpio *pinChrgEn;    // charge enable
+    Gpio *pinChrg;      // read charge state
+    Gpio *pinStdby;     // read charge state
+    ADC_ChannelConfTypeDef channelConfig;
 
     // As a Battery Capacity
-    const float bC [11] =   {3.5, 3.57, 3.64, 3.71, 3.78, 
-                            3.85, 3.92, 3.99, 4.06, 4.13, 4.2};
-
-    float adcValueToVoltage(uint32_t val) {
-        return (float)((4095 * 3.3) / val);
-    }
-
+    const float bC [11] =   {3.6, 3.65, 3.69, 3.74, 3.8, 
+                            3.84, 3.87, 3.95, 4.02, 4.10, 4.2};
 public:
+    /**
+     * @param channel pointer to ADC channel configuration structure
+     * @param gpioAddr has default value, use only for testing!
+     * Warning: all pins within are initialized with one default PORTx address
+     * If they differ, introduce new default arguments
+     */
+    Battery(ADC_ChannelConfTypeDef *channel, 
+            GPIO_TypeDef * portAddr = CHARGER_ENABLE_GPIO_Port);
+
+    float adcValueToVoltage(uint32_t val);
+
+    enum ChargeState {
+        CHARGING,
+        FULL
+    };
+
     /**
      * @return Percentage value of battery. '0' or multiple of 10
      */
-    uint8_t BatteryPercent(void) {
-        float adcVal = adcValueToVoltage(GetAdcValue(&channelConfig));
+    uint8_t GetPercent(void);
 
-        for(uint8_t i = 0; i < 11; i++) {
-            if((adcVal > bc[i]) && (adcVal < bc[i + 1])) return i * 10;
-        }
-    }
+    ChargeState IsCharging(void);
 };

@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "ss49.hpp"
 
-ADC_HandleTypeDef hadc;
+extern ADC_HandleTypeDef hadc;
 
 class hallSensorTest : public ::testing::Test {
 public:
@@ -17,6 +17,9 @@ public:
     SS49 * sensor;
     
     void SetUp() override {
+        // Clear hadc struct if previously initialized
+        ADC_HandleTypeDef xhadc;
+        hadc = xhadc;
         setConversionFlag(true);
         sensor = new SS49(&channelConfig);
     }

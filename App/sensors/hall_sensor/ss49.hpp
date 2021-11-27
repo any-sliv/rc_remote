@@ -18,7 +18,6 @@ private:
 
     // todo try to make it constant and assign value after init
     int neutralThrottle = 0;
-
 public:
     /**
      * Initiate the sensor.
