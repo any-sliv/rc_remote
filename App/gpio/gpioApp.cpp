@@ -5,16 +5,14 @@
  *      Author: macsli
  */
 
-#ifdef __cplusplus 
-extern "C" { 
-#endif 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include "gpioApp.hpp"
 
-
-Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, 
-            bool initState, uint32_t mode,
-      uint32_t pull) {
+Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState, uint32_t mode,
+           uint32_t pull) {
   pin = _pin;
   port = _port;
 
@@ -29,26 +27,18 @@ Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin,
   Set(initState);
 }
 
-void Gpio::Set(void) { 
-  HAL_GPIO_WritePin(port, pin, (GPIO_PinState)1U); 
-}
+void Gpio::Set(void) { HAL_GPIO_WritePin(port, pin, (GPIO_PinState)1U); }
 
 void Gpio::Set(bool value) {
   HAL_GPIO_WritePin(port, pin, (GPIO_PinState)value);
 }
 
-void Gpio::Reset(void) { 
-  HAL_GPIO_WritePin(port, pin, (GPIO_PinState)0); 
-}
+void Gpio::Reset(void) { HAL_GPIO_WritePin(port, pin, (GPIO_PinState)0); }
 
-bool Gpio::Read(void) {
-  return (bool)HAL_GPIO_ReadPin(port, pin);
-}
+bool Gpio::Read(void) { return (bool)HAL_GPIO_ReadPin(port, pin); }
 
-uint32_t Gpio::GetPinNumber(void) {
-  return pin;
-}
+uint32_t Gpio::GetPinNumber(void) { return pin; }
 
-#ifdef __cplusplus 
-} 
-#endif 
+#ifdef __cplusplus
+}
+#endif

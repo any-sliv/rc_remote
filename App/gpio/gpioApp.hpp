@@ -8,10 +8,10 @@
 #ifndef INC_GPIOAPP_H_
 #define INC_GPIOAPP_H_
 
-#include "stm32l1xx_hal.h"
 #include "stdint.h"
+#include "stm32l1xx_hal.h"
 
-#define INIT_LOW  0
+#define INIT_LOW 0
 #define INIT_HIGH 1
 
 enum Mode {
@@ -26,11 +26,11 @@ enum Pull {
 };
 
 class Gpio {
-private:
+ private:
   uint16_t pin;
   GPIO_TypeDef *port;
 
-public:
+ public:
   /**
    * Gpio class constructor. Instantize if want to
    * initialize GPIO pin.
@@ -42,7 +42,7 @@ public:
    * @param pull pull type
    */
   Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState = 0,
-           uint32_t mode = OUTPUT, uint32_t pull = NO_PULL);
+       uint32_t mode = OUTPUT, uint32_t pull = NO_PULL);
 
   // Sets pin value to '1'
   void Set(void);
