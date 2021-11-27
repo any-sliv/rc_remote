@@ -13,7 +13,7 @@ include_directories(
     #${WORKSPACE_PATH}/App/logger
     ${WORKSPACE_PATH}/App/sensors
     ${WORKSPACE_PATH}/App/sensors/hall_sensor
-    #${WORKSPACE_PATH}/App/sensors/battery
+    ${WORKSPACE_PATH}/App/sensors/battery
     #${WORKSPACE_PATH}/App/ws2812
 
     Fixtures
@@ -21,6 +21,7 @@ include_directories(
     Modules/HAL
     Modules/gpio
     Modules/hall_sensor
+    Modules/battery
     
     googletest
     googletest/include/gtest
@@ -37,13 +38,14 @@ file(GLOB_RECURSE SOURCES
     #${WORKSPACE_PATH}/App/logger/*.*
     ${WORKSPACE_PATH}/App/sensors/*.*
     ${WORKSPACE_PATH}/App/sensors/hall_sensor/*.*
-    #${WORKSPACE_PATH}/App/sensors/battery/*.*
+    ${WORKSPACE_PATH}/App/sensors/battery/*.*
     #${WORKSPACE_PATH}/App/ws2812/*.*
     Fixtures/*.*
     Modules/*.*
     Modules/HAL/*.*
     Modules/gpio/*.*
     Modules/hall_sensor/*.*
+    Modules/battery/*.*
 )
 
 add_subdirectory(googletest)
