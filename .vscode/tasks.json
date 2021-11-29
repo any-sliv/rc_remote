@@ -4,9 +4,77 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "thetaskboi",
+            "label": "Build",
+            "group": "build",
             "type": "shell",
-            "command": "echo 'Hello'"
+            "command": "make",
+            "args": ["-j4"]
+        },
+        {
+        "label": "CMake",
+            "group": "build",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["."]
+        },
+        {
+            "label": "Build clean",
+            "group": "build",
+            "command": "make",
+            "args": ["clean"]
+        },
+        {
+            "label": "Build all",
+            "group": "build",
+            "dependsOrder": "sequence",
+            "command": "echo \"Build all!\"",
+            "dependsOn": ["CMake", "Build"]
+        },
+        {
+            "label": "Test googletest/CMake",
+            "group": "test",
+            "command": "cmake",
+            "args": ["."],
+            "options": {
+                "cwd": "${workspaceFolder}/Tests/googletest"
+            }
+        },
+        {
+            "label": "Test googletest/make",
+            "group": "test",
+            "command": "make",
+            "args": ["-j4"],
+            "options": {
+                "cwd": "${workspaceFolder}/Tests/googletest"
+            }
+        },
+        {
+            "label": "Test CMake",
+            "group": "test",
+            "command": "cmake",
+            "args": ["."],
+            "options": {
+                "cwd": "${workspaceFolder}/Tests"
+            }
+        },
+        {
+            "label": "Test make",
+            "group": "test",
+            "command": "make",
+            "args": ["-j4"],
+            "options": {
+                "cwd": "${workspaceFolder}/Tests"
+            }
+        },
+        {
+            "label": "Test build and run",
+            "group": "test",
+            "command": "./utest",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Test googletest/CMake", "Test googletest/make", "Test CMake", "Test make"],
+            "options": {
+                "cwd": "${workspaceFolder}/Tests"
+            }
         }
     ]
 }

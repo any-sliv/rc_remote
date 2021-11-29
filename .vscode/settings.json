@@ -6,6 +6,8 @@
         "statusBar.noFolderBackground": "#212121",
         "statusBar.debuggingBackground": "#263238"
     },
+    "cortex-debug.stutilPath": "~/dev/stlink/bin/st-util",
+    "cortex-debug.gdbPath": "/usr/bin/gdb-multiarch",
     "cmake.configureOnOpen": true,
     "files.associations": {
         "stdbool.h": "c",
