@@ -10,17 +10,34 @@
 
 image: gcc
 
+stages:
+    - .pre
+    - build
+    - test
+    # - deploy
+
+before_script:
+    - sudo apt-get update --yes
+    - sudo apt-get install --yes cmake
+    - sudo apt-get install --yes gcc-arm-none-eabi
+    - sudo apt-get install clang-format
+
+    # clang-formatting
+    - find App/ -iname '*.h' -o -iname '*.c' | xargs clang-format -i
+    - find App/ -iname '*.hpp' -o -iname '*.cpp' | xargs clang-format -i
+    - find Tests/Modules -iname '*.h' -o -iname '*.c' | xargs clang-format -i
+    - find Tests/Modules -iname '*.hpp' -o -iname '*.cpp' | xargs clang-format -i
+    - find Tests/Modules -iname '*.hpp' -o -iname '*.cxx' | xargs clang-format -i
+
 build:
     tags:
     - raspberry
     rules:
-    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "dev"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    #- if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "dev"'
     stage: build
 
-    #before_script:
-    #- sudo apt-get update --yes
-    #- sudo apt-get install --yes cmake
-    #- sudo apt-get install --yes gcc-arm-none-eabi
+
     script:
     - mkdir build
     - mkdir out
