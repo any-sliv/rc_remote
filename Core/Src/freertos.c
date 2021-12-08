@@ -49,42 +49,38 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-/* Definitions for defaultTask */
-osThreadId_t defaultTaskHandle;
-const osThreadAttr_t defaultTask_attributes = {
-  .name = "defaultTask",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for radio */
-osThreadId_t radioHandle;
-const osThreadAttr_t radio_attributes = {
-  .name = "radio",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityLow,
-};
-/* Definitions for radioHeartbeat */
-osTimerId_t radioHeartbeatHandle;
-const osTimerAttr_t radioHeartbeat_attributes = {
-  .name = "radioHeartbeat"
-};
-/* Definitions for ledTimeout */
-osTimerId_t ledTimeoutHandle;
-const osTimerAttr_t ledTimeout_attributes = {
-  .name = "ledTimeout"
-};
+osThreadId defaultTaskHandle;
+osThreadId radioHandle;
+osTimerId radioHeartbeatHandle;
+osTimerId ledTimeoutHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
 /* USER CODE END FunctionPrototypes */
 
-void StartDefaultTask(void *argument);
-extern void RadioTask(void *argument);
-extern void radioHeartbeatCallback(void *argument);
-extern void ledTimeoutCallback(void *argument);
+void StartDefaultTask(void const * argument);
+extern void RadioTask(void const * argument);
+extern void radioHeartbeatCallback(void const * argument);
+extern void ledTimeoutCallback(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
+
+/* GetIdleTaskMemory prototype (linked to static allocation support) */
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
+
+/* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
+static StaticTask_t xIdleTaskTCBBuffer;
+static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
+
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
+{
+  *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
+  *ppxIdleTaskStackBuffer = &xIdleStack[0];
+  *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+  /* place for user code */
+}
+/* USER CODE END GET_IDLE_TASK_MEMORY */
 
 /**
   * @brief  FreeRTOS initialization
@@ -105,11 +101,13 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* Create the timer(s) */
-  /* creation of radioHeartbeat */
-  radioHeartbeatHandle = osTimerNew(radioHeartbeatCallback, osTimerPeriodic, NULL, &radioHeartbeat_attributes);
+  /* definition and creation of radioHeartbeat */
+  osTimerDef(radioHeartbeat, radioHeartbeatCallback);
+  radioHeartbeatHandle = osTimerCreate(osTimer(radioHeartbeat), osTimerPeriodic, NULL);
 
-  /* creation of ledTimeout */
-  ledTimeoutHandle = osTimerNew(ledTimeoutCallback, osTimerOnce, NULL, &ledTimeout_attributes);
+  /* definition and creation of ledTimeout */
+  osTimerDef(ledTimeout, ledTimeoutCallback);
+  ledTimeoutHandle = osTimerCreate(osTimer(ledTimeout), osTimerOnce, NULL);
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
@@ -120,19 +118,17 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+  /* definition and creation of defaultTask */
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
-  /* creation of radio */
-  radioHandle = osThreadNew(RadioTask, NULL, &radio_attributes);
+  /* definition and creation of radio */
+  osThreadDef(radio, RadioTask, osPriorityLow, 0, 128);
+  radioHandle = osThreadCreate(osThread(radio), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
-
-  /* USER CODE BEGIN RTOS_EVENTS */
-  /* add events, ... */
-  /* USER CODE END RTOS_EVENTS */
 
 }
 
@@ -143,7 +139,7 @@ void MX_FREERTOS_Init(void) {
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
+void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
