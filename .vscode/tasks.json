@@ -11,7 +11,7 @@
             "args": ["-j4"]
         },
         {
-        "label": "CMake",
+            "label": "CMake",
             "group": "build",
             "type": "shell",
             "command": "cmake",
@@ -27,7 +27,6 @@
             "label": "Build all",
             "group": "build",
             "dependsOrder": "sequence",
-            "command": "echo \"Build all!\"",
             "dependsOn": ["CMake", "Build"]
         },
         {
@@ -75,6 +74,14 @@
             "options": {
                 "cwd": "${workspaceFolder}/Tests"
             }
+        },
+        {
+            "label": "Upload to device",
+            "group": "build",
+            "command": "st-flash",
+            "args": ["write", "./build/rc_remote.bin", "0x08000000"]
+            //"dependsOrder": "sequence",
+            //"dependsOn": ["Build"],
         }
     ]
 }
