@@ -26,7 +26,7 @@
             "request": "attach",
             "type": "cortex-debug",
             "servertype": "stutil",
-            "device": "STM32F407VG",
+            "device": "STM32L151CB",
             "interface": "swd",
             "runToMain": true, // else it starts at reset handler - not interested
             "preLaunchTask": "Build all", // configured in tasks.json
