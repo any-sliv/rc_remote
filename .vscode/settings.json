@@ -1,6 +1,8 @@
 {
     "makefile.extensionOutputFolder": "./.vscode",
     "editor.formatOnSave": true,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
     "workbench.colorCustomizations": {
         "statusBar.background": "#CC5801",
         "statusBar.noFolderBackground": "#212121",
