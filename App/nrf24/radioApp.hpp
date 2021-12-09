@@ -12,7 +12,8 @@
 extern "C" {
 #endif
 
-#include "cmsis_os.h"
+#include "FreeRTOS.h"
+#include "cmsis_os2.h"
 #include "nrf24.h"
 #include "spi.h"
 #include "task.h"

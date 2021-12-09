@@ -23,7 +23,7 @@ extern SPI_HandleTypeDef hspi1;
 // OS managed timer
 extern osTimerId_t radioHeartbeatHandle;
 
-uint32_t taskTimer = (uint32_t)osKernelGetTickCount + RADIO_TASK_TIME_INTERVAL;
+uint32_t taskTimer = RADIO_TASK_TIME_INTERVAL;
 NRF24 radio;
 void *rxData;
 
@@ -35,17 +35,18 @@ void RadioTask(void const *argument) {
   for (;;) {
     if (radio.IsAvailable()) {
       radio.Read(rxData);
-      osTimerStop(radioHeartbeatHandle);
+      //osTimerStop(radioHeartbeatHandle);
     } else {
       // Run timer if not already running
-      if (!(osTimerIsRunning(radioHeartbeatHandle))) {
-        osTimerStart(radioHeartbeatHandle, RADIO_TASK_TIME_INTERVAL);
-      }
+
+      // if (!(osTimerIsRunning(radioHeartbeatHandle))) {
+      //   osTimerStart(radioHeartbeatHandle, RADIO_TASK_TIME_INTERVAL);
+      // }
     }
 
     radio.Write((void *)"x");
 
-    vTaskDelay(taskTimer);
+    //vTaskDelay(taskTimer);
   }  // -------------------------------------------------------------------------
 }
 

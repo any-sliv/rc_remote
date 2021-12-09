@@ -63,8 +63,8 @@
 			<type>1</type>
 			<location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c</location>
 		</link><link>
-			<name>FreeRTOS/cmsis_os.c</name>
+			<name>FreeRTOS/cmsis_os2.c</name>
 			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c</location>
+			<location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c</location>
 		</link></linkedResources>
 </projectDescription>
