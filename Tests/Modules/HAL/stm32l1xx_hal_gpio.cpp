@@ -2,6 +2,8 @@ extern "C" {
   #include "stm32l1xx_hal_gpio.h"
 } // extern C close
 
+void dummy(void) { return; }
+
 void HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState)
 {
   GPIOx->ODR = (PinState << GPIO_Pin);

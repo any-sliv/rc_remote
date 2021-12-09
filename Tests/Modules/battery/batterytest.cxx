@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 #include "battery.hpp"
 
-
 extern ADC_HandleTypeDef hadc;
 
 class batteryTest : public ::testing::Test {

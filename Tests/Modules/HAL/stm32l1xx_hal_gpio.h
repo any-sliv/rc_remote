@@ -4,6 +4,14 @@
 #include "stdint.h"
 #include "stm32l1xx_hal_def.h"
 
+#define GPIO_MODE_INPUT 0
+#define GPIO_MODE_OUTPUT_PP 0
+#define __HAL_RCC_GPIOC_CLK_ENABLE() dummy()
+#define __HAL_RCC_GPIOB_CLK_ENABLE() dummy()
+#define __HAL_RCC_GPIOA_CLK_ENABLE() dummy()
+
+void dummy(void);
+
 typedef struct
 {
   uint32_t Pin;       /*!< Specifies the GPIO pins to be configured.

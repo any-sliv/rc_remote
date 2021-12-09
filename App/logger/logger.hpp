@@ -10,6 +10,10 @@
 
 #include <string>
 
+extern "C" {
+#include "stm32l1xx_hal.h"
+} // extern C close
+
 class Logger {
  private:
   Logger();

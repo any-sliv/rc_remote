@@ -10,7 +10,7 @@ include_directories(
     ${WORKSPACE_PATH}/App/gpio
     #${WORKSPACE_PATH}/App/nrf24
     #${WORKSPACE_PATH}/App/nrf24/drivers
-    #${WORKSPACE_PATH}/App/logger
+    ${WORKSPACE_PATH}/App/logger
     ${WORKSPACE_PATH}/App/sensors
     ${WORKSPACE_PATH}/App/sensors/hall_sensor
     ${WORKSPACE_PATH}/App/sensors/battery
@@ -22,6 +22,7 @@ include_directories(
     Modules/gpio
     Modules/hall_sensor
     Modules/battery
+    Modules/logger
     
     googletest
     googletest/include/gtest
@@ -35,7 +36,7 @@ file(GLOB_RECURSE SOURCES
     ${WORKSPACE_PATH}/App/gpio/*.*
     #${WORKSPACE_PATH}/App/nrf24/*.*
     #${WORKSPACE_PATH}/App/nrf24/drivers/*.*
-    #${WORKSPACE_PATH}/App/logger/*.*
+    ${WORKSPACE_PATH}/App/logger/*.*
     ${WORKSPACE_PATH}/App/sensors/*.*
     ${WORKSPACE_PATH}/App/sensors/hall_sensor/*.*
     ${WORKSPACE_PATH}/App/sensors/battery/*.*
@@ -46,6 +47,7 @@ file(GLOB_RECURSE SOURCES
     Modules/gpio/*.*
     Modules/hall_sensor/*.*
     Modules/battery/*.*
+    Modules/logger/*.*
 )
 
 add_subdirectory(googletest)
