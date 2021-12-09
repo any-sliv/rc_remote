@@ -7,7 +7,7 @@
         {
             "name": "STlink launch",
             "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/build/rc_remote.elf",
+            "executable": "${workspaceRoot}/rc_remote.elf",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "stutil",
@@ -21,7 +21,7 @@
         {
             "name": "STlink attach",
             "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/build/rc_remote.elf",
+            "executable": "${workspaceRoot}/rc_remote.elf",
             "request": "attach",
             "type": "cortex-debug",
             "servertype": "stutil",

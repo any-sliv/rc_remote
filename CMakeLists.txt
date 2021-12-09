@@ -66,7 +66,7 @@ Drivers/Device/ST/STM32L1xx_HAL_Driver/Include/Legacy
 Drivers/CMSIS/Device/ST/STM32L1xx/Include 
 Drivers/CMSIS/Include
 Middlewares/Third_Party/FreeRTOS/Source/include 
-Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 
+Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3
 )
 
@@ -86,6 +86,8 @@ Core/*.*
 Core/Src/*.*
 startup/*.*
 Middlewares/*.*
+Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/*.*
+Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/include/*.*
 Drivers/*.*
 Drivers/STM32L1xx_HAL_Driver/*.*
 )

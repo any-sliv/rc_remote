@@ -8,7 +8,7 @@
             "group": "build",
             "type": "shell",
             "command": "make",
-            "args": ["-j4"]
+            "args": ["-j7"]
         },
         {
             "label": "CMake",
@@ -42,7 +42,7 @@
             "label": "Test googletest/make",
             "group": "test",
             "command": "make",
-            "args": ["-j4"],
+            "args": ["-j7"],
             "options": {
                 "cwd": "${workspaceFolder}/Tests/googletest"
             }
@@ -60,7 +60,7 @@
             "label": "Test make",
             "group": "test",
             "command": "make",
-            "args": ["-j4"],
+            "args": ["-j7"],
             "options": {
                 "cwd": "${workspaceFolder}/Tests"
             }
@@ -79,9 +79,9 @@
             "label": "Upload to device",
             "group": "build",
             "command": "st-flash",
-            "args": ["write", "./build/rc_remote.bin", "0x08000000"]
-            //"dependsOrder": "sequence",
-            //"dependsOn": ["Build"],
+            "args": ["write", "./build/rc_remote.bin", "0x08000000"],
+            "dependsOrder": "sequence",
+            "dependsOn": ["Build"],
         }
     ]
 }
