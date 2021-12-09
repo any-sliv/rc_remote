@@ -13,6 +13,11 @@ extern "C" {
 
 Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState, uint32_t mode,
            uint32_t pull) {
+
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
   pin = _pin;
   port = _port;
 
@@ -38,6 +43,8 @@ void Gpio::Reset(void) { HAL_GPIO_WritePin(port, pin, (GPIO_PinState)0); }
 bool Gpio::Read(void) { return (bool)HAL_GPIO_ReadPin(port, pin); }
 
 uint32_t Gpio::GetPinNumber(void) { return pin; }
+
+//TODO deconstructor
 
 #ifdef __cplusplus
 }

@@ -31,8 +31,6 @@ extern "C"
 #include "usart.h"
 //#include "usb.h"
 #include "gpio.h"
-//#include "radioApp.hpp"
-//#include "gpioApp.hpp"
 
 /* Private function prototypes * -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -48,15 +46,12 @@ int main(void)
   SystemClock_Config();
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
   MX_DMA_Init();
   MX_ADC_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
   MX_USART1_UART_Init();
   //MX_USB_PCD_Init();
-
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, (GPIO_PinState)1);
 
   /* Init scheduler */
   MX_FREERTOS_Init();
@@ -65,10 +60,7 @@ int main(void)
 
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
-  while (1)
-  {
-   
-  }
+  while (1){ };
 }
 
 /**

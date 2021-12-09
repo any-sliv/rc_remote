@@ -8,6 +8,7 @@
 #ifndef INC_GPIOAPP_H_
 #define INC_GPIOAPP_H_
 
+#include "main.h"
 #include "stdint.h"
 #include "stm32l1xx_hal.h"
 
@@ -15,14 +16,14 @@
 #define INIT_HIGH 1
 
 enum Mode {
-  INPUT,
-  OUTPUT,
+  INPUT = GPIO_MODE_INPUT,
+  OUTPUT = GPIO_MODE_OUTPUT_PP,
 };
 
 enum Pull {
-  NO_PULL,
-  PULLUP,
-  PULLDOWN,
+  NO_PULL = GPIO_NOPULL,
+  PULLUP = GPIO_PULLUP,
+  PULLDOWN = GPIO_PULLDOWN,
 };
 
 class Gpio {
