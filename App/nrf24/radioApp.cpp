@@ -52,7 +52,7 @@ void RadioTask(void const *argument) {
     //   Logger::LogDebug("Cannot send data");
     // }
     flag ^= 1;
-    //pin->Set(1);
+    HAL_GPIO_TogglePin(LED_USER_GPIO_Port, LED_USER_Pin);
 
     vTaskDelay(taskTimer);
   }  // -------------------------------------------------------------------------

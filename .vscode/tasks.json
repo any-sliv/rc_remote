@@ -8,7 +8,7 @@
             "group": "build",
             "type": "shell",
             "command": "make",
-            "args": ["-j7"]
+            "args": ["-j7", "all"]
         },
         {
             "label": "CMake",
@@ -79,7 +79,17 @@
             "label": "Upload to device",
             "group": "build",
             "command": "st-flash",
-            "args": ["write", "./build/rc_remote.bin", "0x08000000"],
+            "args": [
+              "--connect-under-reset", 
+              "--flash=128k", 
+              "--freq=1800k",
+              //"--format binary", // todo ?? 
+              "--opt", //todo careful here
+              "--reset",
+              "write", 
+              "./build/rc_remote.bin",
+              "0x08000000"
+            ],
             "dependsOrder": "sequence",
             "dependsOn": ["Build"],
         }
