@@ -24,6 +24,7 @@ extern "C"
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "FreeRTOS.h"
 #include "cmsis_os2.h"
 #include "adc.h"
 #include "dma.h"
@@ -46,12 +47,15 @@ int main(void)
   SystemClock_Config();
 
   /* Initialize all configured peripherals */
+  MX_GPIO_Init();
   MX_DMA_Init();
   MX_ADC_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
   MX_USART1_UART_Init();
   //MX_USB_PCD_Init();
+
+  HAL_GPIO_WritePin(LED_USER_GPIO_Port, LED_USER_Pin, (GPIO_PinState)1);
 
   /* Init scheduler */
   MX_FREERTOS_Init();

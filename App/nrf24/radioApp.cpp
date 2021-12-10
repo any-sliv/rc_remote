@@ -5,12 +5,13 @@
  *      Author: macsli
  */
 
-#include "radioApp.hpp"
-
-#include "logger.hpp"
+#include "FreeRTOS.h"
 #include "timers.h"
+#include "radioApp.hpp"
+#include "logger.hpp"
+#include "gpioApp.hpp"
 
-#define RADIO_TASK_TIME_INTERVAL 5
+#define RADIO_TASK_TIME_INTERVAL 500
 #define RADIO_RECEIVE_TIMEOUT 5000
 
 #define RADIO_WRITE_PIPE 0xCAFEBABE
@@ -24,8 +25,10 @@ extern SPI_HandleTypeDef hspi1;
 extern osTimerId_t radioHeartbeatHandle;
 
 uint32_t taskTimer = RADIO_TASK_TIME_INTERVAL;
+//Gpio * pin = new Gpio(LED_USER_GPIO_Port, LED_USER_Pin);
 NRF24 radio;
 void *rxData;
+bool flag;
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,20 +36,25 @@ extern "C" {
 
 void RadioTask(void const *argument) {
   for (;;) {
-    if (radio.IsAvailable()) {
-      radio.Read(rxData);
-      //osTimerStop(radioHeartbeatHandle);
-    } else {
-      // Run timer if not already running
+    // if (radio.IsAvailable()) {
+    //   radio.Read(rxData);
+    //   osTimerStop(radioHeartbeatHandle);
+    // } else {
+    //   // Run timer if not already running
+    //   if (!(osTimerIsRunning(radioHeartbeatHandle))) {
+    //     osTimerStart(radioHeartbeatHandle, RADIO_TASK_TIME_INTERVAL);
+    //   }
+    // }
 
-      // if (!(osTimerIsRunning(radioHeartbeatHandle))) {
-      //   osTimerStart(radioHeartbeatHandle, RADIO_TASK_TIME_INTERVAL);
-      // }
-    }
+    // if(radio.Write((void *)"x")) {
+    //   Logger::LogDebug("Data sent successfully");
+    // } else {
+    //   Logger::LogDebug("Cannot send data");
+    // }
+    flag ^= 1;
+    //pin->Set(1);
 
-    radio.Write((void *)"x");
-
-    //vTaskDelay(taskTimer);
+    vTaskDelay(taskTimer);
   }  // -------------------------------------------------------------------------
 }
 
@@ -63,7 +71,7 @@ extern void radioHeartbeatCallback(void *argument) {
 #endif
 
 NRF24::NRF24() {
-  NRF24_begin(GPIOB, NRF24_CSN_Pin, NRF24_CE_Pin, hspi1);
+  NRF24_begin(NRF24_CE_GPIO_Port, NRF24_CSN_Pin, NRF24_CE_Pin, hspi1);
 
   // printRadioSettings();
 
