@@ -97,7 +97,9 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
   }
 }
 
-void ledTimeoutCallback(void *argument) { ledsPointer->Powerdown(); }
+void ledTimeoutCallback(void *argument) { 
+  /*ledsPointer->Powerdown();*/ 
+};
 
 }  // extern C close
 
