@@ -87,8 +87,6 @@
               "--connect-under-reset", 
               "--flash=128k", 
               "--freq=1800k",
-              //"--format binary", // todo ?? 
-              "--opt", //todo careful here
               "--reset",
               "write", 
               "./build/rc_remote.bin",

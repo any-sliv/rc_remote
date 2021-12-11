@@ -20,7 +20,7 @@ enable_language(C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS ON)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS ON)
 
@@ -43,8 +43,8 @@ ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC
 ) # ------------------------------------------------
 SET(PROJECT_INC
 ${CMAKE_CURRENT_SOURCE_DIR}/App/gpio
-${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24
-${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers
+# ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24
+# ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers
 ${CMAKE_CURRENT_SOURCE_DIR}/App/logger
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/hall_sensor
@@ -65,8 +65,8 @@ ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32L1xx_HAL_Driver/*.*
 ) # ------------------------------------------------
 file(GLOB_RECURSE PROJECT_SRC FOLLOW_SYMLINKS
 ${CMAKE_CURRENT_SOURCE_DIR}/App/gpio/*.*
-${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/*.*
-${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers/*.*
+# ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/*.*
+# ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/logger/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/hall_sensor/*.*
@@ -76,7 +76,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/App/ws2812/*.*
 
 add_executable(${EXECUTABLE}
   ${CUBEMX_SRC}
-  #${PROJECT_SRC} 
+  ${PROJECT_SRC} 
   ${STARTUP_SCRIPT}
 )
 
@@ -87,12 +87,14 @@ target_compile_definitions(${EXECUTABLE} PRIVATE
 
 target_include_directories(${EXECUTABLE} PRIVATE
   ${CUBEMX_INC}
-  #${PROJECT_INC}
+  ${PROJECT_INC}
 )
 
 target_compile_options(${EXECUTABLE} PRIVATE
   ${CPU_PARAMETERS}
   -Wno-unused-parameter
+  -Wall
+  -Wextra
   #-Wuseless-cast
   #-Wsuggest-override
   $<$<COMPILE_LANGUAGE:CXX>:
@@ -108,7 +110,8 @@ target_link_options( ${EXECUTABLE} PRIVATE
   -T${LINKER_SCRIPT}
   ${CPU_PARAMETERS}
   -Wl,-Map=${CMAKE_SOURCE_DIR}/Drivers/${CMAKE_PROJECT_NAME}.map
-  --specs=nosys.specs
+  -specs=nosys.specs
+  #-specs=nano.specs
   -Wl,--start-group
   -lc
   -lm

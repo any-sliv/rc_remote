@@ -26,7 +26,7 @@ bool Logger::ILogDebug(std::string textString, va_list args) {
 }
 
 Logger& Logger::Get() { 
-  //return logInstance; 
+  return logInstance; 
 }
 
 bool Logger::LogDebug(std::string text, ...) {

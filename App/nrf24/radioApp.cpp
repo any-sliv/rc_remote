@@ -8,7 +8,7 @@
 #include "FreeRTOS.h"
 #include "timers.h"
 #include "radioApp.hpp"
-#include "logger.hpp"
+//#include "logger.hpp"
 #include "gpioApp.hpp"
 
 #define RADIO_TASK_TIME_INTERVAL 500
@@ -34,7 +34,7 @@ bool flag;
 extern "C" {
 #endif
 
-void RadioTask(void const *argument) {
+void RadioTask(void *argument) {
   for (;;) {
     // if (radio.IsAvailable()) {
     //   radio.Read(rxData);
@@ -59,9 +59,6 @@ void RadioTask(void const *argument) {
 }
 
 extern void radioHeartbeatCallback(void *argument) {
-  Logger::LogDebug("Radio no data recieved");
-  Logger::LogDebug("Entering sleep (zzz...)");
-
   // radio.Sleep();
   NRF24_powerDown();
 }

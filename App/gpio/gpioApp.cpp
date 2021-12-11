@@ -21,12 +21,13 @@ Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState, uint32_t mode,
   pin = _pin;
   port = _port;
 
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  GPIO_InitTypeDef GPIO_InitStruct = {
+    .Pin = pin,
+    .Mode = mode,
+    .Pull = pull,
+    .Speed = GPIO_SPEED_FREQ_LOW,
+    };
 
-  GPIO_InitStruct.Pin = pin;
-  GPIO_InitStruct.Mode = mode;
-  GPIO_InitStruct.Pull = pull;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(port, &GPIO_InitStruct);
 
   Set(initState);

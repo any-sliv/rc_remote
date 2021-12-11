@@ -35,8 +35,8 @@ extern "C" {
 void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 
+//void ledTimeoutCallback(void * argument) {};
 void RadioTask(void * argument) {};
-void ledTimeoutCallback(void * argument) {};
 void radioHeartbeatCallback(void * argument) {};
 
 } // extern C close
@@ -83,8 +83,8 @@ int main(void)
 */
 void SystemClock_Config(void) 
 { 
-RCC_OscInitTypeDef RCC_OscInitStruct = {0}; 
-RCC_ClkInitTypeDef RCC_ClkInitStruct = {0}; 
+RCC_OscInitTypeDef RCC_OscInitStruct; 
+RCC_ClkInitTypeDef RCC_ClkInitStruct;
 
 /** Configure the main internal regulator output voltage 
 */ 

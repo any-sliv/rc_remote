@@ -169,14 +169,3 @@ void NRF24_ACTIVATE_cmd(void);
 // 48. Get AckPayload Size
 uint8_t NRF24_GetAckPayloadSize(void);
 
-//**********  DEBUG Functions **********//
-// 1. Print radio settings
-void printRadioSettings(void);
-// 2. Print Status
-void printStatusReg(void);
-// 3. Print Config
-void printConfigReg(void);
-// 4. Init Variables
-void nrf24_DebugUART_Init(UART_HandleTypeDef nrf24Uart);
-// 5. FIFO Status
-void printFIFOstatus(void);
