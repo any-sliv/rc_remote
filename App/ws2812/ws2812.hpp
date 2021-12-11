@@ -33,7 +33,7 @@ class bufferWrapper {
   bool isActive = false;
 
  public:
-  bufferWrapper();
+  bufferWrapper() {};
 
   void append(bool val) {
     val ? active()[currentBit] = WS_ONE : active()[currentBit] = WS_ZERO;

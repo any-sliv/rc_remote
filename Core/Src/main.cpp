@@ -35,6 +35,10 @@ extern "C" {
 void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 
+void RadioTask(void * argument) {};
+void ledTimeoutCallback(void * argument) {};
+void radioHeartbeatCallback(void * argument) {};
+
 } // extern C close
 
 int main(void)
@@ -47,11 +51,11 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  // MX_DMA_Init();
-  // MX_ADC_Init();
-  // MX_SPI1_Init();
-  // MX_SPI2_Init();
-  // MX_USART1_UART_Init();
+  MX_DMA_Init();
+  MX_ADC_Init();
+  MX_SPI1_Init();
+  MX_SPI2_Init();
+  MX_USART1_UART_Init();
   //MX_USB_PCD_Init();
 
   for (int i = 0; i < 10; i++)
