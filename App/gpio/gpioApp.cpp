@@ -33,6 +33,8 @@ Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState, uint32_t mode,
   Set(initState);
 }
 
+Gpio::Gpio() {};
+
 void Gpio::Set(void) { HAL_GPIO_WritePin(port, pin, (GPIO_PinState)1U); }
 
 void Gpio::Set(bool value) {

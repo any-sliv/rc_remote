@@ -32,10 +32,10 @@ extern UART_HandleTypeDef huart1;
 extern osTimerId_t radioHeartbeatHandle;
 
 void RadioTask(void * argument) {
-  //SPI_HandleTypeDef * radioSPI = GetSpiHandle(1);
+  SPI_HandleTypeDef * radioSPI = GetSpiHandle(1);
   uint32_t taskTimer = RADIO_TASK_TIME_INTERVAL;
   Gpio pin = Gpio(LED_USER_GPIO_Port, LED_USER_Pin);
-  //NRF24 radio = NRF24(radioSPI);
+  NRF24 radio = NRF24(radioSPI);
   void *rxData;
   bool flag = false;
 

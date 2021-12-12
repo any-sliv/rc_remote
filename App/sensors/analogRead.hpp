@@ -5,6 +5,9 @@
  *      Author: macsli
  */
 
+#ifndef __ANALOGREAD_HPP
+#define __ANALOGREAD_HPP
+
 #include "adc.h"
 #include "stm32l1xx_hal.h"
 
@@ -34,3 +37,5 @@ class AnalogRead {
     return HAL_ADC_GetValue(&hadc);
   }
 };
+
+#endif /* __ANALOGREAD_HPP */

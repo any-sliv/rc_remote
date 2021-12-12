@@ -1,7 +1,7 @@
 {
   "makefile.extensionOutputFolder": "./.vscode",
   "explorer.autoReveal": false,
-  "editor.formatOnSave": true,
+  //"editor.formatOnSave": true,
   "editor.detectIndentation": false,
   "editor.tabSize": 2,
   "workbench.colorCustomizations": {

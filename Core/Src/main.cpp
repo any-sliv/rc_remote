@@ -48,9 +48,10 @@ int main(void)
   SystemClock_Config();
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
+  //MX_GPIO_Init();
   MX_DMA_Init();
-  MX_ADC_Init();
+  //MX_ADC_Init();
+  //todo init those in specific modules inits
   MX_SPI1_Init();
   MX_SPI2_Init();
   MX_USART1_UART_Init();

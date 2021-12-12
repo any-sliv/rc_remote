@@ -18,6 +18,7 @@ extern ADC_HandleTypeDef hadc;
 // todo to prevent often write cycles
 
 SS49::SS49(ADC_ChannelConfTypeDef *channel) { channelConfig = *channel; }
+SS49::SS49(void) {};
 
 void SS49::CalibrateInitialPosition(uint32_t samplingPeriod) {
   std::vector<uint32_t> sample;

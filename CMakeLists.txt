@@ -42,6 +42,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V
 ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3
 ) # ------------------------------------------------
 SET(PROJECT_INC
+${CMAKE_CURRENT_SOURCE_DIR}/App/button
 ${CMAKE_CURRENT_SOURCE_DIR}/App/gpio
 ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24
 ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers
@@ -64,6 +65,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32L1xx_HAL_Driver/*.*
 ) # ------------------------------------------------
 file(GLOB_RECURSE PROJECT_SRC FOLLOW_SYMLINKS
+${CMAKE_CURRENT_SOURCE_DIR}/App/button/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/gpio/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers/*.*

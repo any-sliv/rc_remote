@@ -31,15 +31,20 @@ uint8_t Battery::GetPercent(void) {
 }
 
 Battery::Battery(ADC_ChannelConfTypeDef *channel, GPIO_TypeDef *portAddr) {
-  pinChrgEn = new Gpio(portAddr, CHARGER_ENABLE_Pin, 1, OUTPUT);
-  pinChrg = new Gpio(portAddr, CHARGER_CHARGE_Pin, 0, INPUT, PULLUP);
-  pinStdby = new Gpio(portAddr, CHARGER_STANDBY_Pin, 0, INPUT, PULLUP);
+  pinChrgEn = Gpio(portAddr, CHARGER_ENABLE_Pin, 1, OUTPUT);
+  pinChrg = Gpio(portAddr, CHARGER_CHARGE_Pin, 0, INPUT, PULLUP);
+  pinStdby = Gpio(portAddr, CHARGER_STANDBY_Pin, 0, INPUT, PULLUP);
 
   channelConfig = *channel;
 }
+Battery::Battery(void) {
+  pinChrgEn = Gpio(CHARGER_CHARGE_GPIO_Port, CHARGER_ENABLE_Pin, 1, OUTPUT);
+  pinChrg = Gpio(CHARGER_CHARGE_GPIO_Port, CHARGER_CHARGE_Pin, 0, INPUT, PULLUP);
+  pinStdby = Gpio(CHARGER_CHARGE_GPIO_Port, CHARGER_STANDBY_Pin, 0, INPUT, PULLUP);
+ }
 
 Battery::ChargeState Battery::IsCharging(void) {
-  if (pinChrg->Read() == false && pinStdby->Read() == true)
+  if (pinChrg.Read() == false && pinStdby.Read() == true)
     return CHARGING;
   else
     return FULL;

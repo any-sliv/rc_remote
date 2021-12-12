@@ -8,6 +8,7 @@
                 "${workspaceFolder}/Drivers/**",
                 "${workspaceFolder}/Middlewares/**",
                 "${workspaceFolder}/Tests/**",
+                "${workspaceFolder}/App/button",
                 "${workspaceFolder}/App/gpio",
                 "${workspaceFolder}/App/nrf24",
                 "${workspaceFolder}/App/nrf24/drivers",

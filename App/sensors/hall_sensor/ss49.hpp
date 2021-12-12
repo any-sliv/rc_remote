@@ -12,7 +12,11 @@ extern "C" {
 
 class SS49 : AnalogRead {
  private:
-  ADC_ChannelConfTypeDef channelConfig;
+  ADC_ChannelConfTypeDef channelConfig = {
+    .Channel = 0,
+    .Rank = 1,
+    .SamplingTime = ADC_SAMPLETIME_48CYCLES
+  };
 
   // todo try to make it constant and assign value after init
   int neutralThrottle = 0;
@@ -23,6 +27,11 @@ class SS49 : AnalogRead {
    * @param channel configuration
    */
   SS49(ADC_ChannelConfTypeDef *channel);
+  /**
+   * If no channel given as a param use 
+   * default config of class member @param channelConfig 
+   */
+  SS49(void);
 
   /**
    * Blocking function

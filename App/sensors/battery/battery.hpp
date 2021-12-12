@@ -15,10 +15,14 @@ extern "C" {
 
 class Battery : virtual public AnalogRead {
  private:
-  Gpio *pinChrgEn;  // charge enable
-  Gpio *pinChrg;    // read charge state
-  Gpio *pinStdby;   // read charge state
-  ADC_ChannelConfTypeDef channelConfig;
+  Gpio pinChrgEn;    // charge enable
+  Gpio pinChrg;    // read charge state
+  Gpio pinStdby;   // read charge state
+  ADC_ChannelConfTypeDef channelConfig = {
+    .Channel = 1,
+    .Rank = 2,
+    .SamplingTime = ADC_SAMPLETIME_48CYCLES
+  };
 
   // As a Battery Capacity
   const float bC[11] = {3.6,  3.65, 3.69, 3.74, 3.8, 3.84,
@@ -33,6 +37,8 @@ class Battery : virtual public AnalogRead {
    */
   Battery(ADC_ChannelConfTypeDef *channel,
           GPIO_TypeDef *portAddr = CHARGER_ENABLE_GPIO_Port);
+
+  Battery(void);  
 
   float adcValueToVoltage(uint32_t val);
 

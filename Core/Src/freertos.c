@@ -62,6 +62,25 @@ const osThreadAttr_t radio_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for sensor */
+osThreadId_t sensorHandle;
+const osThreadAttr_t sensor_attributes = {
+  .name = "sensor",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for button */
+osThreadId_t buttonHandle;
+const osThreadAttr_t button_attributes = {
+  .name = "button",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for buttonQueue */
+osMessageQueueId_t buttonQueueHandle;
+const osMessageQueueAttr_t buttonQueue_attributes = {
+  .name = "buttonQueue"
+};
 /* Definitions for radioHeartbeat */
 osTimerId_t radioHeartbeatHandle;
 const osTimerAttr_t radioHeartbeat_attributes = {
@@ -72,6 +91,21 @@ osTimerId_t ledTimeoutHandle;
 const osTimerAttr_t ledTimeout_attributes = {
   .name = "ledTimeout"
 };
+/* Definitions for buttonPress */
+osTimerId_t buttonPressHandle;
+const osTimerAttr_t buttonPress_attributes = {
+  .name = "buttonPress"
+};
+/* Definitions for buttonHold */
+osTimerId_t buttonHoldHandle;
+const osTimerAttr_t buttonHold_attributes = {
+  .name = "buttonHold"
+};
+/* Definitions for buttonMultiplePress */
+osTimerId_t buttonMultiplePressHandle;
+const osTimerAttr_t buttonMultiplePress_attributes = {
+  .name = "buttonMultiplePress"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -80,8 +114,13 @@ const osTimerAttr_t ledTimeout_attributes = {
 
 void StartDefaultTask(void *argument);
 extern void RadioTask(void *argument);
+extern void SensorTask(void *argument);
+extern void ButtonTask(void *argument);
 extern void radioHeartbeatCallback(void *argument);
 extern void ledTimeoutCallback(void *argument);
+extern void buttonPressCallback(void *argument);
+extern void buttonHoldCallback(void *argument);
+extern void buttonMultiplePressCallback(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -110,9 +149,22 @@ void MX_FREERTOS_Init(void) {
   /* creation of ledTimeout */
   ledTimeoutHandle = osTimerNew(ledTimeoutCallback, osTimerOnce, NULL, &ledTimeout_attributes);
 
+  /* creation of buttonPress */
+  buttonPressHandle = osTimerNew(buttonPressCallback, osTimerOnce, NULL, &buttonPress_attributes);
+
+  /* creation of buttonHold */
+  buttonHoldHandle = osTimerNew(buttonHoldCallback, osTimerOnce, NULL, &buttonHold_attributes);
+
+  /* creation of buttonMultiplePress */
+  buttonMultiplePressHandle = osTimerNew(buttonMultiplePressCallback, osTimerOnce, NULL, &buttonMultiplePress_attributes);
+
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
+
+  /* Create the queue(s) */
+  /* creation of buttonQueue */
+  buttonQueueHandle = osMessageQueueNew (3, sizeof(uint8_t), &buttonQueue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -124,6 +176,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of radio */
   radioHandle = osThreadNew(RadioTask, NULL, &radio_attributes);
+
+  /* creation of sensor */
+  sensorHandle = osThreadNew(SensorTask, NULL, &sensor_attributes);
+
+  /* creation of button */
+  buttonHandle = osThreadNew(ButtonTask, NULL, &button_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
