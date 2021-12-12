@@ -17,15 +17,13 @@
   ******************************************************************************
   */
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
+
 #include "FreeRTOS.h"
-#include "cmsis_os2.h"
+#include "main.h"
+#include "cmsis_os.h"
+#include "task.h"
 #include "adc.h"
 #include "dma.h"
 #include "spi.h"
@@ -33,10 +31,13 @@ extern "C"
 //#include "usb.h"
 #include "gpio.h"
 
+extern "C" {
 /* Private function prototypes * -----------------------------------------------*/
-void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 
+} // extern C close
+
+void SystemClock_Config(void);
 
 int main(void)
 {
@@ -55,16 +56,23 @@ int main(void)
   MX_USART1_UART_Init();
   //MX_USB_PCD_Init();
 
-  HAL_GPIO_WritePin(LED_USER_GPIO_Port, LED_USER_Pin, (GPIO_PinState)1);
+  for (int i = 0; i < 10; i++)
+  {
+    HAL_GPIO_TogglePin(LED_USER_GPIO_Port, LED_USER_Pin);
+    HAL_Delay(50);
+  }
 
   /* Init scheduler */
+  osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
   /* Start scheduler */
   osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
-  while (1){ };
+  while (1){ 
+
+  }
 }
 
 /**
@@ -73,8 +81,8 @@ int main(void)
 */
 void SystemClock_Config(void) 
 { 
-RCC_OscInitTypeDef RCC_OscInitStruct = {0}; 
-RCC_ClkInitTypeDef RCC_ClkInitStruct = {0}; 
+RCC_OscInitTypeDef RCC_OscInitStruct; 
+RCC_ClkInitTypeDef RCC_ClkInitStruct;
 
 /** Configure the main internal regulator output voltage 
 */ 
@@ -165,9 +173,5 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-
-#ifdef __cplusplus
-}
-#endif
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

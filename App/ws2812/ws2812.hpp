@@ -13,8 +13,8 @@
 
 #define WS2812_LEDS_NUMBER 5
 
-#define WS_ZERO ((const uint16_t)0b1111100000000000)
-#define WS_ONE ((const uint16_t)0b1111111111000000)
+#define WS_ZERO (const uint16_t)0b1111100000000000
+#define WS_ONE (const uint16_t)0b1111111111000000
 
 struct ws2812_diode_s {
   uint8_t red = 0;
@@ -33,10 +33,11 @@ class bufferWrapper {
   bool isActive = false;
 
  public:
-  bufferWrapper();
+  bufferWrapper() {};
 
   void append(bool val) {
-    val ? active()[currentBit] = WS_ONE : active()[currentBit] = WS_ZERO;
+    //todo too complicated
+    //val ? active()[currentBit] = WS_ONE : active()[currentBit] = WS_ZERO;
     currentBit++;
     if (currentBit >= (24 - 1)) currentBit = 0;
   }

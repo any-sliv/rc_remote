@@ -222,6 +222,12 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle)
 
 /* USER CODE BEGIN 1 */
 
+SPI_HandleTypeDef * GetSpiHandle(int spiNumber) {
+  if(spiNumber == 1) return &hspi1;
+  if(spiNumber == 2) return &hspi2;
+  return 0;
+}
+
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -8,14 +8,19 @@
             "group": "build",
             "type": "shell",
             "command": "make",
-            "args": ["-j7"]
+            "args": ["-j8"]
         },
         {
             "label": "CMake",
             "group": "build",
             "type": "shell",
             "command": "cmake",
-            "args": ["."]
+            "args": [
+              "-Bbuild",
+              "-DCMAKE_TOOLCHAIN_FILE=gcc-arm-none-eabi.cmake",
+              "-DCMAKE_BUILD_TYPE=Debug",
+              "-DCMAKE_EXPORT_COMPILE_COMMANDS=true"
+            ]
         },
         {
             "label": "Build clean",
@@ -79,7 +84,15 @@
             "label": "Upload to device",
             "group": "build",
             "command": "st-flash",
-            "args": ["write", "./build/rc_remote.bin", "0x08000000"],
+            "args": [
+              "--connect-under-reset", 
+              "--flash=128k", 
+              "--freq=1800k",
+              "--reset",
+              "write", 
+              "./build/rc_remote.bin",
+              "0x08000000"
+            ],
             "dependsOrder": "sequence",
             "dependsOn": ["Build"],
         }

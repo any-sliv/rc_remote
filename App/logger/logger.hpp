@@ -5,8 +5,8 @@
  *      Author: macsli
  */
 
-#ifndef INC_LOGGER_H_
-#define INC_LOGGER_H_
+#ifndef __LOGGER_HPP
+#define __LOGGER_HPP
 
 #include <string>
 
@@ -23,6 +23,7 @@ class Logger {
  public:
   static Logger& Get();
 
+  static void Log(std::string text);
   /**
    * Give me your text and I log it
    * @param text string to be printed in UART interface
@@ -31,4 +32,4 @@ class Logger {
   static bool LogDebug(std::string text, ...);
 };
 
-#endif /* INC_LOGGER_H_ */
+#endif /* __LOGGER_HPP */

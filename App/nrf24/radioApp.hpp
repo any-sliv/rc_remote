@@ -5,18 +5,17 @@
  *      Author: macsli
  */
 
-#ifndef INC_RADIOAPP_H_
-#define INC_RADIOAPP_H_
+#ifndef __RADIOAPP_HPP
+#define __RADIOAPP_HPP
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #include "FreeRTOS.h"
-#include "cmsis_os2.h"
-#include "nrf24.h"
-#include "spi.h"
+#include "cmsis_os.h"
 #include "task.h"
+#include "spi.h"
 
 #ifdef __cplusplus
 }
@@ -28,7 +27,7 @@ class NRF24 {
   bool isSleeping;
 
  public:
-  NRF24();
+  NRF24(SPI_HandleTypeDef * hspi);
 
   /**
    * Transmit given payload, constant length
@@ -57,6 +56,8 @@ class NRF24 {
    * Power up the radio. Contains blocking delay of 1.5 ms
    */
   void Wakeup(void);
+
+  uint8_t IsInitialised(void);
 };
 
-#endif /* INC_RADIOAPP_H_ */
+#endif /* __RADIOAPP_HPP */

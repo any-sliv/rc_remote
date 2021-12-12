@@ -8,7 +8,6 @@
                 "${workspaceFolder}/Drivers/**",
                 "${workspaceFolder}/Middlewares/**",
                 "${workspaceFolder}/Tests/**",
-
                 "${workspaceFolder}/App/gpio",
                 "${workspaceFolder}/App/nrf24",
                 "${workspaceFolder}/App/nrf24/drivers",
@@ -17,12 +16,10 @@
                 "${workspaceFolder}/App/sensors/hall_sensor",
                 "${workspaceFolder}/App/sensors/battery",
                 "${workspaceFolder}/App/ws2812",
-
                 "${workspaceFolder}/Tests",
                 "${workspaceFolder}/Tests/Modules",
                 "${workspaceFolder}/Tests/Modules/gpio",
                 "${workspaceFolder}/Tests/Modules/hall_sensor",
-
                 "${workspaceFolder}/Tests/googletest",
                 "${workspaceFolder}/Tests/googletest/googletest/include",
                 "${workspaceFolder}/Tests/googletest/googletest/include/gtest",
@@ -30,8 +27,8 @@
                 "${workspaceFolder}/Tests/googletest/googletest/include/gtest/internal/custom",
                 "${workspaceFolder}/Tests/googletest/googletest/src",
                 "${workspaceFolder}/Tests/googletest/googletest/test",
-
                 "${workspaceFolder}/Core/Inc",
+                "${workspaceFolder}/Core/Src",
                 "${workspaceFolder}/Drivers/STM32L1xx_HAL_Driver/Inc",
                 "${workspaceFolder}/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy",
                 "${workspaceFolder}/Drivers/CMSIS/Include",
@@ -51,12 +48,18 @@
                 "databaseFilename": ""
             },
             "defines": [
-                "STM32L151xBA"
+                "_DEBUG",
+                "STM32L151xBA",
+                "USE_HAL_DRIVER"
             ],
             "macFrameworkPath": [],
             "compilerPath": "/usr/local/bin/arm-none-eabi-gcc",
             "cStandard": "gnu11",
-            "cppStandard": "gnu++20",
+            "cppStandard": "gnu++17",
+            "compilerArgs": [
+              "-mcpu=cortex-m3",
+              "-mthumb"
+            ],
             "intelliSenseMode": "gcc-arm",
             "configurationProvider": "ms-vscode.makefile-tools"
         }

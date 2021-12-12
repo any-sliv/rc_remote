@@ -26,7 +26,7 @@ void SS49::CalibrateInitialPosition(uint32_t samplingPeriod) {
   // Discard x/8 worst samples
   uint8_t discardSamples = samplingPeriod >> 3;
 
-  for (int i = 0; i < samplingPeriod; i++) {
+  for (uint32_t i = 0; i < samplingPeriod; i++) {
     sample.push_back(GetAdcValue(&channelConfig));
   }
   // Removing lowest and highest samples

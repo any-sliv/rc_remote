@@ -1,109 +1,135 @@
-set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_SYSTEM_VERSION 1)
 cmake_minimum_required(VERSION 3.1)
 
-# specify cross compilers and tools
-set(CMAKE_C_COMPILER arm-none-eabi-gcc)
-set(CMAKE_CXX_COMPILER arm-none-eabi-g++)
-set(CMAKE_ASM_COMPILER  arm-none-eabi-gcc)
-set(CMAKE_AR arm-none-eabi-ar)
-set(CMAKE_OBJCOPY arm-none-eabi-objcopy)
-set(CMAKE_OBJDUMP arm-none-eabi-objdump)
-set(SIZE arm-none-eabi-size)
-set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+project(rc_remote)
 
-# project settings
-project(rc_remote C CXX ASM)
-set(CMAKE_CXX_STANDARD 20)
+set(MCU_FAMILY STM32L1xx)
+set(MCU_MODEL STM32L151xBA)
+set(CPU_PARAMETERS
+    -mcpu=cortex-m3
+    -mthumb
+    -ffunction-sections
+    -fdata-sections
+    -mfloat-abi=soft
+  )
+
+set(STARTUP_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/startup_stm32l151xba.s)
+set(LINKER_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32L151CBTxA_FLASH.ld)
+
+set(EXECUTABLE ${CMAKE_PROJECT_NAME})
+enable_language(C CXX ASM)
 set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS ON)
 
-#Uncomment for hardware floating point
-#add_compile_definitions(ARM_MATH_CM4;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
-#add_compile_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
-#add_link_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
+set(CUBEMX_INC
+${CMAKE_CURRENT_SOURCE_DIR}/Core/Inc
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32L1xx_HAL_Driver/Inc 
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy 
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/Include
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/STM32L1xx_HAL_Driver/Inc
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32L1xx_HAL_Driver/Inc/Legacy
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Device/ST/STM32L1xx_HAL_Driver/Include
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Device/ST/STM32L1xx_HAL_Driver/Include/Legacy
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32L1xx/Include 
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/Include
+${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source
+${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/include 
+${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2
+${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3
+) # ------------------------------------------------
+SET(PROJECT_INC
+${CMAKE_CURRENT_SOURCE_DIR}/App/gpio
+${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24
+${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers
+${CMAKE_CURRENT_SOURCE_DIR}/App/logger
+${CMAKE_CURRENT_SOURCE_DIR}/App/sensors
+${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/hall_sensor
+${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/battery
+${CMAKE_CURRENT_SOURCE_DIR}/App/ws2812
+)
+# /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
 
-#Uncomment for software floating point
-#add_compile_options(-mfloat-abi=soft)
+file(GLOB_RECURSE CUBEMX_SRC 
+${CMAKE_CURRENT_SOURCE_DIR}/Core/Src/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/MemMang/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32L1xx_HAL_Driver/*.*
+) # ------------------------------------------------
+file(GLOB_RECURSE PROJECT_SRC FOLLOW_SYMLINKS
+${CMAKE_CURRENT_SOURCE_DIR}/App/gpio/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/App/logger/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/hall_sensor/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/battery/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/App/ws2812/*.*
+) # ------------------------------------------------
 
-add_compile_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)
-add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
-
-# uncomment to mitigate c++17 absolute addresses warnings
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-register -Wno-volatile")
-
-if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
-    message(STATUS "Maximum optimization for speed")
-    add_compile_options(-Ofast)
-elseif ("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo")
-    message(STATUS "Maximum optimization for speed, debug info included")
-    add_compile_options(-Ofast -g)
-elseif ("${CMAKE_BUILD_TYPE}" STREQUAL "MinSizeRel")
-    message(STATUS "Maximum optimization for size")
-    add_compile_options(-Os)
-else ()
-    message(STATUS "Minimal optimization, debug info included")
-    add_compile_options(-Og -g)
-endif ()
-
-include_directories(
-App/gpio
-App/nrf24
-App/nrf24/drivers
-App/logger
-App/sensors
-App/sensors/hall_sensor
-App/sensors/battery
-App/ws2812
-
-Core/Inc
-Drivers/STM32L1xx_HAL_Driver/Inc 
-Drivers/STM32L1xx_HAL_Driver/Inc/Legacy 
-Drivers/CMSIS/Include
-Drivers/CMSIS/STM32L1xx_HAL_Driver/Inc
-Drivers/STM32L1xx_HAL_Driver/Inc/Legacy
-Drivers/Device/ST/STM32L1xx_HAL_Driver/Include
-Drivers/Device/ST/STM32L1xx_HAL_Driver/Include/Legacy
-Drivers/CMSIS/Device/ST/STM32L1xx/Include 
-Drivers/CMSIS/Include
-Middlewares/Third_Party/FreeRTOS/Source/include 
-Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2
-Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3
+add_executable(${EXECUTABLE}
+  ${CUBEMX_SRC}
+  ${PROJECT_SRC} 
+  ${STARTUP_SCRIPT}
 )
 
-add_definitions(-DUSE_HAL_DRIVER -DSTM32L151xBA)
-
-file(GLOB_RECURSE SOURCES 
-App/gpio/*.*
-App/nrf24/*.*
-App/nrf24/drivers/*.*
-App/logger/*.*
-App/sensors/*.*
-App/sensors/hall_sensor/*.*
-App/sensors/battery/*.*
-App/ws2812/*.*
-
-Core/*.*
-Core/Src/*.*
-startup/*.*
-Middlewares/*.*
-Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/*.*
-Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/include/*.*
-Drivers/*.*
-Drivers/STM32L1xx_HAL_Driver/*.*
+target_compile_definitions(${EXECUTABLE} PRIVATE
+  ${MCU_MODEL}
+  USE_HAL_DRIVER
 )
 
-set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/Drivers/STM32L151CBTxA_FLASH.ld)
+target_include_directories(${EXECUTABLE} PRIVATE
+  ${CUBEMX_INC}
+  ${PROJECT_INC}
+)
 
-add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${CMAKE_SOURCE_DIR}/${PROJECT_NAME}.map)
-add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)
-add_link_options(-T ${LINKER_SCRIPT})
+target_compile_options(${EXECUTABLE} PRIVATE
+  ${CPU_PARAMETERS}
+  -Wno-unused-parameter
+  -Wall
+  -Wextra
+  #-Wuseless-cast
+  #-Wsuggest-override
+  $<$<COMPILE_LANGUAGE:CXX>:
+    -Wno-volatile
+    -fno-rtti
+    -fno-exceptions>
+    #-Wold-style-cast
+  $<$<CONFIG:Debug>:-O0 -g3 -ggdb>
+  $<$<CONFIG:Release>:-Og -g0>
+)
 
-add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
+target_link_options( ${EXECUTABLE} PRIVATE
+  -T${LINKER_SCRIPT}
+  ${CPU_PARAMETERS}
+  -Wl,-Map=${CMAKE_SOURCE_DIR}/Drivers/${CMAKE_PROJECT_NAME}.map
+  -specs=nosys.specs
+  #-specs=nano.specs
+  -Wl,--start-group
+  -lc
+  -lm
+  -lstdc++
+  -lsupc++
+  -Wl,--end-group
+  -Wl,--gc-sections
+  -Wl,--print-memory-usage
+)
+
+add_custom_command(TARGET ${EXECUTABLE} POST_BUILD
+  COMMAND ${CMAKE_SIZE} $<TARGET_FILE:${EXECUTABLE}>
+)
 
 set(HEX_FILE ${CMAKE_SOURCE_DIR}/build/${PROJECT_NAME}.hex)
 set(BIN_FILE ${CMAKE_SOURCE_DIR}/build/${PROJECT_NAME}.bin)
 
-add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
+add_custom_command(TARGET ${EXECUTABLE} POST_BUILD
     COMMAND ${CMAKE_OBJCOPY} ARGS -O ihex ${PROJECT_NAME}.elf ${HEX_FILE}
     COMMAND ${CMAKE_OBJCOPY} ARGS -O binary ${PROJECT_NAME}.elf ${BIN_FILE}
     COMMENT "Building ${HEX_FILE} Building ${BIN_FILE}"

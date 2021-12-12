@@ -14,6 +14,7 @@
 // Global variables only for callback functions
 extern osTimerId_t ledTimeoutHandle;
 Leds *ledsPointer = NULL;
+extern SPI_HandleTypeDef hspi2;
 
 Leds::Leds() {
   ledsPointer = this;
@@ -21,7 +22,6 @@ Leds::Leds() {
   ledsEnablePin = new Gpio{DCDC_ENABLE_GPIO_Port, DCDC_ENABLE_Pin};
 
   MX_SPI2_Init();
-  extern SPI_HandleTypeDef hspi2;
   ledSpi = &hspi2;
 
   Logger::LogDebug("Leds Init");
@@ -97,7 +97,9 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
   }
 }
 
-void ledTimeoutCallback(void *argument) { ledsPointer->Powerdown(); }
+void ledTimeoutCallback(void *argument) { 
+  /*ledsPointer->Powerdown();*/ 
+};
 
 }  // extern C close
 

@@ -10,6 +10,9 @@
 #include "radioApp.hpp"
 #include "logger.hpp"
 #include "gpioApp.hpp"
+extern "C" {
+  #include "nrf24.h"
+} // extern C close
 
 #define RADIO_TASK_TIME_INTERVAL 500
 #define RADIO_RECEIVE_TIMEOUT 5000
@@ -19,22 +22,25 @@
 #define RADIO_PAYLOAD_SIZE 32
 #define RADIO_AUTO_ACK 1
 
-// HAL SPI handle
-extern SPI_HandleTypeDef hspi1;
-// OS managed timer
-extern osTimerId_t radioHeartbeatHandle;
-
-uint32_t taskTimer = RADIO_TASK_TIME_INTERVAL;
-//Gpio * pin = new Gpio(LED_USER_GPIO_Port, LED_USER_Pin);
-NRF24 radio;
-void *rxData;
-bool flag;
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void RadioTask(void const *argument) {
+// HAL UART handle
+extern UART_HandleTypeDef huart1;
+// OS managed timer
+extern osTimerId_t radioHeartbeatHandle;
+
+void RadioTask(void * argument) {
+  //SPI_HandleTypeDef * radioSPI = GetSpiHandle(1);
+  uint32_t taskTimer = RADIO_TASK_TIME_INTERVAL;
+  Gpio pin = Gpio(LED_USER_GPIO_Port, LED_USER_Pin);
+  //NRF24 radio = NRF24(radioSPI);
+  void *rxData;
+  bool flag = false;
+
+  //if(radio.IsInitialised()) pin.Set();
+
   for (;;) {
     // if (radio.IsAvailable()) {
     //   radio.Read(rxData);
@@ -51,17 +57,18 @@ void RadioTask(void const *argument) {
     // } else {
     //   Logger::LogDebug("Cannot send data");
     // }
+
+    // if(radio.IsAvailable()) {
+    //   Logger::Log("Radio available");
+    // }
     flag ^= 1;
-    //pin->Set(1);
+    pin.Set(flag);
 
     vTaskDelay(taskTimer);
   }  // -------------------------------------------------------------------------
 }
 
 extern void radioHeartbeatCallback(void *argument) {
-  Logger::LogDebug("Radio no data recieved");
-  Logger::LogDebug("Entering sleep (zzz...)");
-
   // radio.Sleep();
   NRF24_powerDown();
 }
@@ -70,19 +77,19 @@ extern void radioHeartbeatCallback(void *argument) {
 }
 #endif
 
-NRF24::NRF24() {
-  NRF24_begin(NRF24_CE_GPIO_Port, NRF24_CSN_Pin, NRF24_CE_Pin, hspi1);
+NRF24::NRF24(SPI_HandleTypeDef * hspi) {
+  NRF24_begin(NRF24_CE_GPIO_Port, NRF24_CSN_Pin, NRF24_CE_Pin, hspi);
 
   // printRadioSettings();
 
   NRF24_stopListening();
   NRF24_openWritingPipe(RADIO_WRITE_PIPE);
-  NRF24_setAutoAck(RADIO_AUTO_ACK);
+//  NRF24_setAutoAck(RADIO_AUTO_ACK);
   NRF24_setChannel(RADIO_CHANNEL);
   NRF24_setPayloadSize(RADIO_PAYLOAD_SIZE);
 
-  NRF24_enableDynamicPayloads();
-  NRF24_enableAckPayload();
+//  NRF24_enableDynamicPayloads();
+//  NRF24_enableAckPayload();
 }
 
 bool NRF24::Write(void *payload) {
@@ -105,9 +112,13 @@ void NRF24::Wakeup(void) {
   if (isSleeping) {
     NRF24_powerUp();
     // Powerup requires 1.5ms run up delay
-    HAL_Delay(1500);
+    osDelay(1500);
     isSleeping = false;
   }
+}
+
+uint8_t NRF24::IsInitialised(void) {
+  return NRF24_get_status();
 }
 
 // --------------------------------------------------------
