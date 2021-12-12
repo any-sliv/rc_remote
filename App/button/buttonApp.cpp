@@ -1,5 +1,5 @@
 /*
- * sensorApp.cpp
+ * buttonApp.cpp
  *
  *  Created on: Dec 12, 2021
  *      Author: macsli
@@ -35,7 +35,7 @@ extern "C" {
   extern osMessageQueueId_t buttonQueueHandle;
 } // extern C close
 
-extern "C" void ButtonTask(void *argument) {
+extern "C" void ButtonTask(void * argument) {
   Gpio button = Gpio(BUTTON_TRIGGER_GPIO_Port, BUTTON_TRIGGER_Pin,
                      0, INPUT, PULLUP);
 
@@ -46,6 +46,7 @@ extern "C" void ButtonTask(void *argument) {
   uint8_t dummy = 0;
 
   for (;;) { // ---------------------------------------
+    int a = 0;
     switch (state) {
     case INITIAL_PRESS:
       if (button.Read()) {
@@ -96,26 +97,35 @@ extern "C" void ButtonTask(void *argument) {
       break;
     }
 
+    // Each press increase number of presses and run timer
+    // When timer expires send to queue number of presses from timer runtime
+    // If timer is running send only value of current state of button
+    // Message queue format |button.Read()|number of presses|wasHold|
     if (wasPressed) {
       pressed++;
       wasPressed = false;
       osTimerStop(buttonMultiplePressHandle);
       osTimerStart(buttonMultiplePressHandle, MULTIPLE_PRESS_TIMEOUT);
     }
+
+    // Warning: if queue if full no messages are put
     uint8_t buttonRead = (uint8_t)button.Read();
-    osMessageQueuePut(buttonQueueHandle, &buttonRead, 0, 200);
+    //todo too fast readout (queueGet) and 0/1/0/1 is read, cuz '0' is put when queue is empty
+    osMessageQueuePut(buttonQueueHandle, &buttonRead, 0, 0);
 
     // Put data only when multiple press has timedout
-    if (!(osTimerIsRunning)) {
-      osMessageQueuePut(buttonQueueHandle, &pressed, 0, 200);
-      osMessageQueuePut(buttonQueueHandle, &wasHold, 0, 200);
+    if (!(osTimerIsRunning(buttonMultiplePressHandle))) {
+      osMessageQueuePut(buttonQueueHandle, &pressed, 0, 0);
+      osMessageQueuePut(buttonQueueHandle, &wasHold, 0, 0);
       pressed = 0;
       wasHold = 0;
     }
     else {
-      osMessageQueuePut(buttonQueueHandle, &dummy, 0, 200);
-      osMessageQueuePut(buttonQueueHandle, &dummy, 0, 200);
+      osMessageQueuePut(buttonQueueHandle, &dummy /* = 0 */, 0, 0);
+      osMessageQueuePut(buttonQueueHandle, &dummy /* = 0 */, 0, 0);
     }
+    
+    vTaskDelay(BUTTON_TASK_INTERVAL);
   }
 } // ---------------------------------------------------
 

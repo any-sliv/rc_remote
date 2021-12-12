@@ -39,8 +39,7 @@ void MX_FREERTOS_Init(void);
 
 void SystemClock_Config(void);
 
-int main(void)
-{
+int main(void) {
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
@@ -56,12 +55,6 @@ int main(void)
   MX_SPI2_Init();
   MX_USART1_UART_Init();
   //MX_USB_PCD_Init();
-
-  for (int i = 0; i < 10; i++)
-  {
-    HAL_GPIO_TogglePin(LED_USER_GPIO_Port, LED_USER_Pin);
-    HAL_Delay(50);
-  }
 
   /* Init scheduler */
   osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */

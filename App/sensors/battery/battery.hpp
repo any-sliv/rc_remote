@@ -13,7 +13,7 @@ extern "C" {
 #include "analogRead.hpp"
 #include "gpioApp.hpp"
 
-class Battery : virtual public AnalogRead {
+class Battery : AnalogRead {
  private:
   Gpio pinChrgEn;    // charge enable
   Gpio pinChrg;    // read charge state

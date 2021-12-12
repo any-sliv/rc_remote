@@ -25,12 +25,15 @@ Gpio::Gpio(GPIO_TypeDef *_port, uint32_t _pin, bool initState, uint32_t mode,
     .Pin = pin,
     .Mode = mode,
     .Pull = pull,
-    .Speed = GPIO_SPEED_FREQ_LOW,
     };
+  
+  if(mode == OUTPUT) {
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  }
 
   HAL_GPIO_Init(port, &GPIO_InitStruct);
 
-  Set(initState);
+  //Set(initState);
 }
 
 Gpio::Gpio() {};
@@ -43,7 +46,7 @@ void Gpio::Set(bool value) {
 
 void Gpio::Reset(void) { HAL_GPIO_WritePin(port, pin, (GPIO_PinState)0); }
 
-bool Gpio::Read(void) { return (bool)HAL_GPIO_ReadPin(port, pin); }
+bool Gpio::Read(void) { return (!(bool)HAL_GPIO_ReadPin(port, pin)); }
 
 uint32_t Gpio::GetPinNumber(void) { return pin; }
 

@@ -66,6 +66,7 @@ class Gpio {
 
   /**
    * @retval Value of current pin state
+   * WARNING! Inverted logic!
    */
   bool Read(void);
 
