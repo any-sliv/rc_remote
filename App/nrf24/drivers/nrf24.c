@@ -41,7 +41,7 @@ static uint16_t				nrf24_CSN_PIN;
 static uint16_t				nrf24_CE_PIN;
 //SPI handle
 static SPI_HandleTypeDef nrf24_hspi;
-//Debugging UART handle
+
 
 //**** Functions prototypes ****//
 //Microsecond delay function
@@ -168,10 +168,11 @@ uint8_t NRF24_get_status(void)
 }
 
 //12. Begin function
-void NRF24_begin(GPIO_TypeDef *nrf24PORT, uint16_t nrfCSN_Pin, uint16_t nrfCE_Pin, SPI_HandleTypeDef nrfSPI)
+void NRF24_begin(GPIO_TypeDef *nrf24PORT, uint16_t nrfCSN_Pin, uint16_t nrfCE_Pin, SPI_HandleTypeDef * nrfSPI)
 {
 	//Copy SPI handle variable
-	memcpy(&nrf24_hspi, &nrfSPI, sizeof(nrfSPI));
+	//memcpy(&nrf24_hspi, nrfSPI, sizeof(nrfSPI));
+  nrf24_hspi = *nrfSPI;
 	//Copy Pins and Port variables
 	nrf24_PORT = nrf24PORT;
 	nrf24_CSN_PIN = nrfCSN_Pin;
@@ -181,7 +182,7 @@ void NRF24_begin(GPIO_TypeDef *nrf24PORT, uint16_t nrfCSN_Pin, uint16_t nrfCE_Pi
 	NRF24_csn(1);
 	NRF24_ce(0);
 	//5 ms initial delay
-	HAL_Delay(5);
+  osDelay(5);
 	
 	//**** Soft Reset Registers default values ****//
 	NRF24_write_register(0x00, 0x08);
@@ -218,6 +219,8 @@ void NRF24_begin(GPIO_TypeDef *nrf24PORT, uint16_t nrfCSN_Pin, uint16_t nrfCE_Pi
 
 	//Initialise retries 15 and delay 1250 usec
 	NRF24_setRetries(15, 15);
+  osDelay(2);
+
 	//Initialise PA level to max (0dB)
 	NRF24_setPALevel(RF24_PA_0dB);
 	//Initialise data rate to 1Mbps
@@ -255,6 +258,7 @@ void NRF24_startListening(void)
 	//Set CE HIGH to start listenning
 	NRF24_ce(1);
 	//Wait for 130 uSec for the radio to come on
+  //todo here and rest of delays
 	NRF24_DelayMicroSeconds(150);
 }
 //14. Stop listening (essential before any write operation)

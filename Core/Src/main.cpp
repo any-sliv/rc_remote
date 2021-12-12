@@ -19,7 +19,7 @@
 
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-extern "C" {
+
 #include "FreeRTOS.h"
 #include "main.h"
 #include "cmsis_os.h"
@@ -31,15 +31,13 @@ extern "C" {
 //#include "usb.h"
 #include "gpio.h"
 
+extern "C" {
 /* Private function prototypes * -----------------------------------------------*/
-void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 
-//void ledTimeoutCallback(void * argument) {};
-void RadioTask(void * argument) {};
-void radioHeartbeatCallback(void * argument) {};
-
 } // extern C close
+
+void SystemClock_Config(void);
 
 int main(void)
 {

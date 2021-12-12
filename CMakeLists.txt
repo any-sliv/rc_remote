@@ -43,8 +43,8 @@ ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC
 ) # ------------------------------------------------
 SET(PROJECT_INC
 ${CMAKE_CURRENT_SOURCE_DIR}/App/gpio
-# ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24
-# ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers
+${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24
+${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers
 ${CMAKE_CURRENT_SOURCE_DIR}/App/logger
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/hall_sensor
@@ -65,8 +65,8 @@ ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32L1xx_HAL_Driver/*.*
 ) # ------------------------------------------------
 file(GLOB_RECURSE PROJECT_SRC FOLLOW_SYMLINKS
 ${CMAKE_CURRENT_SOURCE_DIR}/App/gpio/*.*
-# ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/*.*
-# ${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/App/nrf24/drivers/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/logger/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/hall_sensor/*.*

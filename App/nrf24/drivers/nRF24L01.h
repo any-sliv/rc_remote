@@ -7,6 +7,9 @@ Description:
 
 */
 
+#ifndef __NRF24L01_H
+#define __NRF24L01_H
+
 #define _BV(x) (1 << (x))
 
 /* Memory Map */
@@ -110,3 +113,5 @@ Description:
 #define RF_DR_HIGH 3
 #define RF_PWR_LOW 1
 #define RF_PWR_HIGH 2
+
+#endif

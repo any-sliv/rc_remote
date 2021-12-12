@@ -21,6 +21,12 @@ WARRANTY and Author is not liable for any damages caused directly or indirectly
 by this software, read more about this on the GNU General Public License.
 */
 
+#ifndef __NRF24_H
+#define __NRF24_H
+
+#include "FreeRTOS.h"
+#include "cmsis_os.h"
+
 // List of header files
 #include <stdbool.h>
 #include <stdlib.h>
@@ -89,7 +95,7 @@ uint8_t NRF24_get_status(void);
 
 // 12. Begin function
 void NRF24_begin(GPIO_TypeDef* nrf24PORT, uint16_t nrfCSN_Pin,
-                 uint16_t nrfCE_Pin, SPI_HandleTypeDef nrfSPI);
+                 uint16_t nrfCE_Pin, SPI_HandleTypeDef * nrfSPI);
 // 13. Listen on open pipes for reading (Must call NRF24_openReadingPipe()
 // first)
 void NRF24_startListening(void);
@@ -169,3 +175,4 @@ void NRF24_ACTIVATE_cmd(void);
 // 48. Get AckPayload Size
 uint8_t NRF24_GetAckPayloadSize(void);
 
+#endif

@@ -78,7 +78,8 @@
     "variant": "cpp",
     "gpio.h": "c",
     "main.h": "c",
-    "freertos.h": "c"
+    "freertos.h": "c",
+    "spi.h": "c"
   },
   "cmake.configureSettings": {
     "gtest_build_samples": "ON"

@@ -19,7 +19,7 @@ extern UART_HandleTypeDef huart1;
 
 bool Logger::ILogDebug(std::string textString, va_list args) {
   uint8_t* txBuffer = reinterpret_cast<uint8_t*>(textString[0]);
-  HAL_StatusTypeDef ret = HAL_UART_Transmit_IT(&huart1, txBuffer, textString.length());
+  HAL_StatusTypeDef ret = HAL_UART_Transmit(&huart1, txBuffer, textString.length() + 1, 5);
 
   // HAL_OK is 0 -> returns true.
   return ret ? false : true;
@@ -36,4 +36,10 @@ bool Logger::LogDebug(std::string text, ...) {
   bool ret = Get().ILogDebug(text, args);
   va_end(args);
   return ret;
+}
+
+void Logger::Log(std::string text) {
+  text.append("\r\n");
+  const char *cstr = text.c_str();
+  HAL_StatusTypeDef ret = HAL_UART_Transmit(&huart1, (uint8_t *)cstr, text.length() + 1, 5);
 }
