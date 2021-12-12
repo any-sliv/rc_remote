@@ -102,7 +102,7 @@ target_compile_options(${EXECUTABLE} PRIVATE
     -fno-rtti
     -fno-exceptions>
     #-Wold-style-cast
-  $<$<CONFIG:Debug>:-Og -g3 -ggdb>
+  $<$<CONFIG:Debug>:-O0 -g3 -ggdb>
   $<$<CONFIG:Release>:-Og -g0>
 )
 
