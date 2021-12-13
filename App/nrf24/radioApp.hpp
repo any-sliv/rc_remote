@@ -8,27 +8,41 @@
 #ifndef __RADIOAPP_HPP
 #define __RADIOAPP_HPP
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include "FreeRTOS.h"
 #include "cmsis_os.h"
 #include "task.h"
 #include "spi.h"
 #include "gpioApp.hpp"
 
-#ifdef __cplusplus
-}
-#endif
+struct RadioConfig
+{
+    // Interval at which radio task is being run
+  const uint16_t taskTimeInterval = 20; //[ms]
+
+  const uint8_t payloadSize = 16;
+
+    // Radio transmit channel
+  const uint8_t channel = 52;
+
+    // Pipe addreses
+  const uint64_t txPipeAddress = 0xCAFEBABE;
+  const uint64_t rxPipeAddress = 0xDEADBEEF;
+
+    // Used gpio pins
+  GPIO_TypeDef * port = NRF24_CE_GPIO_Port;
+  const uint16_t cePin = NRF24_CE_Pin;
+  const uint16_t csnPin = NRF24_CSN_Pin;
+};
 
 class NRF24 {
+ public: const RadioConfig config;
+
  private:
-  // Safety flag for changing power mode
+    // Safety flag for changing power mode
   bool isSleeping;
-  // Pins only initalised. State set by HAL in NRF24 drivers
-  Gpio pinCE = Gpio(NRF24_CE_GPIO_Port, NRF24_CE_Pin);
-  Gpio pinCSN = Gpio(NRF24_CSN_GPIO_Port, NRF24_CSN_Pin);
+    // Pins only initalised. State set by HAL in NRF24 drivers
+  Gpio pinCE = Gpio(config.port, config.cePin);
+  Gpio pinCSN = Gpio(config.port, config.csnPin);
 
  public:
   NRF24(SPI_HandleTypeDef * hspi);
