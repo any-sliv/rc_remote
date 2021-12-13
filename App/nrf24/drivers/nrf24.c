@@ -19,6 +19,7 @@ References:				This library was written based on the Arduino NRF24 Open-Source l
 
 //List of header files
 #include "nrf24.h"
+#include "usart.h"
 
 //*** Variables declaration ***//
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
@@ -40,8 +41,9 @@ static GPIO_TypeDef		*nrf24_PORT;
 static uint16_t				nrf24_CSN_PIN;
 static uint16_t				nrf24_CE_PIN;
 //SPI handle
-static SPI_HandleTypeDef nrf24_hspi;
+static SPI_HandleTypeDef * nrf24_hspi;
 
+extern UART_HandleTypeDef huart1;
 
 //**** Functions prototypes ****//
 //Microsecond delay function
@@ -73,9 +75,9 @@ uint8_t NRF24_read_register(uint8_t reg)
 	NRF24_csn(0);
 	//Transmit register address
 	spiBuf[0] = reg&0x1F;
-	HAL_SPI_Transmit(&nrf24_hspi, spiBuf, 1, 100);
+	HAL_SPI_Transmit(nrf24_hspi, spiBuf, 1, 100);
 	//Receive data
-	HAL_SPI_Receive(&nrf24_hspi, &spiBuf[1], 1, 100);
+	HAL_SPI_Receive(nrf24_hspi, &spiBuf[1], 1, 100);
 	retData = spiBuf[1];
 	//Bring CSN high
 	NRF24_csn(1);
@@ -90,9 +92,9 @@ void NRF24_read_registerN(uint8_t reg, uint8_t *buf, uint8_t len)
 	//Transmit register address
 	spiBuf[0] = reg&0x1F;
 	//spiStatus = NRF24_SPI_Write(spiBuf, 1);
-	HAL_SPI_Transmit(&nrf24_hspi, spiBuf, 1, 100);
+	HAL_SPI_Transmit(nrf24_hspi, spiBuf, 1, 100);
 	//Receive data
-	HAL_SPI_Receive(&nrf24_hspi, buf, len, 100);
+	HAL_SPI_Receive(nrf24_hspi, buf, len, 100);
 	//Bring CSN high
 	NRF24_csn(1);
 }
@@ -105,7 +107,7 @@ void NRF24_write_register(uint8_t reg, uint8_t value)
 	//Transmit register address and data
 	spiBuf[0] = reg|0x20;
 	spiBuf[1] = value;
-	HAL_SPI_Transmit(&nrf24_hspi, spiBuf, 2, 100);
+	HAL_SPI_Transmit(nrf24_hspi, spiBuf, 2, 100);
 	//Bring CSN high
 	NRF24_csn(1);
 }
@@ -117,8 +119,8 @@ void NRF24_write_registerN(uint8_t reg, const uint8_t* buf, uint8_t len)
 	NRF24_csn(0);
 	//Transmit register address and data
 	spiBuf[0] = reg|0x20;
-	HAL_SPI_Transmit(&nrf24_hspi, spiBuf, 1, 100);
-	HAL_SPI_Transmit(&nrf24_hspi, (uint8_t*)buf, len, 100);
+	HAL_SPI_Transmit(nrf24_hspi, spiBuf, 1, 100);
+	HAL_SPI_Transmit(nrf24_hspi, (uint8_t*)buf, len, 100);
 	//Bring CSN high
 	NRF24_csn(1);
 }
@@ -130,8 +132,8 @@ void NRF24_write_payload(const void* buf, uint8_t len)
 	NRF24_csn(0);
 	//Send Write Tx payload command followed by pbuf data
 	wrPayloadCmd = CMD_W_TX_PAYLOAD;
-	HAL_SPI_Transmit(&nrf24_hspi, &wrPayloadCmd, 1, 100);
-	HAL_SPI_Transmit(&nrf24_hspi, (uint8_t *)buf, len, 100);
+	HAL_SPI_Transmit(nrf24_hspi, &wrPayloadCmd, 1, 100);
+	HAL_SPI_Transmit(nrf24_hspi, (uint8_t *)buf, len, 100);
 	//Bring CSN high
 	NRF24_csn(1);
 }
@@ -144,8 +146,8 @@ void NRF24_read_payload(void* buf, uint8_t len)
 	//Read data from Rx payload buffer
 	NRF24_csn(0);
 	cmdRxBuf = CMD_R_RX_PAYLOAD;
-	HAL_SPI_Transmit(&nrf24_hspi, &cmdRxBuf, 1, 100);
-	HAL_SPI_Receive(&nrf24_hspi, buf, data_len, 100);
+	HAL_SPI_Transmit(nrf24_hspi, &cmdRxBuf, 1, 100);
+	HAL_SPI_Receive(nrf24_hspi, buf, data_len, 100);
 	NRF24_csn(1);
 }
 
@@ -171,8 +173,8 @@ uint8_t NRF24_get_status(void)
 void NRF24_begin(GPIO_TypeDef *nrf24PORT, uint16_t nrfCSN_Pin, uint16_t nrfCE_Pin, SPI_HandleTypeDef * nrfSPI)
 {
 	//Copy SPI handle variable
-	//memcpy(&nrf24_hspi, nrfSPI, sizeof(nrfSPI));
-  nrf24_hspi = *nrfSPI;
+	//memcpy(nrf24_hspi, nrfSPI, sizeof(nrfSPI));
+  nrf24_hspi = nrfSPI;
 	//Copy Pins and Port variables
 	nrf24_PORT = nrf24PORT;
 	nrf24_CSN_PIN = nrfCSN_Pin;
@@ -224,7 +226,7 @@ void NRF24_begin(GPIO_TypeDef *nrf24PORT, uint16_t nrfCSN_Pin, uint16_t nrfCE_Pi
 	//Initialise PA level to max (0dB)
 	NRF24_setPALevel(RF24_PA_0dB);
 	//Initialise data rate to 1Mbps
-	NRF24_setDataRate(RF24_2MBPS);
+	NRF24_setDataRate(RF24_1MBPS);
 	//Initalise CRC length to 16-bit (2 bytes)
 	NRF24_setCRCLength(RF24_CRC_16);
 	//Disable dynamic payload
@@ -234,8 +236,7 @@ void NRF24_begin(GPIO_TypeDef *nrf24PORT, uint16_t nrfCSN_Pin, uint16_t nrfCE_Pi
 	
 	//Reset status register
 	NRF24_resetStatus();
-	//Initialise channel to 76
-	NRF24_setChannel(76);
+
 	//Flush buffers
 	NRF24_flush_tx();
 	NRF24_flush_rx();
@@ -279,7 +280,7 @@ bool NRF24_write( const void* buf, uint8_t len )
   uint8_t observe_tx;
   uint8_t status;
   uint32_t sent_at = HAL_GetTick();
-	const uint32_t timeout = 10; //ms to wait for timeout
+	const uint32_t timeout = 20; //ms to wait for timeout
 	do
   {
     NRF24_read_registerN(REG_OBSERVE_TX,&observe_tx,1);
@@ -719,11 +720,16 @@ void NRF24_ACTIVATE_cmd(void)
 	NRF24_csn(0);
 	cmdRxBuf[0] = CMD_ACTIVATE;
 	cmdRxBuf[1] = 0x73;
-	HAL_SPI_Transmit(&nrf24_hspi, cmdRxBuf, 2, 100);
+	HAL_SPI_Transmit(nrf24_hspi, cmdRxBuf, 2, 100);
 	NRF24_csn(1);
 }
 //48. Get AckPayload Size
 uint8_t NRF24_GetAckPayloadSize(void)
 {
 	return ack_payload_length;
+}
+
+void printRadioSettings(void)
+{
+	//tbd
 }

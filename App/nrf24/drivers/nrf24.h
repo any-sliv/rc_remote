@@ -31,6 +31,7 @@ by this software, read more about this on the GNU General Public License.
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 #include "nRF24L01.h"
 #include "stm32l1xx_hal.h"  //** Change this according to your STM32 series **//
@@ -174,5 +175,7 @@ void NRF24_resetStatus(void);
 void NRF24_ACTIVATE_cmd(void);
 // 48. Get AckPayload Size
 uint8_t NRF24_GetAckPayloadSize(void);
+
+void printRadioSettings(void);
 
 #endif

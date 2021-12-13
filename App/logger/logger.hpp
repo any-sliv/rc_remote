@@ -23,7 +23,7 @@ class Logger {
  public:
   static Logger& Get();
 
-  static void Log(std::string text);
+  static void Log(char * data, uint16_t len);
   /**
    * Give me your text and I log it
    * @param text string to be printed in UART interface

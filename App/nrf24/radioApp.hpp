@@ -16,6 +16,7 @@ extern "C" {
 #include "cmsis_os.h"
 #include "task.h"
 #include "spi.h"
+#include "gpioApp.hpp"
 
 #ifdef __cplusplus
 }
@@ -25,6 +26,9 @@ class NRF24 {
  private:
   // Safety flag for changing power mode
   bool isSleeping;
+  // Pins only initalised. State set by HAL in NRF24 drivers
+  Gpio pinCE = Gpio(NRF24_CE_GPIO_Port, NRF24_CE_Pin);
+  Gpio pinCSN = Gpio(NRF24_CSN_GPIO_Port, NRF24_CSN_Pin);
 
  public:
   NRF24(SPI_HandleTypeDef * hspi);
