@@ -113,18 +113,21 @@ extern "C" void ButtonTask(void * argument) {
     //todo too fast readout (queueGet) and 0/1/0/1 is read, cuz '0' is put when queue is empty
     osMessageQueuePut(buttonQueueHandle, &buttonRead, 0, 0);
 
+    //todo refactor to do foreach
     // Put data only when multiple press has timedout
+    uint8_t tmpQueue [3] = {
+      button.Read(),
+      osTimerIsRunning(buttonQueueHandle) ? dummy : pressed,
+      osTimerIsRunning(buttonQueueHandle) ? dummy : wasHold
+      };
+
+    for (auto && item : tmpQueue) osMessageQueuePut(buttonQueueHandle, &item, 0, 0);
+
     if (!(osTimerIsRunning(buttonMultiplePressHandle))) {
-      osMessageQueuePut(buttonQueueHandle, &pressed, 0, 0);
-      osMessageQueuePut(buttonQueueHandle, &wasHold, 0, 0);
       pressed = 0;
       wasHold = 0;
     }
-    else {
-      osMessageQueuePut(buttonQueueHandle, &dummy /* = 0 */, 0, 0);
-      osMessageQueuePut(buttonQueueHandle, &dummy /* = 0 */, 0, 0);
-    }
-    
+
     vTaskDelay(BUTTON_TASK_INTERVAL);
   }
 } // ---------------------------------------------------
