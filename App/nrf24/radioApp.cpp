@@ -67,9 +67,13 @@ NRF24::NRF24(SPI_HandleTypeDef * hspi) {
   //NRF24_setAutoAck(RADIO_AUTO_ACK);
   NRF24_setChannel(config.channel);
   NRF24_setPayloadSize(config.payloadSize);
+
+  // WARNING: enabling this function messes with RT OS. Blocks other tasks.
+  // USE ONLY WHEN NECESSARY
+  //printRadioSettings();
   
-//  NRF24_enableDynamicPayloads();
-//  NRF24_enableAckPayload();
+ //NRF24_enableDynamicPayloads();
+ //NRF24_enableAckPayload();
 }
 
 bool NRF24::Write(void *payload) {

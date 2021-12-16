@@ -25,7 +25,7 @@ struct RadioConfig
   const uint8_t channel = 52;
 
     // Pipe addreses
-  const uint64_t txPipeAddress = 0xCAFEBABE;
+  const uint64_t txPipeAddress = 0x00CAFEBABE;
   const uint64_t rxPipeAddress = 0xDEADBEEF;
 
     // Used gpio pins

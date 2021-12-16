@@ -26,12 +26,6 @@ enum Pull {
   PULLDOWN = GPIO_PULLDOWN,
 };
 
-enum Button {
-  RELEASED,
-  PRESSED,
-  HOLD
-};
-
 class Gpio {
  private:
   uint16_t pin;

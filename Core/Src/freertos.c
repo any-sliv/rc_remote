@@ -76,10 +76,20 @@ const osThreadAttr_t button_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
-/* Definitions for buttonQueue */
-osMessageQueueId_t buttonQueueHandle;
-const osMessageQueueAttr_t buttonQueue_attributes = {
-  .name = "buttonQueue"
+/* Definitions for qButtonPresses */
+osMessageQueueId_t qButtonPressesHandle;
+const osMessageQueueAttr_t qButtonPresses_attributes = {
+  .name = "qButtonPresses"
+};
+/* Definitions for qButtonHold */
+osMessageQueueId_t qButtonHoldHandle;
+const osMessageQueueAttr_t qButtonHold_attributes = {
+  .name = "qButtonHold"
+};
+/* Definitions for qButtonState */
+osMessageQueueId_t qButtonStateHandle;
+const osMessageQueueAttr_t qButtonState_attributes = {
+  .name = "qButtonState"
 };
 /* Definitions for radioHeartbeat */
 osTimerId_t radioHeartbeatHandle;
@@ -163,8 +173,14 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the queue(s) */
-  /* creation of buttonQueue */
-  buttonQueueHandle = osMessageQueueNew (3, sizeof(uint8_t), &buttonQueue_attributes);
+  /* creation of qButtonPresses */
+  qButtonPressesHandle = osMessageQueueNew (1, sizeof(uint8_t), &qButtonPresses_attributes);
+
+  /* creation of qButtonHold */
+  qButtonHoldHandle = osMessageQueueNew (1, sizeof(uint8_t), &qButtonHold_attributes);
+
+  /* creation of qButtonState */
+  qButtonStateHandle = osMessageQueueNew (1, sizeof(uint8_t), &qButtonState_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -178,7 +194,7 @@ void MX_FREERTOS_Init(void) {
   radioHandle = osThreadNew(RadioTask, NULL, &radio_attributes);
 
   /* creation of sensor */
-  sensorHandle = osThreadNew(SensorTask, NULL, &sensor_attributes);
+  //sensorHandle = osThreadNew(SensorTask, NULL, &sensor_attributes);
 
   /* creation of button */
   buttonHandle = osThreadNew(ButtonTask, NULL, &button_attributes);

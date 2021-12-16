@@ -10,9 +10,10 @@
 #include "task.h"
 #include "queue.h"
 #include "gpioApp.hpp"
+#include "logger.hpp"
 
 // Each <ms> sensor task is ran
-#define BUTTON_TASK_INTERVAL 10 // [ms]
+#define BUTTON_TASK_INTERVAL 5 // [ms]
 #define PRESS_TIME 10
 #define HOLD_TIME 150
 #define MULTIPLE_PRESS_TIMEOUT 100
@@ -24,7 +25,14 @@ enum buttonState {
   WAS_IT_PRESS,
   HOLD_TIMER_EXPIRY,
   WAS_IT_HOLD,
-  HOLD_ENOUGH
+  HOLD_ENOUGH,
+  END
+};
+
+enum buttonStatus {
+  RELEASED,
+  PRESSED,
+  HOLD
 };
 
 extern "C" {
@@ -32,33 +40,40 @@ extern "C" {
   extern osTimerId_t buttonHoldHandle;
   extern osTimerId_t buttonMultiplePressHandle;
 
-  extern osMessageQueueId_t buttonQueueHandle;
+  extern osMessageQueueId_t qButtonPressesHandle;
+  extern osMessageQueueId_t qButtonHoldHandle;
+  extern osMessageQueueId_t qButtonStateHandle;
 } // extern C close
 
 extern "C" void ButtonTask(void * argument) {
   Gpio button = Gpio(BUTTON_TRIGGER_GPIO_Port, BUTTON_TRIGGER_Pin,
                      0, INPUT, PULLUP);
 
+  // State machine state
   buttonState state = INITIAL_PRESS;
-  uint8_t pressed = 0;
-  bool wasPressed = false;
-  bool wasHold = false;
+  // Button current status
+  buttonStatus status = RELEASED;
+
+  uint8_t pressesNumber = 0;
   uint8_t dummy = 0;
 
   for (;;) { // ---------------------------------------
-    int a = 0;
     switch (state) {
+      status = RELEASED;
+
     case INITIAL_PRESS:
       if (button.Read()) {
+      //if(!(HAL_GPIO_ReadPin(BUTTON_TRIGGER_GPIO_Port, BUTTON_TRIGGER_Pin))) {
         osTimerStart(buttonPressHandle, PRESS_TIME);
         state = PRESS_TIMER_EXPIRY;
       }
       break;
 
     case PRESS_TIMER_EXPIRY:
+      // Press timer expired?
       if (!(osTimerIsRunning(buttonPressHandle))) {
         state = WAS_IT_PRESS;
-      } //else stay here
+      }
       break;
 
     case WAS_IT_PRESS:
@@ -67,68 +82,66 @@ extern "C" void ButtonTask(void * argument) {
         state = HOLD_TIMER_EXPIRY;
       }
       else {
-        wasPressed = true;
-        state = INITIAL_PRESS;
+        state = END;
+        status = PRESSED;
       }
       break;
 
-    //todo check few times if still button is hold
     case HOLD_TIMER_EXPIRY:
+      // Hold timer expired?
       if (!(osTimerIsRunning(buttonPressHandle))) {
         state = WAS_IT_HOLD;
-      } //else stay here
-      break;
-
-    case WAS_IT_HOLD:
-      if (button.Read()) {
-        wasHold = true;
-        state = HOLD_ENOUGH;
+        status = HOLD;
       }
       else {
-        wasPressed = true;
-        state = INITIAL_PRESS;
+        // If released
+        if (! (button.Read())) {
+          state = END;
+          status = PRESSED;
+        }
       }
       break;
 
     case HOLD_ENOUGH:
-      if (!(button.Read())) {
-        state = INITIAL_PRESS;
+      // If released
+      if (! (button.Read())) {
+        state = END;
       } //else stay and wait until released
+      break;
+
+    case END:
+      state = INITIAL_PRESS;
       break;
     }
 
     // Each press increase number of presses and run timer
-    // When timer expires send to queue number of presses from timer runtime
-    // If timer is running send only value of current state of button
-    // Message queue format |button.Read()|number of presses|wasHold|
-    if (wasPressed) {
-      pressed++;
-      wasPressed = false;
-      osTimerStop(buttonMultiplePressHandle);
+    // Pressed is cleared when timer expires.
+    // So as long as its running you can add presses.
+    if (status == PRESSED) {
+      pressesNumber++;
       osTimerStart(buttonMultiplePressHandle, MULTIPLE_PRESS_TIMEOUT);
+      // Delay due to OS must tick to detect if timer runs.
+      osDelay(1);
     }
 
     // Warning: if queue if full no messages are put
     uint8_t buttonRead = (uint8_t)button.Read();
-    //todo too fast readout (queueGet) and 0/1/0/1 is read, cuz '0' is put when queue is empty
-    osMessageQueuePut(buttonQueueHandle, &buttonRead, 0, 0);
+    // Queue send! Current button state.
+    xQueueSend(qButtonStateHandle, &buttonRead, 0);
 
-    //todo refactor to do foreach
-    // Put data only when multiple press has timedout
-    uint8_t tmpQueue [3] = {
-      button.Read(),
-      osTimerIsRunning(buttonQueueHandle) ? dummy : pressed,
-      osTimerIsRunning(buttonQueueHandle) ? dummy : wasHold
-      };
-
-    for (auto && item : tmpQueue) osMessageQueuePut(buttonQueueHandle, &item, 0, 0);
-
+    //Put data only when multiple press has timedout
     if (!(osTimerIsRunning(buttonMultiplePressHandle))) {
-      pressed = 0;
-      wasHold = 0;
+      // Queue send! Number of presses.
+      xQueueSend(qButtonPressesHandle, &pressesNumber, 0);
+      pressesNumber = 0;
     }
 
-    vTaskDelay(BUTTON_TASK_INTERVAL);
+    if(status == HOLD) {
+      // Queue send! If button is hold.
+      xQueueSend(qButtonHoldHandle, &status, 0);
+    }
+
+    osDelay(BUTTON_TASK_INTERVAL);
   }
 } // ---------------------------------------------------
 
