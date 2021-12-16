@@ -6,9 +6,8 @@
  */
 
 #include "FreeRTOS.h"
-#include "cmsis_os.h"
 #include "task.h"
-#include "queue.h"
+#include "buttonApp.hpp"
 #include "gpioApp.hpp"
 #include "logger.hpp"
 
@@ -39,10 +38,6 @@ extern "C" {
   extern osTimerId_t buttonPressHandle;
   extern osTimerId_t buttonHoldHandle;
   extern osTimerId_t buttonMultiplePressHandle;
-
-  extern osMessageQueueId_t qButtonPressesHandle;
-  extern osMessageQueueId_t qButtonHoldHandle;
-  extern osMessageQueueId_t qButtonStateHandle;
 } // extern C close
 
 extern "C" void ButtonTask(void * argument) {
@@ -58,9 +53,9 @@ extern "C" void ButtonTask(void * argument) {
   uint8_t dummy = 0;
 
   for (;;) { // ---------------------------------------
+    status = RELEASED;
+    
     switch (state) {
-      status = RELEASED;
-
     case INITIAL_PRESS:
       if (button.Read()) {
       //if(!(HAL_GPIO_ReadPin(BUTTON_TRIGGER_GPIO_Port, BUTTON_TRIGGER_Pin))) {
@@ -129,8 +124,8 @@ extern "C" void ButtonTask(void * argument) {
     // Queue send! Current button state.
     xQueueSend(qButtonStateHandle, &buttonRead, 0);
 
-    //Put data only when multiple press has timedout
-    if (!(osTimerIsRunning(buttonMultiplePressHandle))) {
+    //Put data only when multiple press has timedout and press are registered
+    if (pressesNumber && !(osTimerIsRunning(buttonMultiplePressHandle))) {
       // Queue send! Number of presses.
       xQueueSend(qButtonPressesHandle, &pressesNumber, 0);
       pressesNumber = 0;
@@ -141,7 +136,7 @@ extern "C" void ButtonTask(void * argument) {
       xQueueSend(qButtonHoldHandle, &status, 0);
     }
 
-    osDelay(BUTTON_TASK_INTERVAL);
+    vTaskDelay(BUTTON_TASK_INTERVAL);
   }
 } // ---------------------------------------------------
 

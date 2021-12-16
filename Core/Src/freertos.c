@@ -194,7 +194,7 @@ void MX_FREERTOS_Init(void) {
   radioHandle = osThreadNew(RadioTask, NULL, &radio_attributes);
 
   /* creation of sensor */
-  //sensorHandle = osThreadNew(SensorTask, NULL, &sensor_attributes);
+  sensorHandle = osThreadNew(SensorTask, NULL, &sensor_attributes);
 
   /* creation of button */
   buttonHandle = osThreadNew(ButtonTask, NULL, &button_attributes);
