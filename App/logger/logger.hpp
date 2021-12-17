@@ -17,11 +17,10 @@ extern "C" {
 class Logger {
  private:
   Logger();
-  static Logger logInstance;
-  static bool ILogDebug(std::string textString, va_list args);
 
  public:
-  static Logger& Get();
+
+  static void Log(std::string text);
 
   static void Log(char * data, uint16_t len);
   /**

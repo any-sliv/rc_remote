@@ -7,7 +7,7 @@
   "workbench.colorCustomizations": {
     "statusBar.background": "#CC5801",
     "statusBar.noFolderBackground": "#212121",
-    "statusBar.debuggingBackground": "#263238"
+    "statusBar.debuggingBackground": "#FC46AA"
   },
   "cortex-debug.stutilPath": "/usr/local/bin/st-util",
   "cortex-debug.gdbPath": "/usr/local/bin/gdb",
