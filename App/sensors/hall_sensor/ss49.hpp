@@ -18,18 +18,20 @@ class SS49 : AnalogRead {
     .SamplingTime = ADC_SAMPLETIME_48CYCLES
   };
 
+  uint32_t samplingPeriod = 200;
   // todo try to make it constant and assign value after init
   int neutralThrottle = 0;
 
  public:
   /**
-   * Initiate the sensor.
+   * Initiate the sensor. Used in unit test scenario.
    * @param channel configuration
    */
   SS49(ADC_ChannelConfTypeDef *channel);
   /**
-   * If no channel given as a param use 
-   * default config of class member @param channelConfig 
+   * If no channel given as a param use
+   * default config of class member @param channelConfig
+   * Runs calibration - blocking function.
    */
   SS49(void);
 
@@ -41,6 +43,8 @@ class SS49 : AnalogRead {
    * Calibration value is saved in variable "neutralThrottle"
    */
   void CalibrateInitialPosition(uint32_t samplingPeriod);
+  
+  void CalibrateInitialPosition(void);
 
   /**
    * Return position of hall sensor.

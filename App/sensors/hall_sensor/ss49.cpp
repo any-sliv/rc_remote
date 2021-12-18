@@ -6,11 +6,13 @@
  */
 
 #include "ss49.hpp"
-
+#include "logger.hpp"
 #include <vector>
 #include <algorithm>
 
 extern ADC_HandleTypeDef hadc;
+
+#define SAMPLING_PERIOD 200
 
 // todo add save in flash previous position and check if current calibration
 // todo is not much higher than previous position
@@ -18,7 +20,12 @@ extern ADC_HandleTypeDef hadc;
 // todo to prevent often write cycles
 
 SS49::SS49(ADC_ChannelConfTypeDef *channel) { channelConfig = *channel; }
-SS49::SS49(void) {};
+
+SS49::SS49(void) {
+  Logger::Log("SS49 hall sensor Init.");
+  //CalibrateInitialPosition(samplingPeriod);
+  CalibrateInitialPosition();
+}
 
 void SS49::CalibrateInitialPosition(uint32_t samplingPeriod) {
   std::vector<uint32_t> sample;
@@ -40,6 +47,18 @@ void SS49::CalibrateInitialPosition(uint32_t samplingPeriod) {
   for (auto &n : sample) sum += n;
 
   neutralThrottle = (int)(sum / sample.size());
+}
+
+void SS49::CalibrateInitialPosition(void) {
+  uint32_t sum = 0;
+
+  // Get all samples
+  for (size_t i = 0; i < SAMPLING_PERIOD; i++) {
+    sum += GetAdcValue(&channelConfig);
+    HAL_Delay(1);
+  }
+
+  neutralThrottle = (int)(sum/SAMPLING_PERIOD);
 }
 
 int SS49::GetPosition(void) {

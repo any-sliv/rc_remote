@@ -39,8 +39,8 @@ extern "C" void SensorTask(void * argument) {
 
     // Anti overflow
     if(sum >= 0xFFFF0000) sum = 0;
-    if(sum >= 0xFFFF0000) counter = 0;
-    //sum += hallSensor.GetPosition();
+    if(counter >= 0xFFFF0000) counter = 0;
+    sum += hallSensor.GetPosition();
     counter++;
 
     if(xSemaphoreTake(radioTxDoneSemaphoreHandle, 1) == pdTRUE) {
@@ -59,7 +59,6 @@ extern "C" void SensorTask(void * argument) {
     //todo TEST ME
     bool chrg = battery.IsCharging();
 
-    //if(timesPressed > 1) Logger::Log("Pressed x times :D", 32);
     vTaskDelay(SENSOR_TASK_INTERVAL);
   }
 }
