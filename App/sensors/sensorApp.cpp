@@ -56,8 +56,7 @@ extern "C" void SensorTask(void * argument) {
       int a = 0;
     }
 
-    //todo TEST ME
-    bool chrg = battery.IsCharging();
+    Battery::ChargeState batState = battery.GetChargeState();
 
     vTaskDelay(SENSOR_TASK_INTERVAL);
   }

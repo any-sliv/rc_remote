@@ -46,7 +46,7 @@ void Gpio::Set(bool value) {
 
 void Gpio::Reset(void) { HAL_GPIO_WritePin(port, pin, (GPIO_PinState)0); }
 
-bool Gpio::Read(void) { return (!(bool)HAL_GPIO_ReadPin(port, pin)); }
+bool Gpio::Read(void) { return (bool)HAL_GPIO_ReadPin(port, pin); }
 
 uint32_t Gpio::GetPinNumber(void) { return pin; }
 

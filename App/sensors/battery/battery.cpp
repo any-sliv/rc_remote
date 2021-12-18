@@ -43,9 +43,8 @@ Battery::Battery(void) {
   pinStdby = Gpio(CHARGER_CHARGE_GPIO_Port, CHARGER_STANDBY_Pin, 0, INPUT, PULLUP);
  }
 
-Battery::ChargeState Battery::IsCharging(void) {
-  if (pinChrg.Read() == false && pinStdby.Read() == true)
-    return CHARGING;
-  else
-    return FULL;
+Battery::ChargeState Battery::GetChargeState(void) {
+  if (pinChrg.Read() == false && pinStdby.Read() == true) return CHARGING;
+  else if (pinChrg.Read() == true && pinStdby.Read() == false) return TERMINATED;
+  else return NO_BATTERY;
 }

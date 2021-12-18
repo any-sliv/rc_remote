@@ -42,12 +42,16 @@ class Battery : AnalogRead {
 
   float adcValueToVoltage(uint32_t val);
 
-  enum ChargeState { CHARGING, FULL };
+  enum ChargeState { 
+    TERMINATED,
+    CHARGING,
+    NO_BATTERY,
+  };
 
   /**
    * @return Percentage value of battery. '0' or multiple of 10
    */
   uint8_t GetPercent(void);
 
-  ChargeState IsCharging(void);
+  ChargeState GetChargeState(void);
 };

@@ -49,7 +49,7 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, CHARGER_STANDBY_Pin|CHARGER_CHARGE_Pin|CHARGER_ENABLE_Pin|LED_USER_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, CHARGER_ENABLE_Pin|LED_USER_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, NRF24_CE_Pin|NRF24_CSN_Pin|DCDC_ENABLE_Pin, GPIO_PIN_RESET);
@@ -60,8 +60,14 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(BUTTON_TRIGGER_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PAPin PAPin PAPin PAPin */
-  GPIO_InitStruct.Pin = CHARGER_STANDBY_Pin|CHARGER_CHARGE_Pin|CHARGER_ENABLE_Pin|LED_USER_Pin;
+  /*Configure GPIO pins : PAPin PAPin */
+  GPIO_InitStruct.Pin = CHARGER_STANDBY_Pin|CHARGER_CHARGE_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PAPin PAPin */
+  GPIO_InitStruct.Pin = CHARGER_ENABLE_Pin|LED_USER_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
