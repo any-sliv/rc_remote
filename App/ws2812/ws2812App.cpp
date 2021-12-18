@@ -17,14 +17,13 @@ Leds *ledsPointer = NULL;
 extern SPI_HandleTypeDef hspi2;
 
 Leds::Leds() {
+  //Logger::Log("WS2812 leds Constructor.");
   ledsPointer = this;
 
   ledsEnablePin = new Gpio{DCDC_ENABLE_GPIO_Port, DCDC_ENABLE_Pin};
 
   MX_SPI2_Init();
   ledSpi = &hspi2;
-
-  Logger::LogDebug("Leds Init");
 }
 
 Leds::~Leds() { HAL_SPI_MspDeInit(ledSpi); }

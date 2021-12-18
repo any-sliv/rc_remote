@@ -14,21 +14,21 @@ extern "C" {
 #include "stm32l1xx_hal.h"
 } // extern C close
 
+void Log(std::string text);
+
 class Logger {
- private:
+ public:
   Logger();
 
- public:
-
-  static void Log(std::string text);
-
-  static void Log(char * data, uint16_t len);
   /**
    * Give me your text and I log it
    * @param text string to be printed in UART interface
-   * @return success(1) / fail(0)
-   */
-  static bool LogDebug(std::string text, ...);
+  */
+  static void Log(std::string text);
+
+  static void Log(char * data);
 };
+
+
 
 #endif /* __LOGGER_HPP */

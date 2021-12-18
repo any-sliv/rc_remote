@@ -20,7 +20,7 @@ class Battery : AnalogRead {
   Gpio pinStdby;   // read charge state
   ADC_ChannelConfTypeDef channelConfig = {
     .Channel = 1,
-    .Rank = 2,
+    .Rank = 1,
     .SamplingTime = ADC_SAMPLETIME_48CYCLES
   };
 

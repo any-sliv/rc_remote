@@ -7,8 +7,10 @@
 
 #include "FreeRTOS.h"
 #include "timers.h"
+#include "queue.h"
 #include "radioApp.hpp"
 #include "logger.hpp"
+#include "buttonApp.hpp"
 extern "C" {
   #include "nrf24.h"
 } // extern C close
@@ -26,29 +28,31 @@ extern "C" {
 extern "C" void RadioTask(void * argument) {
   NRF24 radio = NRF24(&hspi1);
   Gpio pin = Gpio(LED_USER_GPIO_Port, LED_USER_Pin);
-  bool flag;
-  char data[32] = "hei";
+  bool flag = false;
+  //void * rxData;
+  //uint8_t * txData = reinterpret_cast<uint8_t *>(malloc(radio.config.payloadSize));
+  //uint8_t * txData = new uint8_t(radio.config.payloadSize);
 
   for (;;) {
     // if (radio.IsAvailable()) {
     //   radio.Read(rxData);
-    //   osTimerStop(radioHeartbeatHandle);
     // } else {
-    //   // Run timer if not already running
-    //   if (!(osTimerIsRunning(radioHeartbeatHandle))) {
-    //     osTimerStart(radioHeartbeatHandle, RADIO_TASK_TIME_INTERVAL);
-    //   }
+
     // }
 
-    flag ^= 1;
-    pin.Set(flag);
-    // if(NRF24_write(&data, 32)) {
+    // xQueueReceive(qRadioTxValueHandle, rxData, 0);
+    // if(radio.Write(rxData)) {
+    //   flag ^= 1;
+    //   pin.Set(flag);
+    // }
     //   //Logger::Log("DataSentSuccessfully \r\n", 32);
     //   pin.Set();
     // } else {
     //   Logger::Log("CannotSendSata \r\n", radio.config.payloadSize);
     //   pin.Reset();
     // }
+    flag ^= 1;
+    pin.Set(flag);
 
     vTaskDelay(radio.config.taskTimeInterval);
   }  // -------------------------------------------------------------------------
@@ -56,10 +60,10 @@ extern "C" void RadioTask(void * argument) {
 
 extern "C" void radioHeartbeatCallback(void *argument) {
   // radio.Sleep();
-  NRF24_powerDown();
 }
 
 NRF24::NRF24(SPI_HandleTypeDef * hspi) {
+  Logger::Log("NRF24 radio Constructor.");
   NRF24_begin(config.port, config.cePin, config.csnPin, hspi);
 
   NRF24_stopListening();

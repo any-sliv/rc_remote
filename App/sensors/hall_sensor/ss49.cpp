@@ -43,5 +43,5 @@ void SS49::CalibrateInitialPosition(uint32_t samplingPeriod) {
 }
 
 int SS49::GetPosition(void) {
-  return (int)((int)GetAdcValue(&channelConfig) - neutralThrottle);
+  return (int)GetAdcValue(&channelConfig) - neutralThrottle;
 }

@@ -91,6 +91,11 @@ osMessageQueueId_t qButtonStateHandle;
 const osMessageQueueAttr_t qButtonState_attributes = {
   .name = "qButtonState"
 };
+/* Definitions for qRadioTxValue */
+osMessageQueueId_t qRadioTxValueHandle;
+const osMessageQueueAttr_t qRadioTxValue_attributes = {
+  .name = "qRadioTxValue"
+};
 /* Definitions for radioHeartbeat */
 osTimerId_t radioHeartbeatHandle;
 const osTimerAttr_t radioHeartbeat_attributes = {
@@ -115,6 +120,11 @@ const osTimerAttr_t buttonHold_attributes = {
 osTimerId_t buttonMultiplePressHandle;
 const osTimerAttr_t buttonMultiplePress_attributes = {
   .name = "buttonMultiplePress"
+};
+/* Definitions for radioTxDoneSemaphore */
+osSemaphoreId_t radioTxDoneSemaphoreHandle;
+const osSemaphoreAttr_t radioTxDoneSemaphore_attributes = {
+  .name = "radioTxDoneSemaphore"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -147,6 +157,10 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
+
+  /* Create the semaphores(s) */
+  /* creation of radioTxDoneSemaphore */
+  radioTxDoneSemaphoreHandle = osSemaphoreNew(1, 1, &radioTxDoneSemaphore_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -181,6 +195,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of qButtonState */
   qButtonStateHandle = osMessageQueueNew (1, sizeof(uint8_t), &qButtonState_attributes);
+
+  /* creation of qRadioTxValue */
+  qRadioTxValueHandle = osMessageQueueNew (1, sizeof(int), &qRadioTxValue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */

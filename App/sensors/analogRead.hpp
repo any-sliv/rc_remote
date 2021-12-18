@@ -29,12 +29,16 @@ class AnalogRead {
    * @return value of ADC measurement
    */
   uint32_t GetAdcValue(const ADC_ChannelConfTypeDef *channel) {
-    HAL_ADC_Start(&hadc);
+    uint32_t val = 0;
     HAL_ADC_ConfigChannel(&hadc, (ADC_ChannelConfTypeDef *)channel);
-    while (HAL_ADC_PollForConversion(&hadc, conversionTimeout) == HAL_BUSY)
-      ;
 
-    return HAL_ADC_GetValue(&hadc);
+    for(uint32_t i = 0; i < channel->Rank; i++) {
+      HAL_ADC_Start(&hadc);
+      HAL_ADC_PollForConversion(&hadc, 10);
+      val = HAL_ADC_GetValue(&hadc);
+      HAL_ADC_Stop(&hadc);
+    }
+    return val;
   }
 };
 

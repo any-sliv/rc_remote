@@ -15,6 +15,9 @@ extern "C" {
   extern osMessageQueueId_t qButtonPressesHandle;
   extern osMessageQueueId_t qButtonHoldHandle;
   extern osMessageQueueId_t qButtonStateHandle;
+  extern osMessageQueueId_t qRadioTxValueHandle;
+
+  extern osSemaphoreId_t radioTxDoneSemaphoreHandle;
 } // extern C close
 
 #endif
