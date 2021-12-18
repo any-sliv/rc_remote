@@ -4,50 +4,36 @@
     "version": "0.2.0",
     "projectName": "rc_remote",
     "configurations": [
-        {
-            "name": "STlink launch",
-            "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/build/rc_remote.elf",
-            "request": "launch",
-            "type": "cortex-debug",
-            "servertype": "stutil",
-            "device": "STM32L151CB",
-            "interface": "swd",
-            "runToMain": true, // else it starts at reset handler - not interested
-            "preLaunchTask": "Build all", // configured in tasks.json
-            "svdFile": "", // Include svd to watch device peripherals
-            "swoConfig": {} // currently (v1.7.0) not supported
-        },
-        {
-            "name": "STlink attach",
-            "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/build/rc_remote.elf",
-            "request": "attach",
-            "type": "cortex-debug",
-            "servertype": "stutil",
-            "device": "STM32L151CB",
-            "interface": "swd",
-            "runToMain": true, // else it starts at reset handler - not interested
-            "preLaunchTask": "Build all", // configured in tasks.json
-            // "preLaunchCommands": ["Build all"], // you can execute command instead of task
-            "svdFile": "", // Include svd to watch device peripherals
-            "swoConfig": {} // currently (v1.7.0) not supported
-        },
-        {
-          "name": "Cortex debug OpenOCD",
-          "cwd": "${workspaceRoot}",
-          "executable": "${workspaceRoot}/build/rc_remote.elf",
-          "request": "launch",
-          "type": "cortex-debug",
-          "servertype": "openocd",
-          "device": "STM32L151CB",
-          "configFiles": [
-            "/usr/local/share/openocd/scripts/interface/stlink.cfg",
-            "/usr/local/share/openocd/scripts/target/stm32l1.cfg"
-          ],
-          "runToMain": true, // else it starts at reset handler - not interested
-          "preLaunchTask": "Build all", // configured in tasks.json
-          "svdFile": "${workspaceRoot}/Drivers/STM32L151.svd", // Include svd to watch device peripherals
-      },
-    ]
+
+    {
+        "name": "STlink launch",
+        "cwd": "${workspaceRoot}",
+        "executable": "${workspaceRoot}/build/rc_remote.elf",
+        "request": "launch",
+        "type": "cortex-debug",
+        "servertype": "stutil",
+        "device": "STM32L151CB",
+        "interface": "swd",
+        "runToMain": true, // else it starts at reset handler - not interested
+        "preLaunchTask": "Build all", // configured in tasks.json
+        "svdFile": "", // Include svd to watch device peripherals
+        "swoConfig": {} // currently (v1.7.0) not supported
+    },
+    {
+      "name": "Cortex debug OpenOCD",
+      "cwd": "${workspaceRoot}",
+      "executable": "${workspaceRoot}/build/rc_remote.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "device": "STM32L151CB",
+      "configFiles": [
+        "/usr/local/share/openocd/scripts/interface/stlink.cfg",
+        "/usr/local/share/openocd/scripts/target/stm32l1.cfg"
+      ],
+      "runToMain": true, // else it starts at reset handler - not interested
+      "preLaunchTask": "Upload to device", // configured in tasks.json
+      "svdFile": "${workspaceRoot}/Drivers/STM32L151.svd", // Include svd to watch device peripherals
+  },
+  ]
 }
