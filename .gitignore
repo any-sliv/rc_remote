@@ -78,3 +78,5 @@ workspace.code-workspace
 build/compile_commands.json
 
 build/
+
+*.log
