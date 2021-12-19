@@ -40,23 +40,27 @@ extern "C" void SensorTask(void * argument) {
     // Anti overflow
     if(sum >= 0xFFFF0000) sum = 0;
     if(counter >= 0xFFFF0000) counter = 0;
+    
     sum += hallSensor.GetPosition();
     counter++;
 
+    // Radio sets semaphore after tx transmission.
     if(xSemaphoreTake(radioTxDoneSemaphoreHandle, 1) == pdTRUE) {
-      avg = sum/counter;
-      // Send calculated average
+      // Send averaged throttle value if trigger is pressed. 
+      // Otherwise send idle position -> 0
+      triggerButtonState ? avg = 0 : avg = sum/counter;
+
       xQueueSend(qRadioTxValueHandle, &avg, 0);
-      sum = 0;
+      sum = 0, counter = 0;
     }
 
     if(timesPressed == INTERNAL_BATTERY_TRIGGER) {
     //todo send it to ws2812 led app
-      uint8_t pt = battery.GetPercent();
       int a = 0;
     }
 
-    Battery::ChargeState batState = battery.GetChargeState();
+    uint8_t batteryPercent = battery.GetPercent();
+    Battery::ChargeState batteryState = battery.GetChargeState();
 
     vTaskDelay(SENSOR_TASK_INTERVAL);
   }

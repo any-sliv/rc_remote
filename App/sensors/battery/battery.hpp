@@ -25,8 +25,8 @@ class Battery : AnalogRead {
   };
 
   // As a Battery Capacity
-  const float bC[11] = {3.6,  3.65, 3.69, 3.74, 3.8, 3.84,
-                        3.87, 3.95, 4.02, 4.10, 4.2};
+  const float bC[12] = {3.6,  3.65, 3.69, 3.74, 3.8, 3.84,
+                        3.87, 3.95, 4.02, 4.10, 4.2, 4.3};
 
  public:
   /**
@@ -45,7 +45,7 @@ class Battery : AnalogRead {
   enum ChargeState { 
     TERMINATED,
     CHARGING,
-    NO_BATTERY,
+    NO_VOLTAGE,
   };
 
   /**

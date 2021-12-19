@@ -80,3 +80,9 @@ build/compile_commands.json
 build/
 
 *.log
+
+.idea/vcs.xml
+
+.vscode/.cortex-debug.peripherals.state.json
+
+.vscode/.cortex-debug.registers.state.json

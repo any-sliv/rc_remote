@@ -53,11 +53,13 @@ extern "C" void ButtonTask(void * argument) {
   uint8_t dummy = 0;
 
   for (;;) { // ---------------------------------------
+    // Easier explanation of this algorithm (state machine)
+    // able in buttonDiagram.drawio
+
     status = RELEASED;
-    
     switch (state) {
     case INITIAL_PRESS:
-      if (button.Read()) {
+      if (!(button.Read())) {
       //if(!(HAL_GPIO_ReadPin(BUTTON_TRIGGER_GPIO_Port, BUTTON_TRIGGER_Pin))) {
         osTimerStart(buttonPressHandle, PRESS_TIME);
         state = PRESS_TIMER_EXPIRY;
@@ -72,7 +74,7 @@ extern "C" void ButtonTask(void * argument) {
       break;
 
     case WAS_IT_PRESS:
-      if (button.Read()) {
+      if (!(button.Read())) {
         osTimerStart(buttonHoldHandle, HOLD_TIME);
         state = HOLD_TIMER_EXPIRY;
       }
@@ -90,7 +92,7 @@ extern "C" void ButtonTask(void * argument) {
       }
       else {
         // If released
-        if (! (button.Read())) {
+        if (button.Read()) {
           state = END;
           status = PRESSED;
         }
@@ -99,7 +101,7 @@ extern "C" void ButtonTask(void * argument) {
 
     case HOLD_ENOUGH:
       // If released
-      if (! (button.Read())) {
+      if (button.Read()) {
         state = END;
       } //else stay and wait until released
       break;
@@ -107,7 +109,8 @@ extern "C" void ButtonTask(void * argument) {
     case END:
       state = INITIAL_PRESS;
       break;
-    }
+      
+    } // --- SWITCH END ---
 
     // Each press increase number of presses and run timer
     // Pressed is cleared when timer expires.
