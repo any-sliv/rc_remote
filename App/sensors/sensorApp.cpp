@@ -19,6 +19,8 @@
 #define INTERNAL_BATTERY_TRIGGER 3
 #define EXTERNAL_BATTERY_TRIGGER 5
 
+//todo remove -no-rrti and exceptions, try if it runs
+
 extern "C" void SensorTask(void * argument) {
     // Data from hallSensor sent to radio
   SS49 hallSensor;
@@ -38,8 +40,8 @@ extern "C" void SensorTask(void * argument) {
     xQueueReceive(qButtonHoldHandle, &triggerButtonHold, 0);
 
     // Anti overflow
-    if(sum >= 0xFFFF0000) sum = 0;
-    if(counter >= 0xFFFF0000) counter = 0;
+    if(sum >= (int)0xFFFF0000) sum = 0;
+    if(counter >= (int)0xFFFF0000) counter = 0;
     
     sum += hallSensor.GetPosition();
     counter++;
@@ -56,7 +58,6 @@ extern "C" void SensorTask(void * argument) {
 
     if(timesPressed == INTERNAL_BATTERY_TRIGGER) {
     //todo send it to ws2812 led app
-      int a = 0;
     }
 
     uint8_t batteryPercent = battery.GetPercent();

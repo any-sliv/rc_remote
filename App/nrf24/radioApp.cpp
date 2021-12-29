@@ -29,30 +29,23 @@ extern "C" void RadioTask(void * argument) {
   NRF24 radio = NRF24(&hspi1);
   Gpio pin = Gpio(LED_USER_GPIO_Port, LED_USER_Pin);
   bool flag = false;
-  //void * rxData;
-  //uint8_t * txData = reinterpret_cast<uint8_t *>(malloc(radio.config.payloadSize));
-  //uint8_t * txData = new uint8_t(radio.config.payloadSize);
 
   for (;;) {
     // if (radio.IsAvailable()) {
-    //   radio.Read(rxData);
+    //   radio.Read(&radio.rxData);
     // } else {
 
     // }
 
-    // xQueueReceive(qRadioTxValueHandle, rxData, 0);
-    // if(radio.Write(rxData)) {
-    //   flag ^= 1;
-    //   pin.Set(flag);
-    // }
-    //   //Logger::Log("DataSentSuccessfully \r\n", 32);
-    //   pin.Set();
-    // } else {
-    //   Logger::Log("CannotSendSata \r\n", radio.config.payloadSize);
-    //   pin.Reset();
-    // }
-    flag ^= 1;
-    pin.Set(flag);
+    // Set throttle data as data to transmit
+    int rcv = 0;
+    xQueueReceive(qRadioTxValueHandle, &rcv, 0);
+    if(radio.Write(rcv)) {
+      flag ^= 1;
+      pin.Set(flag);
+    } else {
+      pin.Reset();
+    }
 
     vTaskDelay(radio.config.taskTimeInterval);
   }  // -------------------------------------------------------------------------
@@ -64,6 +57,9 @@ extern "C" void radioHeartbeatCallback(void *argument) {
 
 NRF24::NRF24(SPI_HandleTypeDef * hspi) {
   Logger::Log("NRF24 radio Constructor.");
+
+  memset(&rxData, 0, sizeof(rxData));
+
   NRF24_begin(config.port, config.cePin, config.csnPin, hspi);
 
   NRF24_stopListening();
@@ -72,22 +68,28 @@ NRF24::NRF24(SPI_HandleTypeDef * hspi) {
   NRF24_setChannel(config.channel);
   NRF24_setPayloadSize(config.payloadSize);
 
-  // WARNING: enabling this function messes with RT OS. Blocks other tasks.
-  // USE ONLY WHEN NECESSARY
+  // ! WARNING: enabling this function messes with RT OS. Blocks other tasks.
+  // ! USE ONLY WHEN NECESSARY
   //printRadioSettings();
   
  //NRF24_enableDynamicPayloads();
  //NRF24_enableAckPayload();
 }
 
-bool NRF24::Write(void *payload) {
+bool NRF24::Write(int data) {
+  sprintf((char *)txData, "THR:%d \r\n", data);
+
   NRF24_stopListening();
   NRF24_openWritingPipe(config.txPipeAddress);
 
-  bool ret = NRF24_write(payload, config.payloadSize);
+  bool ret = NRF24_write(&txData, config.payloadSize);
 
   NRF24_openReadingPipe(1, config.rxPipeAddress);
   NRF24_startListening();
+
+  // Clear tx buffer
+  memset(&txData, 0, sizeof(rxData));
+
   return ret;
 }
 

@@ -23,7 +23,6 @@ enum buttonState {
   PRESS_TIMER_EXPIRY,
   WAS_IT_PRESS,
   HOLD_TIMER_EXPIRY,
-  WAS_IT_HOLD,
   HOLD_ENOUGH,
   END
 };
@@ -50,7 +49,6 @@ extern "C" void ButtonTask(void * argument) {
   buttonStatus status = RELEASED;
 
   uint8_t pressesNumber = 0;
-  uint8_t dummy = 0;
 
   for (;;) { // ---------------------------------------
     // Easier explanation of this algorithm (state machine)
@@ -60,7 +58,6 @@ extern "C" void ButtonTask(void * argument) {
     switch (state) {
     case INITIAL_PRESS:
       if (!(button.Read())) {
-      //if(!(HAL_GPIO_ReadPin(BUTTON_TRIGGER_GPIO_Port, BUTTON_TRIGGER_Pin))) {
         osTimerStart(buttonPressHandle, PRESS_TIME);
         state = PRESS_TIMER_EXPIRY;
       }
@@ -87,7 +84,7 @@ extern "C" void ButtonTask(void * argument) {
     case HOLD_TIMER_EXPIRY:
       // Hold timer expired?
       if (!(osTimerIsRunning(buttonPressHandle))) {
-        state = WAS_IT_HOLD;
+        state = HOLD_ENOUGH;
         status = HOLD;
       }
       else {

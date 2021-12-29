@@ -22,33 +22,20 @@ struct ws2812_diode_s {
   uint8_t blue = 0;
 };  // -------------------------------------
 
-class bufferWrapper {
- private:
-  uint16_t buffer1[24];
-  uint16_t buffer2[24];
-
-  uint8_t currentBit = 0;
-
-  // false - buffer1; true - buffer2
-  bool isActive = false;
-
+class Buffer {
  public:
-  bufferWrapper() {};
-
-  void append(bool val) {
-    //todo too complicated
-    //val ? active()[currentBit] = WS_ONE : active()[currentBit] = WS_ZERO;
-    currentBit++;
-    if (currentBit >= (24 - 1)) currentBit = 0;
-  }
+  Buffer() {};
+  uint16_t tx[24 * WS2812_LEDS_NUMBER];
+  size_t len;
 
   /**
-   * Returns address of active buffer
+   * Appends a @param bit to buffer
    */
-  uint16_t* active(void) { return isActive ? buffer1 : buffer2; }
-
-  void flip(void) { isActive ^= (bool)1; }
-};  // -------------------------------------
+  void append(bool bit) {
+    bit ? tx[len] = WS_ONE : tx[len] = WS_ZERO;
+    len++;
+  }
+};
 
 class Leds {
  private:
@@ -57,27 +44,26 @@ class Leds {
 
   SPI_HandleTypeDef* ledSpi;
 
+  Buffer txBuffer;
+
   /**
    * DC/DC supplying leds pin state 0 - down, 1 - up
    */
-  Gpio* ledsEnablePin = NULL;
-
-  bufferWrapper buffer;
+  Gpio ledsEnablePin;
 
   struct ws2812_diode_s wsLed[WS2812_LEDS_NUMBER];
 
   uint8_t currentLed;
 
+  void loadBuffer(void);
+
+  void Refresh(void);
+  
  public:
   Leds();
   ~Leds();
 
   void Powerdown(void);
-
-  /**
-   * Loads data for next two diodes, use only in callback
-   */
-  uint16_t* loadBuffer(void);
 
   /**
    * Put desired colour, in particular led into diodes structure.
@@ -87,7 +73,6 @@ class Leds {
 
   void Clear(void);
 
-  void Refresh(void);
 
   uint8_t GetCurrentLed(void);
 };  // -------------------------------------

@@ -5,6 +5,7 @@
 #include "stm32l1xx_hal_def.h"
 
 #define HAL_ADC_STATE_RESET 0
+#define ADC_SAMPLETIME_48CYCLES 0
 
 typedef struct
 {
@@ -150,6 +151,8 @@ void setAdcReturnValue(uint32_t val);
 void MX_ADC_Init(void);
 
 void HAL_ADC_Start(ADC_HandleTypeDef * adc);
+
+void HAL_ADC_Stop(ADC_HandleTypeDef * adc);
 
 void HAL_ADC_ConfigChannel(ADC_HandleTypeDef * adc, ADC_ChannelConfTypeDef * channel);
 

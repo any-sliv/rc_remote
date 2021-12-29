@@ -23,6 +23,8 @@ void MX_ADC_Init(void) {};
 
 void HAL_ADC_Start(ADC_HandleTypeDef * adc) {};
 
+void HAL_ADC_Stop(ADC_HandleTypeDef * adc) {};
+
 void HAL_ADC_ConfigChannel(ADC_HandleTypeDef * adc, ADC_ChannelConfTypeDef * channel) {};
 
 HAL_StatusTypeDef HAL_ADC_PollForConversion(ADC_HandleTypeDef * adc, uint32_t timeout) {

@@ -37,7 +37,6 @@ file(GLOB_RECURSE SOURCES
     #${WORKSPACE_PATH}/App/nrf24/*.*
     #${WORKSPACE_PATH}/App/nrf24/drivers/*.*
     ${WORKSPACE_PATH}/App/logger/*.*
-    ${WORKSPACE_PATH}/App/sensors/*.*
     ${WORKSPACE_PATH}/App/sensors/hall_sensor/*.*
     ${WORKSPACE_PATH}/App/sensors/battery/*.*
     #${WORKSPACE_PATH}/App/ws2812/*.*

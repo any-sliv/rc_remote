@@ -22,7 +22,7 @@ extern ADC_HandleTypeDef hadc;
 SS49::SS49(ADC_ChannelConfTypeDef *channel) { channelConfig = *channel; }
 
 SS49::SS49(void) {
-  Logger::Log("SS49 hall sensor Init.");
+  //Logger::Log("SS49 hall sensor Init.");
   //CalibrateInitialPosition(samplingPeriod);
   CalibrateInitialPosition();
 }

@@ -38,21 +38,34 @@ class NRF24 {
  public: const RadioConfig config;
 
  private:
+  // Buffer to be sent thru radio
+  uint8_t txData[32];
+
     // Safety flag for changing power mode
   bool isSleeping;
+
     // Pins only initalised. State set by HAL in NRF24 drivers
   Gpio pinCE = Gpio(config.port, config.cePin);
   Gpio pinCSN = Gpio(config.port, config.csnPin);
 
+  /**
+   * Create message for radio transmission.
+   * @param data value of throttle to be sent
+   * Then value is saved in txData member
+  */
+  void createMessage(int data);
+
  public:
+  uint8_t rxData[32];
+
   NRF24(SPI_HandleTypeDef * hspi);
 
   /**
-   * Transmit given payload, constant length
+   * Transmit given payload, constant length. Flushes tx buffer
    * @param payload address
    * @return success(1) / fail(0)
    */
-  bool Write(void *payload);
+  bool Write(int data);
 
   /**
    * Check if any payload has been recieved by radio

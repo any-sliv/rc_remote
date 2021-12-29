@@ -15,7 +15,7 @@ uint8_t Battery::GetPercent(void) {
   // times 2 due to we have voltage divier of 2
   float voltage = adcValueToVoltage(GetAdcValue(&channelConfig)) * 2;
 
-  if(voltage > bC[12]) return 101;
+  if(voltage > bC[11]) return 101;
 
   for (uint8_t i = 0; i < 11; i++) {
     if (voltage > bC[i]) {

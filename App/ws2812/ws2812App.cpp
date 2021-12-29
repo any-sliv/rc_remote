@@ -11,16 +11,18 @@
 #include "spi.h"
 #include "ws2812.hpp"
 
-// Global variables only for callback functions
-extern osTimerId_t ledTimeoutHandle;
-Leds *ledsPointer = NULL;
-extern SPI_HandleTypeDef hspi2;
+extern "C" {
+  // Global variables only for callback functions
+  extern osTimerId_t ledTimeoutHandle;
+  extern SPI_HandleTypeDef hspi2;
+}
+
+//todo take care, data is inverted at v level converter
 
 Leds::Leds() {
-  //Logger::Log("WS2812 leds Constructor.");
-  ledsPointer = this;
+  Logger::Log("WS2812 leds Constructor. \r\n");
 
-  ledsEnablePin = new Gpio{DCDC_ENABLE_GPIO_Port, DCDC_ENABLE_Pin};
+  ledsEnablePin = Gpio(DCDC_ENABLE_GPIO_Port, DCDC_ENABLE_Pin);
 
   MX_SPI2_Init();
   ledSpi = &hspi2;
@@ -28,34 +30,30 @@ Leds::Leds() {
 
 Leds::~Leds() { HAL_SPI_MspDeInit(ledSpi); }
 
+//todo do automatic refresh, dont force user to use it manually
+
 void Leds::SetColour(ws2812_diode_s wsStruct, uint8_t ledNumber) {
   if (ledNumber > sizeof(wsLed)) return;
   wsLed[ledNumber] = wsStruct;
 }
 
-uint16_t *Leds::loadBuffer(void) {
+void Leds::loadBuffer(void) {
   const uint8_t k = 0x80;
   uint8_t bit = 0;
 
-  buffer.flip();
-
   // each bit from wsLed[x] is extracted
   for (bit = 0; bit < 8; bit++) {
-    buffer.append(wsLed[currentLed].green && (k >> bit));
+    txBuffer.append((bool) wsLed[currentLed].green && (k >> bit));
   }
   for (bit = 0; bit < 8; bit++) {
-    buffer.append(wsLed[currentLed].red && (k >> bit));
+    txBuffer.append((bool) wsLed[currentLed].red && (k >> bit));
   }
   for (bit = 0; bit < 8; bit++) {
-    buffer.append(wsLed[currentLed].blue && (k >> bit));
+    txBuffer.append((bool) wsLed[currentLed].blue && (k >> bit));
   }
-
-  if (!(currentLed >= sizeof(wsLed))) {
-    currentLed++;
-  }
-
-  return buffer.active();
 }
+
+//todo spi transfer from tx buffer.
 
 void Leds::Clear(void) {
   for (auto &&i : wsLed) {
@@ -66,7 +64,7 @@ void Leds::Clear(void) {
 }
 
 void Leds::Refresh(void) {
-  ledsEnablePin->Set();
+  //ledsEnablePin.Set();
   // Run a timer which expiry disables leds power supply
   osTimerStart(ledTimeoutHandle, timeout);
   loadBuffer();
@@ -75,21 +73,23 @@ void Leds::Refresh(void) {
 
 uint8_t Leds::GetCurrentLed(void) { return currentLed; }
 
-void Leds::Powerdown(void) { ledsEnablePin->Reset(); }
+void Leds::Powerdown(void) { 
+  //ledsEnablePin.Reset(); 
+  }
 
 extern "C" {
 
-void HAL_SPI_TxHalfCpltCallback(SPI_HandleTypeDef *hspi) {
-  if (hspi == &hspi2) {
-    if (ledsPointer->GetCurrentLed() > WS2812_LEDS_NUMBER) {
-      HAL_SPI_DMAStop(hspi);
-      return;
-    }
+// void HAL_SPI_TxHalfCpltCallback(SPI_HandleTypeDef *hspi) {
+//   if (hspi == &hspi2) {
+//     if (ledsPointer->GetCurrentLed() > WS2812_LEDS_NUMBER) {
+//       HAL_SPI_DMAStop(hspi);
+//       return;
+//     }
 
-    uint16_t *bufferPointer = ledsPointer->loadBuffer();
-    HAL_SPI_Transmit_DMA(hspi, (uint8_t *)bufferPointer, 24);
-  }
-}
+//     uint16_t *bufferPointer = ledsPointer->loadBuffer();
+//     HAL_SPI_Transmit_DMA(hspi, (uint8_t *)bufferPointer, 24);
+//   }
+// }
 
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
   if (hspi == &hspi2) {
