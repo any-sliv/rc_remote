@@ -10,23 +10,60 @@
 
 image: gcc
 
-build:
-    tags:
-    - raspberry
+stages:
+    - pre
+    - build
+    - unit_test
+    - deploy
+    - integration_test
+    - post
+
+pre build:
+    stage: pre
     rules:
     - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "dev"'
-    stage: build
 
-    #before_script:
-    #- sudo apt-get update --yes
-    #- sudo apt-get install --yes cmake
-    #- sudo apt-get install --yes gcc-arm-none-eabi
     script:
-    - mkdir build
-    - mkdir out
-    - cd build
-    - cmake ..
-    - cmake --build .
-    artifacts:
-        paths:
-        - build
+    - sudo apt-get update --yes
+    - sudo apt-get install --yes cmake
+    - sudo apt-get install --yes gcc-arm-none-eabi
+    - sudo apt-get install pigpiod
+    - sudo apt-get install stlink
+
+compile and build:
+    stage: build
+    rules:
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "dev"'
+
+    script:
+    - cmake -Bbuild -DCMAKE_TOOLCHAIN_FILE=gcc-arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=true
+    - make -j4
+
+unit test:
+    stage: unit_test
+    script:
+    - cd Tests/googletest
+    - cmake .
+    - make -j4
+    - cd ..
+    - cmake .
+    - make -j4
+    - ./utest
+
+test deployment:
+    stage: deploy
+    script:
+    - cd ~/dev/remote_thesis
+    - st-info --probe
+    - st-flash --connect-under-reset --flash=128k --freq=1800k --reset write ./build/rc_remote.bin 0x08000000
+
+integration test:
+    stage: integration_test
+    script:
+    - cd ~/dev/thesis_pi_test
+    - python3 main.py
+
+post ops:
+    stage: post
+    script:
+    - clang-format
