@@ -15,9 +15,10 @@
 
 /*  Each <ms> task is ran. */
 #define SENSOR_TASK_INTERVAL 5 // [ms]
+
 // Amount of presses to trigger action
-#define INTERNAL_BATTERY_TRIGGER 3
-#define EXTERNAL_BATTERY_TRIGGER 5
+#define INDICATE_BATTERY_TRIGGER 3
+#define INDICATE_RIDE_MODE 5
 
 //todo remove -no-rrti and exceptions, try if it runs
 
@@ -55,12 +56,24 @@ extern "C" void SensorTask(void * argument) {
       xQueueSend(qRadioTxValueHandle, &avg, 0);
       sum = 0, counter = 0;
     }
+    
+    switch(timesPressed) {
+      case INDICATE_BATTERY_TRIGGER:
+        //todo send it to ws2812 led app
+        break;
+      case INDICATE_RIDE_MODE:
+        SS49::rideMode mode = hallSensor.ChangeRideMode();
+        //todo send mode to led app
+        break;
 
-    if(timesPressed == INTERNAL_BATTERY_TRIGGER) {
-    //todo send it to ws2812 led app
+      default: break;
     }
 
     uint8_t batteryPercent = battery.GetPercent();
+    if(batteryPercent <= 10) {
+      //todo light up leds periodically to indicate low battery
+    }
+    
     Battery::ChargeState batteryState = battery.GetChargeState();
 
     vTaskDelay(SENSOR_TASK_INTERVAL);

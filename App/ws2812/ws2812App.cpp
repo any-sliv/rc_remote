@@ -68,7 +68,8 @@ void Leds::Refresh(void) {
   // Run a timer which expiry disables leds power supply
   osTimerStart(ledTimeoutHandle, timeout);
   loadBuffer();
-  HAL_SPI_Transmit_DMA(ledSpi, (uint8_t *)buffer.active(), 24);
+  
+  //HAL_SPI_Transmit_DMA(ledSpi, (uint8_t *)buffer.active(), 24);
 }
 
 uint8_t Leds::GetCurrentLed(void) { return currentLed; }

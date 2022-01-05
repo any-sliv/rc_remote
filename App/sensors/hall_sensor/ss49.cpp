@@ -61,6 +61,27 @@ void SS49::CalibrateInitialPosition(void) {
   neutralThrottle = (int)(sum/SAMPLING_PERIOD);
 }
 
+SS49::rideMode SS49::ChangeRideMode(void) {
+  switch(mode) {
+    case NORMAL:
+      mode = ECO;
+      break;
+    case ECO:
+      mode = BOOST;
+      break;
+    case BOOST:
+      mode = ECO;
+      break;
+  }
+  return mode;
+}
+
 int SS49::GetPosition(void) {
-  return (int)GetAdcValue(&channelConfig) - neutralThrottle;
+  int val = GetAdcValue(&channelConfig) - neutralThrottle;
+    
+    // Scale throttle value accordingly to ride mode
+  if(mode == NORMAL) val = val * 0.7;
+  if(mode == ECO) val = val * 0.5;
+
+  return val;
 }

@@ -11,6 +11,12 @@ extern "C" {
 #include "analogRead.hpp"
 
 class SS49 : AnalogRead {
+ public: enum rideMode {
+    NORMAL = 0,
+    ECO = 1,
+    BOOST = 2
+  };
+  
  private:
   ADC_ChannelConfTypeDef channelConfig = {
     .Channel = 0,
@@ -19,8 +25,11 @@ class SS49 : AnalogRead {
   };
 
   uint32_t samplingPeriod = 200;
-  // todo try to make it constant and assign value after init
+
   int neutralThrottle = 0;
+
+    // Ride mode
+  rideMode mode = NORMAL;
 
  public:
   /**
@@ -47,7 +56,15 @@ class SS49 : AnalogRead {
   void CalibrateInitialPosition(void);
 
   /**
+   * Change ride mode. Each call <mode = mode+1>
+   * Resets mode automatically if overflowed.
+   * @return current ride mode
+   */
+  rideMode ChangeRideMode(void);
+
+  /**
    * Return position of hall sensor.
+   * Position is remapped accordingly to <rideMode> value
    * @return 0 - neutral, negative values when braking, positive when
    * accelerating
    */
