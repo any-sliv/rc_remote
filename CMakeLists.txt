@@ -51,6 +51,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/hall_sensor
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/battery
 ${CMAKE_CURRENT_SOURCE_DIR}/App/ws2812
+${CMAKE_CURRENT_SOURCE_DIR}/App/flash
 )
 # /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
 
@@ -74,6 +75,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/hall_sensor/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/sensors/battery/*.*
 ${CMAKE_CURRENT_SOURCE_DIR}/App/ws2812/*.*
+${CMAKE_CURRENT_SOURCE_DIR}/App/flash/*.*
 ) # ------------------------------------------------
 
 add_executable(${EXECUTABLE}

@@ -59,7 +59,7 @@ NRF24::NRF24(SPI_HandleTypeDef * hspi) {
   Logger::Log("NRF24 radio Constructor.");
 
   memset(&rxData, 0, sizeof(rxData));
-
+  MX_SPI1_Init();
   NRF24_begin(config.port, config.cePin, config.csnPin, hspi);
 
   NRF24_stopListening();

@@ -72,8 +72,15 @@ SS49::rideMode SS49::ChangeRideMode(void) {
     case BOOST:
       mode = ECO;
       break;
+    default:
+      mode = NORMAL;
+      break;
   }
   return mode;
+}
+
+void SS49::ChangeRideMode(uint32_t _mode) {
+  mode = (rideMode) _mode;
 }
 
 int SS49::GetPosition(void) {

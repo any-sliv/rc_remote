@@ -63,6 +63,11 @@ class SS49 : AnalogRead {
   rideMode ChangeRideMode(void);
 
   /**
+   * Use only when reading from flash!!!
+   */
+  void ChangeRideMode(uint32_t mode);
+
+  /**
    * Return position of hall sensor.
    * Position is remapped accordingly to <rideMode> value
    * @return 0 - neutral, negative values when braking, positive when

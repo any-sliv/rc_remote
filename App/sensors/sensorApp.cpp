@@ -12,6 +12,8 @@
 #include "battery.hpp"
 #include "ss49.hpp"
 #include "logger.hpp"
+#include "ws2812.hpp"
+#include "flash.hpp"
 
 /*  Each <ms> task is ran. */
 #define SENSOR_TASK_INTERVAL 5 // [ms]
@@ -23,8 +25,16 @@
 //todo remove -no-rrti and exceptions, try if it runs
 
 extern "C" void SensorTask(void * argument) {
+    // WS2812 leds entity
+  Leds leds;
     // Data from hallSensor sent to radio
   SS49 hallSensor;
+  
+  { // Dummy scope
+    uint32_t tmpMode = 0;
+    Flash_Read_Data(0x0801F000, &tmpMode, 1);
+    hallSensor.ChangeRideMode(tmpMode);
+  }
     // Data from battery sent to LEDs
   Battery battery;
     // State of trigger button
@@ -39,10 +49,6 @@ extern "C" void SensorTask(void * argument) {
     xQueueReceive(qButtonStateHandle, &triggerButtonState, 0);
     xQueueReceive(qButtonPressesHandle, &timesPressed, 0);
     xQueueReceive(qButtonHoldHandle, &triggerButtonHold, 0);
-
-    // Anti overflow
-    if(sum >= (int)0xFFFF0000) sum = 0;
-    if(counter >= (int)0xFFFF0000) counter = 0;
     
     sum += hallSensor.GetPosition();
     counter++;
@@ -63,10 +69,12 @@ extern "C" void SensorTask(void * argument) {
         break;
       case INDICATE_RIDE_MODE:
         SS49::rideMode mode = hallSensor.ChangeRideMode();
+
+        uint32_t saveMode = (uint32_t) mode;
+        Flash_Write_Data(0x0801F000, &saveMode, 1);
+
         //todo send mode to led app
         break;
-
-      default: break;
     }
 
     uint8_t batteryPercent = battery.GetPercent();
@@ -75,6 +83,16 @@ extern "C" void SensorTask(void * argument) {
     }
     
     Battery::ChargeState batteryState = battery.GetChargeState();
+    //todo if charging send to led app
+
+    ws2812_diode_s colour = {0x55, 0x55, 0x55};
+    leds.Clear();
+    //leds.SetColour(colour, 0);
+    //leds.Refresh();
+
+    // Anti overflow
+    if(sum >= (int)0xFFFF0000) sum = 0;
+    if(counter >= (int)0xFFFF0000) counter = 0;
 
     vTaskDelay(SENSOR_TASK_INTERVAL);
   }

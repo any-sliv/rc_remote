@@ -49,9 +49,9 @@ class NRF24 {
   Gpio pinCSN = Gpio(config.port, config.csnPin);
 
   /**
-   * Create message for radio transmission.
-   * @param data value of throttle to be sent
+   * Create message for radio transmission. 
    * Then value is saved in txData member
+   * @param data value of throttle to be sent
   */
   void createMessage(int data);
 
@@ -61,8 +61,8 @@ class NRF24 {
   NRF24(SPI_HandleTypeDef * hspi);
 
   /**
-   * Transmit given payload, constant length. Flushes tx buffer
-   * @param payload address
+   * Function composes message and sends it through radio.
+   * @param data value of throttle
    * @return success(1) / fail(0)
    */
   bool Write(int data);

@@ -59,21 +59,21 @@ const osThreadAttr_t defaultTask_attributes = {
 osThreadId_t radioHandle;
 const osThreadAttr_t radio_attributes = {
   .name = "radio",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for sensor */
 osThreadId_t sensorHandle;
 const osThreadAttr_t sensor_attributes = {
   .name = "sensor",
-  .stack_size = 128 * 4,
+  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for button */
 osThreadId_t buttonHandle;
 const osThreadAttr_t button_attributes = {
   .name = "button",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for qButtonPresses */
@@ -208,13 +208,13 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* creation of radio */
-  radioHandle = osThreadNew(RadioTask, NULL, &radio_attributes);
+  //radioHandle = osThreadNew(RadioTask, NULL, &radio_attributes);
 
   /* creation of sensor */
   sensorHandle = osThreadNew(SensorTask, NULL, &sensor_attributes);
 
   /* creation of button */
-  buttonHandle = osThreadNew(ButtonTask, NULL, &button_attributes);
+  //buttonHandle = osThreadNew(ButtonTask, NULL, &button_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
