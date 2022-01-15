@@ -17,6 +17,7 @@
                 "${workspaceFolder}/App/sensors/hall_sensor",
                 "${workspaceFolder}/App/sensors/battery",
                 "${workspaceFolder}/App/ws2812",
+                "${workspaceFolder}/App/flash",
                 "${workspaceFolder}/Tests",
                 "${workspaceFolder}/Tests/Modules",
                 "${workspaceFolder}/Tests/Modules/gpio",

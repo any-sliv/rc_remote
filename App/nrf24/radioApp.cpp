@@ -15,10 +15,6 @@ extern "C" {
   #include "nrf24.h"
 } // extern C close
 
-#define RADIO_CHANNEL 52
-#define RADIO_PAYLOAD_SIZE 32
-#define RADIO_AUTO_ACK 1
-
 extern "C" {
   extern SPI_HandleTypeDef hspi1;
   extern UART_HandleTypeDef huart1;
@@ -41,11 +37,13 @@ extern "C" void RadioTask(void * argument) {
     int rcv = 0;
     xQueueReceive(qRadioTxValueHandle, &rcv, 0);
     if(radio.Write(rcv)) {
-      flag ^= 1;
-      pin.Set(flag);
+      
     } else {
       pin.Reset();
     }
+
+    flag ^= 1;
+    pin.Set(flag);
 
     vTaskDelay(radio.config.taskTimeInterval);
   }  // -------------------------------------------------------------------------
@@ -70,6 +68,7 @@ NRF24::NRF24(SPI_HandleTypeDef * hspi) {
 
   // ! WARNING: enabling this function messes with RT OS. Blocks other tasks.
   // ! USE ONLY WHEN NECESSARY
+  
   //printRadioSettings();
   
  //NRF24_enableDynamicPayloads();
@@ -84,7 +83,7 @@ bool NRF24::Write(int data) {
 
   bool ret = NRF24_write(&txData, config.payloadSize);
 
-  NRF24_openReadingPipe(1, config.rxPipeAddress);
+  //NRF24_openReadingPipe(1, config.rxPipeAddress);
   NRF24_startListening();
 
   // Clear tx buffer
@@ -95,7 +94,7 @@ bool NRF24::Write(int data) {
 
 bool NRF24::IsAvailable(void) { return NRF24_available(); }
 
-void NRF24::Read(void *data) { NRF24_read(data, RADIO_PAYLOAD_SIZE); }
+void NRF24::Read(void *data) { NRF24_read(data, config.payloadSize); }
 
 void NRF24::Sleep(void) {
   NRF24_powerDown();

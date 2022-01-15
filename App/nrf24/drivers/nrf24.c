@@ -232,7 +232,7 @@ void NRF24_begin(GPIO_TypeDef *nrf24PORT, uint16_t nrfCSN_Pin, uint16_t nrfCE_Pi
 	//Disable dynamic payload
 	NRF24_disableDynamicPayloads();
 	//Set payload size
-	NRF24_setPayloadSize(32);
+	//NRF24_setPayloadSize(32);
 	
 	//Reset status register
 	NRF24_resetStatus();

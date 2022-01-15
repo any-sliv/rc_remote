@@ -19,7 +19,7 @@ struct RadioConfig
     // Interval at which radio task is being run
   const uint16_t taskTimeInterval = 20; //[ms]
 
-  const uint8_t payloadSize = 16;
+  const uint8_t payloadSize = 32;
 
     // Radio transmit channel
   const uint8_t channel = 52;
