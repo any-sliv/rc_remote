@@ -62,14 +62,19 @@ class Leds {
 
   uint8_t currentLed;
 
+  void loadBuffer(void);
+
+    /**
+   * Put desired colour, in particular led into diodes structure.
+   * Refresh required - do it manually!
+   */
+  void SetColour(ws2812_diode_s wsStruct, uint8_t ledNumber);
+
   /**
    * @param percent percent of battery
    * @return Number of leds to light up
    */
   uint8_t convertPercentToLeds(uint8_t percent);
-
-  void loadBuffer(void);
-
   
  public:
   Leds();
@@ -80,10 +85,9 @@ class Leds {
   void Powerdown(void);
 
   /**
-   * Put desired colour, in particular led into diodes structure.
-   * Refresh required - do it manually!
+   * If battery has low voltage one diode will blink periodically
    */
-  void SetColour(ws2812_diode_s wsStruct, uint8_t ledNumber);
+  void IndicateLowBattery(void);
 
   /**
    * Diodes indicate (animation) current battery charge. 
@@ -93,6 +97,7 @@ class Leds {
    * @return Flag if animation has finished 
    */
   bool ShowBatteryState(uint8_t internalPercent, uint8_t externalPercent);
+
 
   void Clear(void);
 

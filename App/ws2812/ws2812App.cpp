@@ -88,6 +88,7 @@ bool Leds::ShowBatteryState(uint8_t internalPercent, uint8_t externalPercent) {
   static bool countUp = true;
   uint8_t activeLeds = 0;
   ws2812_diode_s colour = {0,0,0};
+  bool ret = false;
 
   if(ovfCounter < 2) {
     // Internal battery animation
@@ -122,17 +123,18 @@ bool Leds::ShowBatteryState(uint8_t internalPercent, uint8_t externalPercent) {
     ovfCounter++;
     countUp = true;
   }
-    
-  Refresh();
-
+  
   // Internal and external flowed twice, end it
   if(ovfCounter >= 4) {
     i = 0;
     ovfCounter = 0;
     countUp = true;
-    return true;
+    Clear();
+    ret = true;
   }
-  return false;
+  Refresh();
+
+  return ret;
 }
 
 uint8_t Leds::convertPercentToLeds(uint8_t percent) {
@@ -145,10 +147,24 @@ uint8_t Leds::convertPercentToLeds(uint8_t percent) {
   else return 0;
 }
 
+void Leds::IndicateLowBattery(void) {
+  static uint16_t i = 0;
+  ws2812_diode_s colour = {0x10, 0, 0};
+  if(i++ > 400) {
+    SetColour(colour, 0);
+    if(i > 440) {
+      Clear();
+      i = 0;
+    }
+  }
+  Refresh();
+}
+
 extern "C" {
 
 void ledTimeoutCallback(void *argument) { 
   ledsPointer->Clear();
+  osDelay(1);
   ledsPointer->Powerdown();
 };
 

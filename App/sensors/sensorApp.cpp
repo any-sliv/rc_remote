@@ -41,6 +41,8 @@ extern "C" void SensorTask(void * argument) {
   uint8_t triggerButtonState = 0;
   uint8_t timesPressed = 0;
   uint8_t triggerButtonHold = 0;
+    //Used to turn on battery state indication
+  bool indicateFlag = true;
 
     // Used to calculate average from hallSensor
   int sum = 0, counter = 0, avg = 0;
@@ -66,10 +68,15 @@ extern "C" void SensorTask(void * argument) {
     Battery::ChargeState batteryState = battery.GetChargeState();
     //todo if charging send to led app
     uint8_t batteryPercent = battery.GetPercent();
+    if(batteryPercent < 15) leds.IndicateLowBattery();
+    if(indicateFlag) {
+      if(leds.ShowBatteryState(batteryPercent, 50)) indicateFlag = false;
+    }
 
     switch(timesPressed) {
       case INDICATE_BATTERY_TRIGGER:
-        //todo send it to ws2812 led app
+        // Latches flag until animation returns true and zeroes flag
+        indicateFlag = true;
         break;
       case INDICATE_RIDE_MODE:
         SS49::rideMode mode = hallSensor.ChangeRideMode();
