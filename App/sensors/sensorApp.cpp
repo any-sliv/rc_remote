@@ -63,6 +63,10 @@ extern "C" void SensorTask(void * argument) {
       sum = 0, counter = 0;
     }
     
+    Battery::ChargeState batteryState = battery.GetChargeState();
+    //todo if charging send to led app
+    uint8_t batteryPercent = battery.GetPercent();
+
     switch(timesPressed) {
       case INDICATE_BATTERY_TRIGGER:
         //todo send it to ws2812 led app
@@ -77,18 +81,10 @@ extern "C" void SensorTask(void * argument) {
         break;
     }
 
-    uint8_t batteryPercent = battery.GetPercent();
     if(batteryPercent <= 10) {
       //todo light up leds periodically to indicate low battery
     }
     
-    Battery::ChargeState batteryState = battery.GetChargeState();
-    //todo if charging send to led app
-
-    ws2812_diode_s colour = {0x55, 0x55, 0x55};
-    leds.Clear();
-    //leds.SetColour(colour, 0);
-    //leds.Refresh();
 
     // Anti overflow
     if(sum >= (int)0xFFFF0000) sum = 0;

@@ -37,13 +37,13 @@ extern "C" void RadioTask(void * argument) {
     int rcv = 0;
     xQueueReceive(qRadioTxValueHandle, &rcv, 0);
     if(radio.Write(rcv)) {
-      
+          flag ^= 1;
+    pin.Set(flag);
     } else {
       pin.Reset();
     }
 
-    flag ^= 1;
-    pin.Set(flag);
+
 
     vTaskDelay(radio.config.taskTimeInterval);
   }  // -------------------------------------------------------------------------
@@ -54,12 +54,12 @@ extern "C" void radioHeartbeatCallback(void *argument) {
 }
 
 NRF24::NRF24(SPI_HandleTypeDef * hspi) {
-  Logger::Log("NRF24 radio Constructor.");
+  Logger::Log("NRF24 radio Constructor. \r\n");
 
   memset(&rxData, 0, sizeof(rxData));
   MX_SPI1_Init();
-  NRF24_begin(config.port, config.cePin, config.csnPin, hspi);
-
+  //NRF24_begin(config.port, config.cePin, config.csnPin, hspi);
+  NRF24_begin(config.port, config.csnPin, config.cePin, hspi);
   NRF24_stopListening();
   NRF24_openWritingPipe(config.txPipeAddress);
   //NRF24_setAutoAck(RADIO_AUTO_ACK);

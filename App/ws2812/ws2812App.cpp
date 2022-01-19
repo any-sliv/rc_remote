@@ -17,6 +17,8 @@ extern "C" {
   extern SPI_HandleTypeDef hspi2;
 }
 
+static Leds * ledsPointer;
+
 //todo take care, data is inverted at v level converter
 
 Leds::Leds() {
@@ -27,7 +29,9 @@ Leds::Leds() {
   MX_SPI2_Init();
   ledSpi = &hspi2;
   // Clear tx buffer
-  //Clear();
+  Clear();
+
+  ledsPointer = this;
 }
 
 Leds::~Leds() { HAL_SPI_MspDeInit(ledSpi); }
@@ -45,82 +49,90 @@ void Leds::loadBuffer(void) {
   for(uint8_t ledNumber = 0; ledNumber < WS2812_LEDS_NUMBER; ledNumber++) {
     // each bit from wsLed[x] is extracted
     for (bit = 0; bit < 8; bit++) {
-      txBuffer.append((bool) wsLed[currentLed].green & (k >> bit));
+      txBuffer.append((bool) (wsLed[currentLed].green & (k >> bit)));
     }
     for (bit = 0; bit < 8; bit++) {
-      txBuffer.append((bool) wsLed[currentLed].red & (k >> bit));
+      txBuffer.append((bool) (wsLed[currentLed].red & (k >> bit)));
     }
     for (bit = 0; bit < 8; bit++) {
-      txBuffer.append((bool) wsLed[currentLed].blue & (k >> bit));
+      txBuffer.append((bool) (wsLed[currentLed].blue & (k >> bit)));
     }
     currentLed++;
   }
 }
 
 void Leds::Clear(void) {
-  memset(a, 0xff, 50);
-  if(HAL_SPI_Transmit(&hspi2, (uint8_t*) a, 50, 20) != HAL_OK) {
-    int b = 0;
-  }
+  uint16_t a[50];
+  ws2812_diode_s d = {0,0,0};
+  for(size_t i = 0; i < WS2812_LEDS_NUMBER; i++) wsLed[i] = d;
+  memset(a, 0x00, 50);
+  HAL_SPI_Transmit(&hspi2, (uint8_t*) a, 25, 20);
 }
 
 void Leds::Refresh(void) {
   ledsEnablePin.Set();
-
-  Clear();
+  // Start timer for 1s. Expiry disables dc/dc converter
+  osTimerStart(ledTimeoutHandle, 1000);
   loadBuffer();
-  
-  if(HAL_SPI_Transmit_DMA(ledSpi, (uint8_t *)txBuffer.tx, sizeof(txBuffer.tx)) != HAL_OK) {
-    int a = 0;
-  }
+  Clear();
+  HAL_SPI_Transmit_DMA(ledSpi, (uint8_t *)txBuffer.tx, sizeof(txBuffer.tx)/sizeof(txBuffer.tx[0]));
 }
 
-uint8_t Leds::GetCurrentLed(void) { return currentLed; }
-
 void Leds::Powerdown(void) { 
-  //ledsEnablePin.Reset(); 
+  ledsEnablePin.Reset(); 
 }
 
 bool Leds::ShowBatteryState(uint8_t internalPercent, uint8_t externalPercent) {
-  static uint8_t ovfCounter; // Overflow counter
+  static uint8_t ovfCounter = 0; // Overflow counter
   static uint16_t i = 0;
+  static bool countUp = true;
   uint8_t activeLeds = 0;
   ws2812_diode_s colour = {0,0,0};
-  bool counterFlag = true;
 
   if(ovfCounter < 2) {
     // Internal battery animation
     activeLeds = convertPercentToLeds(internalPercent);
-    colour = {0x80, 0x00, 0xFF}; // violet
+    //colour = {0x80, 0x00, 0xFF}; // violet
+    colour.red = 0xFF;
+    colour.green = 0x00;
+    colour.blue = 0xFF;
   } else {
     // External battery animation
     activeLeds = convertPercentToLeds(externalPercent);
     colour = {0x00, 0xFF, 0xFF}; // yellow
   }
 
+  uint8_t multiplier = gamma8(i) + 1;
   // Set each LED that is supposed to be active
-  for(uint8_t led = 0; led < activeLeds; led++) {
+  for(size_t led = 0; led < activeLeds; led++) {
     // Set each LED colour, but use sine value
-    wsLed[led].red = colour.red * gamma8(i);
-    wsLed[led].green = colour.green * gamma8(i);
-    wsLed[led].blue = colour.blue * gamma8(i);
+    wsLed[led].red = colour.red & multiplier;
+    wsLed[led].green = colour.green & multiplier;
+    wsLed[led].blue = colour.blue & multiplier;
   }
-
   // i Runs from 0 to 0xFF back and forth
   // add/sub value determines speed of animation
-  if(counterFlag) i+=2;
+  if(countUp) i+=2;
   else i-=2;
 
-  if(i >= 0xFF) {
-    counterFlag = false;
-    ovfCounter++;
+  if(i >= 0xFC) {
+    countUp = false;
   }
-  else if(i <= 0) counterFlag = true;
-
+  else if(i <= 1) {
+    ovfCounter++;
+    countUp = true;
+  }
+    
   Refresh();
 
   // Internal and external flowed twice, end it
-  return ovfCounter >= 4 ? true : false;
+  if(ovfCounter >= 4) {
+    i = 0;
+    ovfCounter = 0;
+    countUp = true;
+    return true;
+  }
+  return false;
 }
 
 uint8_t Leds::convertPercentToLeds(uint8_t percent) {
@@ -135,19 +147,11 @@ uint8_t Leds::convertPercentToLeds(uint8_t percent) {
 
 extern "C" {
 
-// void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
-//   if (hspi == &hspi2) {
-//   }
-// }
-
 void ledTimeoutCallback(void *argument) { 
-  /*ledsPointer->Powerdown();*/ 
+  ledsPointer->Clear();
+  ledsPointer->Powerdown();
 };
 
 }  // extern C close
-
-
-
-uint8_t Leds::sine8(uint8_t x) { return _sineTable[x]; }
 
 uint8_t Leds::gamma8(uint8_t x) { return _gammaTable[x]; }

@@ -36,6 +36,7 @@ Battery::Battery(ADC_ChannelConfTypeDef *channel, GPIO_TypeDef *portAddr) {
   pinChrg = Gpio(portAddr, CHARGER_CHARGE_Pin, 0, INPUT, PULLUP);
   pinStdby = Gpio(portAddr, CHARGER_STANDBY_Pin, 0, INPUT, PULLUP);
 
+  pinChrgEn.Set();
   channelConfig = *channel;
 }
 Battery::Battery(void) {
