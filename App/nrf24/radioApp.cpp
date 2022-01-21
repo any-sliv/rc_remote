@@ -30,7 +30,6 @@ extern "C" void RadioTask(void * argument) {
     // if (radio.IsAvailable()) {
     //   radio.Read(&radio.rxData);
     // } else {
-
     // }
 
     // Set throttle data as data to transmit
@@ -42,23 +41,21 @@ extern "C" void RadioTask(void * argument) {
     } else {
       pin.Reset();
     }
-
-
-
     vTaskDelay(radio.config.taskTimeInterval);
   }  // -------------------------------------------------------------------------
 }
 
 extern "C" void radioHeartbeatCallback(void *argument) {
-  // radio.Sleep();
+  NRF24::Sleep();
 }
 
 NRF24::NRF24(SPI_HandleTypeDef * hspi) {
   Logger::Log("NRF24 radio Constructor. \r\n");
+  Wakeup();
 
   memset(&rxData, 0, sizeof(rxData));
   MX_SPI1_Init();
-  //NRF24_begin(config.port, config.cePin, config.csnPin, hspi);
+
   NRF24_begin(config.port, config.csnPin, config.cePin, hspi);
   NRF24_stopListening();
   NRF24_openWritingPipe(config.txPipeAddress);
@@ -77,6 +74,7 @@ NRF24::NRF24(SPI_HandleTypeDef * hspi) {
 
 bool NRF24::Write(int data) {
   sprintf((char *)txData, "THR:%d \r\n", data);
+  osTimerStart(radioHeartbeatHandle, 5000);
 
   NRF24_stopListening();
   NRF24_openWritingPipe(config.txPipeAddress);
@@ -98,16 +96,12 @@ void NRF24::Read(void *data) { NRF24_read(data, config.payloadSize); }
 
 void NRF24::Sleep(void) {
   NRF24_powerDown();
-  isSleeping = true;
 }
 
 void NRF24::Wakeup(void) {
-  if (isSleeping) {
-    NRF24_powerUp();
-    // Powerup requires 1.5ms run up delay
-    osDelay(2);
-    isSleeping = false;
-  }
+  NRF24_powerUp();
+  // Powerup requires 1.5ms run up delay
+  osDelay(2);
 }
 
 uint8_t NRF24::IsInitialised(void) {

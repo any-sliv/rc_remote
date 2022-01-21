@@ -42,7 +42,9 @@ extern "C" void SensorTask(void * argument) {
   uint8_t timesPressed = 0;
   uint8_t triggerButtonHold = 0;
     //Used to turn on battery state indication
-  bool indicateFlag = true;
+  bool indicateBattery = false;
+    //Used to turn on ride mode change indication
+  bool indicateRideMode = false;
 
     // Used to calculate average from hallSensor
   int sum = 0, counter = 0, avg = 0;
@@ -65,26 +67,28 @@ extern "C" void SensorTask(void * argument) {
       sum = 0, counter = 0;
     }
     
-    Battery::ChargeState batteryState = battery.GetChargeState();
+    //Battery::ChargeState batteryState = battery.GetChargeState();
     //todo if charging send to led app
     uint8_t batteryPercent = battery.GetPercent();
+    SS49::rideMode mode = hallSensor.ChangeRideMode();
+
     if(batteryPercent < 15) leds.IndicateLowBattery();
-    if(indicateFlag) {
-      if(leds.ShowBatteryState(batteryPercent, 50)) indicateFlag = false;
+    if(indicateBattery) {
+      if(leds.ShowBatteryState(batteryPercent, 50)) indicateBattery = false;
+    }
+    if(indicateRideMode) {
+      if(leds.IndicateRideModeChange(mode)) indicateRideMode = false;
     }
 
     switch(timesPressed) {
       case INDICATE_BATTERY_TRIGGER:
         // Latches flag until animation returns true and zeroes flag
-        indicateFlag = true;
+        indicateBattery = true;
         break;
       case INDICATE_RIDE_MODE:
-        SS49::rideMode mode = hallSensor.ChangeRideMode();
-
+        indicateRideMode = true;
         uint32_t saveMode = (uint32_t) mode;
         Flash_Write_Data(0x0801F000, &saveMode, 1);
-
-        //todo send mode to led app
         break;
     }
 

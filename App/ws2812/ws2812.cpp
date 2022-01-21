@@ -79,7 +79,9 @@ void Leds::Refresh(void) {
 }
 
 void Leds::Powerdown(void) { 
-  ledsEnablePin.Reset(); 
+  //ledsEnablePin.Reset(); 
+  // equivalent to above is
+  HAL_GPIO_WritePin(DCDC_ENABLE_GPIO_Port, DCDC_ENABLE_Pin, (GPIO_PinState) 0);
 }
 
 bool Leds::ShowBatteryState(uint8_t internalPercent, uint8_t externalPercent) {
@@ -116,9 +118,8 @@ bool Leds::ShowBatteryState(uint8_t internalPercent, uint8_t externalPercent) {
   if(countUp) i+=2;
   else i-=2;
 
-  if(i >= 0xFC) {
-    countUp = false;
-  }
+  if(i >= 0xFC) countUp = false;
+  
   else if(i <= 1) {
     ovfCounter++;
     countUp = true;
@@ -133,7 +134,6 @@ bool Leds::ShowBatteryState(uint8_t internalPercent, uint8_t externalPercent) {
     ret = true;
   }
   Refresh();
-
   return ret;
 }
 
@@ -145,6 +145,34 @@ uint8_t Leds::convertPercentToLeds(uint8_t percent) {
   else if(percent >= 80 && percent <= 100) return 5;
   else if(percent > 100) return 5;
   else return 0;
+}
+
+bool Leds::IndicateRideModeChange(SS49::rideMode mode) {
+  static uint8_t i = 0;
+  static uint8_t ret = 0;
+  ws2812_diode_s colour = {0,0,0};
+
+  if(i++ > 10) {
+    switch(mode) {
+      case SS49::ECO: colour.green = 0x40;
+        break;
+      case SS49::NORMAL: colour.blue = 0x40;
+        break;
+      case SS49::BOOST: colour.red = 0x40;
+        break;
+    }
+    if(i > 20) {
+      i = 0;
+      ret++;
+      return false;
+    }
+  }
+  for(uint8_t led = 0; led < WS2812_LEDS_NUMBER; led++) {
+      SetColour(colour, led);
+  }
+  Refresh();
+  if(ret > 4) return true;
+  return false;
 }
 
 void Leds::IndicateLowBattery(void) {
@@ -163,9 +191,7 @@ void Leds::IndicateLowBattery(void) {
 extern "C" {
 
 void ledTimeoutCallback(void *argument) { 
-  ledsPointer->Clear();
-  osDelay(1);
-  ledsPointer->Powerdown();
+  Leds::Powerdown();
 };
 
 }  // extern C close

@@ -11,6 +11,7 @@
 // gpio.h used only for pins naming - sourced from CubeMX
 #include "gpio.h"
 #include "string.h"
+#include "ss49.hpp"
 
 #define WS2812_LEDS_NUMBER 5
 
@@ -82,7 +83,7 @@ class Leds {
 
   void Refresh(void);
   
-  void Powerdown(void);
+  static void Powerdown(void);
 
   /**
    * If battery has low voltage one diode will blink periodically
@@ -92,12 +93,18 @@ class Leds {
   /**
    * Diodes indicate (animation) current battery charge. 
    * Keep calling this function until retruns true. 
-   * Best animation if called each 4 ms 
    * @param batteryPercent percent of charge
    * @return Flag if animation has finished 
    */
   bool ShowBatteryState(uint8_t internalPercent, uint8_t externalPercent);
 
+  /**
+   * Animation of ride mode change.
+   * Keep calling until returns true.
+   * @param mode mode to be indicated
+   * @return Flag if animation has finished
+  */
+  bool IndicateRideModeChange(SS49::rideMode mode);
 
   void Clear(void);
 

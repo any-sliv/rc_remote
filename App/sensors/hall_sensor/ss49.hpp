@@ -4,6 +4,10 @@
  *  Created on: Oct 27, 2021
  *      Author: macsli
  */
+
+#ifndef __SS49_HPP
+#define __SS49_HPP
+
 extern "C" {
 #include "stm32l1xx_hal.h"
 }  // extern C close
@@ -75,3 +79,5 @@ class SS49 : AnalogRead {
    */
   int GetPosition(void);
 };
+
+#endif

@@ -76,6 +76,13 @@ const osThreadAttr_t button_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for power */
+osThreadId_t powerHandle;
+const osThreadAttr_t power_attributes = {
+  .name = "power",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for qButtonPresses */
 osMessageQueueId_t qButtonPressesHandle;
 const osMessageQueueAttr_t qButtonPresses_attributes = {
@@ -136,6 +143,7 @@ void StartDefaultTask(void *argument);
 extern void RadioTask(void *argument);
 extern void SensorTask(void *argument);
 extern void ButtonTask(void *argument);
+extern void PowerManagementTask(void *argument);
 extern void radioHeartbeatCallback(void *argument);
 extern void ledTimeoutCallback(void *argument);
 extern void buttonPressCallback(void *argument);
@@ -208,13 +216,16 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* creation of radio */
-  //radioHandle = osThreadNew(RadioTask, NULL, &radio_attributes);
+  radioHandle = osThreadNew(RadioTask, NULL, &radio_attributes);
 
   /* creation of sensor */
   sensorHandle = osThreadNew(SensorTask, NULL, &sensor_attributes);
 
   /* creation of button */
-  //buttonHandle = osThreadNew(ButtonTask, NULL, &button_attributes);
+  buttonHandle = osThreadNew(ButtonTask, NULL, &button_attributes);
+
+  /* creation of power */
+  powerHandle = osThreadNew(PowerManagementTask, NULL, &power_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

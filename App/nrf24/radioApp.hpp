@@ -81,7 +81,7 @@ class NRF24 {
   /**
    * Put radio into sleep mode
    */
-  void Sleep(void);
+  static void Sleep(void);
 
   /**
    * Power up the radio. Contains blocking delay of 1.5 ms
