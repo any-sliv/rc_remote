@@ -13,9 +13,9 @@
 
 // Each <ms> sensor task is ran
 #define BUTTON_TASK_INTERVAL 5 // [ms]
-#define PRESS_TIME 10
-#define HOLD_TIME 150
-#define MULTIPLE_PRESS_TIMEOUT 100
+#define PRESS_TIME 20
+#define HOLD_TIME 100
+#define MULTIPLE_PRESS_TIMEOUT 500
 
 // Each state is a check of..
 enum buttonState {
@@ -41,7 +41,7 @@ extern "C" {
 
 extern "C" void ButtonTask(void * argument) {
   Gpio button = Gpio(BUTTON_TRIGGER_GPIO_Port, BUTTON_TRIGGER_Pin,
-                     0, INPUT, PULLUP);
+                     0, GPIO_MODE_EVT_RISING_FALLING, GPIO_PULLUP);
 
   // State machine state
   buttonState state = INITIAL_PRESS;
@@ -83,7 +83,7 @@ extern "C" void ButtonTask(void * argument) {
 
     case HOLD_TIMER_EXPIRY:
       // Hold timer expired?
-      if (!(osTimerIsRunning(buttonPressHandle))) {
+      if (!(osTimerIsRunning(buttonHoldHandle))) {
         state = HOLD_ENOUGH;
         status = HOLD;
       }

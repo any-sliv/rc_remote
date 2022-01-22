@@ -59,7 +59,7 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = BUTTON_TRIGGER_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_EVT_RISING_FALLING;
+  GPIO_InitStruct.Mode = GPIO_MODE_EVT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(BUTTON_TRIGGER_GPIO_Port, &GPIO_InitStruct);
 

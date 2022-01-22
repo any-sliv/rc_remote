@@ -16,5 +16,5 @@ extern "C" {
 Logger::Logger() {};
 
 void Logger::Log(char * data) {
-  HAL_StatusTypeDef ret = HAL_UART_Transmit(&huart1, (uint8_t *)data, 32, 5);
+  HAL_UART_Transmit(&huart1, (uint8_t *)data, 32, 5);
 }

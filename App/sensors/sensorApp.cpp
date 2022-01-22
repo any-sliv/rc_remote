@@ -51,8 +51,8 @@ extern "C" void SensorTask(void * argument) {
 
   for(;;) {
     xQueueReceive(qButtonStateHandle, &triggerButtonState, 0);
-    xQueueReceive(qButtonPressesHandle, &timesPressed, 0);
     xQueueReceive(qButtonHoldHandle, &triggerButtonHold, 0);
+    if(xQueueReceive(qButtonPressesHandle, &timesPressed, 0) == pdFALSE) timesPressed = 0;
     
     sum += hallSensor.GetPosition();
     counter++;
@@ -70,14 +70,13 @@ extern "C" void SensorTask(void * argument) {
     //Battery::ChargeState batteryState = battery.GetChargeState();
     //todo if charging send to led app
     uint8_t batteryPercent = battery.GetPercent();
-    SS49::rideMode mode = hallSensor.ChangeRideMode();
 
     if(batteryPercent < 15) leds.IndicateLowBattery();
     if(indicateBattery) {
       if(leds.ShowBatteryState(batteryPercent, 50)) indicateBattery = false;
     }
     if(indicateRideMode) {
-      if(leds.IndicateRideModeChange(mode)) indicateRideMode = false;
+      if(leds.IndicateRideModeChange(hallSensor.mode)) indicateRideMode = false;
     }
 
     switch(timesPressed) {
@@ -86,9 +85,9 @@ extern "C" void SensorTask(void * argument) {
         indicateBattery = true;
         break;
       case INDICATE_RIDE_MODE:
-        indicateRideMode = true;
-        uint32_t saveMode = (uint32_t) mode;
+        uint32_t saveMode = (uint32_t) hallSensor.ChangeRideMode();
         Flash_Write_Data(0x0801F000, &saveMode, 1);
+        indicateRideMode = true;
         break;
     }
 

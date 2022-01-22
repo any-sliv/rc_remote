@@ -33,9 +33,10 @@ class SS49 : AnalogRead {
   int neutralThrottle = 0;
 
     // Ride mode
-  rideMode mode = NORMAL;
 
  public:
+  rideMode mode = NORMAL;
+  
   /**
    * Initiate the sensor. Used in unit test scenario.
    * @param channel configuration

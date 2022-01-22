@@ -176,7 +176,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the timer(s) */
   /* creation of radioHeartbeat */
-  radioHeartbeatHandle = osTimerNew(radioHeartbeatCallback, osTimerPeriodic, NULL, &radioHeartbeat_attributes);
+  radioHeartbeatHandle = osTimerNew(radioHeartbeatCallback, osTimerOnce, NULL, &radioHeartbeat_attributes);
 
   /* creation of ledTimeout */
   ledTimeoutHandle = osTimerNew(ledTimeoutCallback, osTimerOnce, NULL, &ledTimeout_attributes);

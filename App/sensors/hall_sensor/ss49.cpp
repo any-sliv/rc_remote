@@ -70,7 +70,7 @@ SS49::rideMode SS49::ChangeRideMode(void) {
       mode = BOOST;
       break;
     case BOOST:
-      mode = ECO;
+      mode = NORMAL;
       break;
     default:
       mode = NORMAL;

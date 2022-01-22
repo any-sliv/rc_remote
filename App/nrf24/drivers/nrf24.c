@@ -623,7 +623,8 @@ void NRF24_powerUp(void)
 //38. power down
 void NRF24_powerDown(void)
 {
-	NRF24_write_register(REG_CONFIG,NRF24_read_register(REG_CONFIG) & ~_BV(BIT_PWR_UP));
+  NRF24_ce(0);
+	NRF24_write_register(REG_CONFIG,(NRF24_read_register(REG_CONFIG)) & ~_BV(BIT_PWR_UP));
 }
 //39. Check if data are available and on which pipe (Use this for multiple rx pipes)
 bool NRF24_availablePipe(uint8_t* pipe_num)

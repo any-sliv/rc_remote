@@ -13,6 +13,7 @@
 #include "buttonApp.hpp"
 extern "C" {
   #include "nrf24.h"
+  #include "semphr.h"
 } // extern C close
 
 extern "C" {
@@ -26,6 +27,8 @@ extern "C" void RadioTask(void * argument) {
   Gpio pin = Gpio(LED_USER_GPIO_Port, LED_USER_Pin);
   bool flag = false;
 
+  osTimerStart(radioHeartbeatHandle, 5000);
+
   for (;;) {
     // if (radio.IsAvailable()) {
     //   radio.Read(&radio.rxData);
@@ -36,11 +39,18 @@ extern "C" void RadioTask(void * argument) {
     int rcv = 0;
     xQueueReceive(qRadioTxValueHandle, &rcv, 0);
     if(radio.Write(rcv)) {
-          flag ^= 1;
-    pin.Set(flag);
+      flag ^= 1;
+      pin.Set(flag);
     } else {
       pin.Reset();
     }
+    // Active heartbeat if data is sent
+    if(rcv) osTimerStart(radioHeartbeatHandle, 5000);
+
+    flag ^= 1;
+    pin.Set(flag);
+
+    xSemaphoreGive(radioTxDoneSemaphoreHandle);
     vTaskDelay(radio.config.taskTimeInterval);
   }  // -------------------------------------------------------------------------
 }
@@ -53,7 +63,7 @@ NRF24::NRF24(SPI_HandleTypeDef * hspi) {
   Logger::Log("NRF24 radio Constructor. \r\n");
   Wakeup();
 
-  memset(&rxData, 0, sizeof(rxData));
+  memset(rxData, 0, sizeof(rxData));
   MX_SPI1_Init();
 
   NRF24_begin(config.port, config.csnPin, config.cePin, hspi);
@@ -74,7 +84,6 @@ NRF24::NRF24(SPI_HandleTypeDef * hspi) {
 
 bool NRF24::Write(int data) {
   sprintf((char *)txData, "THR:%d \r\n", data);
-  osTimerStart(radioHeartbeatHandle, 5000);
 
   NRF24_stopListening();
   NRF24_openWritingPipe(config.txPipeAddress);
@@ -95,7 +104,9 @@ bool NRF24::IsAvailable(void) { return NRF24_available(); }
 void NRF24::Read(void *data) { NRF24_read(data, config.payloadSize); }
 
 void NRF24::Sleep(void) {
+  //NRF24_stopListening();
   NRF24_powerDown();
+  osDelay(1);
 }
 
 void NRF24::Wakeup(void) {
