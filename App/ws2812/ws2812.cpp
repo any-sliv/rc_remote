@@ -182,9 +182,14 @@ bool Leds::IndicateRideModeChange(SS49::rideMode mode) {
   return false;
 }
 
-void Leds::IndicateLowBattery(void) {
+void Leds::IndicateLowBattery(Battery::BatteryType type) {
   static uint16_t i = 0;
-  ws2812_diode_s colour = {0x10, 0, 0};
+  ws2812_diode_s colour;
+  // internal - violet
+  if(type == Battery::BatteryType::INTERNAL) colour = {0x10, 0, 0x08};
+  //external - ocean blue
+  else colour = {0, 0x10, 0x05};
+
   if(i++ > 400) {
     SetColour(colour, 0);
     if(i > 440) {

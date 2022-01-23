@@ -25,10 +25,21 @@ class Battery : AnalogRead {
   };
 
   // As a Battery Capacity
-  const float bC[12] = {3.6,  3.65, 3.69, 3.74, 3.8, 3.84,
+  const float internalVoltages[12] = {3.6,  3.65, 3.69, 3.74, 3.8, 3.84,
                         3.87, 3.95, 4.02, 4.10, 4.2, 4.3};
 
+  // Ranges of capacity 
+  const float externalValues[12] = {33.7, 34.8, 35.5, 35.9, 36.3, 36.7, 
+                        37.3, 38.2, 39.2, 40.5, 42, 43};
+
+  int externalBatteryValue;
+
  public:
+  enum BatteryType {
+    INTERNAL, //the one in remote
+    EXTERNAL  //the one in skateboard
+  };
+  
   /**
    * @param channel pointer to ADC channel configuration structure
    * @param gpioAddr has default value, use only for testing!
@@ -39,6 +50,11 @@ class Battery : AnalogRead {
           GPIO_TypeDef *portAddr = CHARGER_ENABLE_GPIO_Port);
 
   Battery(void);  
+
+  /**
+   * @param val Please pass me value of external battery
+   */
+  void SetExternalBatteryValue(int val);
 
   float adcValueToVoltage(uint32_t val);
 
@@ -51,7 +67,7 @@ class Battery : AnalogRead {
   /**
    * @return Percentage value of battery. '0' or multiple of 10
    */
-  uint8_t GetPercent(void);
+  uint8_t GetPercent(BatteryType type);
 
   ChargeState GetChargeState(void);
 };

@@ -103,6 +103,11 @@ osMessageQueueId_t qRadioTxValueHandle;
 const osMessageQueueAttr_t qRadioTxValue_attributes = {
   .name = "qRadioTxValue"
 };
+/* Definitions for qBatteryExternal */
+osMessageQueueId_t qBatteryExternalHandle;
+const osMessageQueueAttr_t qBatteryExternal_attributes = {
+  .name = "qBatteryExternal"
+};
 /* Definitions for radioHeartbeat */
 osTimerId_t radioHeartbeatHandle;
 const osTimerAttr_t radioHeartbeat_attributes = {
@@ -206,6 +211,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of qRadioTxValue */
   qRadioTxValueHandle = osMessageQueueNew (1, sizeof(int), &qRadioTxValue_attributes);
+
+  /* creation of qBatteryExternal */
+  qBatteryExternalHandle = osMessageQueueNew (1, sizeof(uint16_t), &qBatteryExternal_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */

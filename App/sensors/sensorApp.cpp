@@ -9,10 +9,10 @@
 #include "task.h"
 #include "semphr.h"
 #include "buttonApp.hpp"
-#include "battery.hpp"
 #include "ss49.hpp"
 #include "logger.hpp"
 #include "ws2812.hpp"
+#include "radioApp.hpp"
 #include "flash.hpp"
 
 /*  Each <ms> task is ran. */
@@ -53,6 +53,14 @@ extern "C" void SensorTask(void * argument) {
     xQueueReceive(qButtonStateHandle, &triggerButtonState, 0);
     xQueueReceive(qButtonHoldHandle, &triggerButtonHold, 0);
     if(xQueueReceive(qButtonPressesHandle, &timesPressed, 0) == pdFALSE) timesPressed = 0;
+
+    { //dummy scope, just to use var once
+      uint16_t val = 0;
+      // Set value of only something has been read from queue
+      if(xQueueReceive(qBatteryExternalHandle, &val, 0) != pdFALSE) {
+        battery.SetExternalBatteryValue((int) val);
+      }
+    }
     
     sum += hallSensor.GetPosition();
     counter++;
@@ -69,16 +77,31 @@ extern "C" void SensorTask(void * argument) {
     
     //Battery::ChargeState batteryState = battery.GetChargeState();
     //todo if charging send to led app
-    uint8_t batteryPercent = battery.GetPercent();
 
-    if(batteryPercent < 15) leds.IndicateLowBattery();
-    if(indicateBattery) {
-      if(leds.ShowBatteryState(batteryPercent, 50)) indicateBattery = false;
+    uint8_t batteryPercent[2] = {
+      battery.GetPercent(Battery::BatteryType::INTERNAL),
+      battery.GetPercent(Battery::BatteryType::EXTERNAL)
+    };
+
+    // Check if batteries are low
+    for(uint8_t i = 0; i < sizeof(batteryPercent); i++) {
+      if(batteryPercent[i] < 15) leds.IndicateLowBattery((Battery::BatteryType) i);
     }
+    
+    // Run animation of battery charge
+    if(indicateBattery) {
+      if(leds.ShowBatteryState(batteryPercent[Battery::BatteryType::INTERNAL], 
+                                batteryPercent[Battery::BatteryType::EXTERNAL])) {
+        indicateBattery = false;
+      }
+    }
+
+    // Run animation of ride mode at change
     if(indicateRideMode) {
       if(leds.IndicateRideModeChange(hallSensor.mode)) indicateRideMode = false;
     }
 
+    // React is button has been pressed x times
     switch(timesPressed) {
       case INDICATE_BATTERY_TRIGGER:
         // Latches flag until animation returns true and zeroes flag
@@ -87,14 +110,10 @@ extern "C" void SensorTask(void * argument) {
       case INDICATE_RIDE_MODE:
         uint32_t saveMode = (uint32_t) hallSensor.ChangeRideMode();
         Flash_Write_Data(0x0801F000, &saveMode, 1);
+        // Latches flag until animation returns true and zeroes flag
         indicateRideMode = true;
         break;
     }
-
-    if(batteryPercent <= 10) {
-      //todo light up leds periodically to indicate low battery
-    }
-    
 
     // Anti overflow
     if(sum >= (int)0xFFFF0000) sum = 0;

@@ -14,6 +14,8 @@
 #include "spi.h"
 #include "gpioApp.hpp"
 
+extern osMessageQueueId_t qBatteryExternalHandle;
+
 struct RadioConfig
 {
     // Interval at which radio task is being run
@@ -22,7 +24,7 @@ struct RadioConfig
   const uint8_t payloadSize = 32;
 
     // Radio transmit channel
-  const uint8_t channel = 52;
+  const uint8_t channel = 60;
 
     // Pipe addreses
   const uint64_t txPipeAddress = 0x00CAFEBABE;
@@ -75,8 +77,9 @@ class NRF24 {
   /**
    * Read recieved payload
    * @param data address
+   * @return value of external battery
    */
-  void Read(void *data);
+  int Read(void *data);
 
   /**
    * Put radio into sleep mode

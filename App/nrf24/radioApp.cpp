@@ -30,15 +30,12 @@ extern "C" void RadioTask(void * argument) {
   osTimerStart(radioHeartbeatHandle, 5000);
 
   for (;;) {
-    // if (radio.IsAvailable()) {
-    //   radio.Read(&radio.rxData);
-    // } else {
-    // }
-
     // Set throttle data as data to transmit
     int rcv = 0;
     xQueueReceive(qRadioTxValueHandle, &rcv, 0);
     if(radio.Write(rcv)) {
+      int read = radio.Read(radio.rxData);
+      xQueueSend(qBatteryExternalHandle, &read, 0);
       flag ^= 1;
       pin.Set(flag);
     } else {
@@ -69,7 +66,7 @@ NRF24::NRF24(SPI_HandleTypeDef * hspi) {
   NRF24_begin(config.port, config.csnPin, config.cePin, hspi);
   NRF24_stopListening();
   NRF24_openWritingPipe(config.txPipeAddress);
-  //NRF24_setAutoAck(RADIO_AUTO_ACK);
+  NRF24_setAutoAck(1);
   NRF24_setChannel(config.channel);
   NRF24_setPayloadSize(config.payloadSize);
 
@@ -78,20 +75,18 @@ NRF24::NRF24(SPI_HandleTypeDef * hspi) {
   
   //printRadioSettings();
   
- //NRF24_enableDynamicPayloads();
- //NRF24_enableAckPayload();
+  NRF24_enableAckPayload();
+  NRF24_enableDynamicPayloads();
+
+  NRF24_startListening();
 }
 
 bool NRF24::Write(int data) {
   sprintf((char *)txData, "THR:%d \r\n", data);
 
-  NRF24_stopListening();
-  NRF24_openWritingPipe(config.txPipeAddress);
+  //NRF24_stopListening();
 
   bool ret = NRF24_write(&txData, config.payloadSize);
-
-  //NRF24_openReadingPipe(1, config.rxPipeAddress);
-  NRF24_startListening();
 
   // Clear tx buffer
   memset(&txData, 0, sizeof(rxData));
@@ -101,7 +96,13 @@ bool NRF24::Write(int data) {
 
 bool NRF24::IsAvailable(void) { return NRF24_available(); }
 
-void NRF24::Read(void *data) { NRF24_read(data, config.payloadSize); }
+int NRF24::Read(void *data) { 
+  NRF24_read(data, config.payloadSize); 
+  uint8_t rx[32];
+  memset(rx, 0, sizeof(rx));
+  memcpy(rx, data + 4, 16);
+  return atoi((const char *) rx);
+}
 
 void NRF24::Sleep(void) {
   //NRF24_stopListening();

@@ -12,6 +12,7 @@
 #include "gpio.h"
 #include "string.h"
 #include "ss49.hpp"
+#include "battery.hpp"
 
 #define WS2812_LEDS_NUMBER 5
 
@@ -88,7 +89,7 @@ class Leds {
   /**
    * If battery has low voltage one diode will blink periodically
    */
-  void IndicateLowBattery(void);
+  void IndicateLowBattery(Battery::BatteryType type);
 
   /**
    * Diodes indicate (animation) current battery charge. 

@@ -11,17 +11,28 @@ float Battery::adcValueToVoltage(uint32_t val) {
   return ((float)val / 4095) * 3.3;
 }
 
-uint8_t Battery::GetPercent(void) {
-  // times 2 due to we have voltage divier of 2
-  float voltage = adcValueToVoltage(GetAdcValue(&channelConfig)) * 2;
+uint8_t Battery::GetPercent(BatteryType type) {
+  float voltage;
+  const float * voltageRanges;
 
-  if(voltage > bC[11]) return 101;
+  if(type == INTERNAL) {
+    voltageRanges = internalVoltages;
+    // times 2 due to we have voltage divier ratio
+    voltage = adcValueToVoltage(GetAdcValue(&channelConfig)) * 2;
+  }
+  else if(type == EXTERNAL) {
+    voltageRanges = externalValues;
+    // times _ due to voltage divier ratio
+    voltage = adcValueToVoltage(externalBatteryValue) * 12.75 ;
+  }
+
+  if(voltage > voltageRanges[11]) return 101;
 
   for (uint8_t i = 0; i < 11; i++) {
-    if (voltage > bC[i]) {
+    if (voltage > voltageRanges[i]) {
       if (i == 10)
         return i * 10;
-      else if (voltage < bC[i + 1]) {
+      else if (voltage < voltageRanges[i + 1]) {
         return i * 10;
       }
     } 
@@ -47,6 +58,10 @@ Battery::Battery(void) {
   // Enable charging
   pinChrgEn.Set();
  }
+
+void Battery::SetExternalBatteryValue(int val) {
+  externalBatteryValue = val;
+}
 
 Battery::ChargeState Battery::GetChargeState(void) {
   // Values of readouts taken from charger datasheet
